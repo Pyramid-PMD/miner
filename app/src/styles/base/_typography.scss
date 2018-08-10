@@ -1,0 +1,22 @@
+body {
+  color: map_get($colors, primary-text);
+}
+
+.text-primary {
+  color: map_get($colors, primary-text) !important;
+}
+
+.text-secondary {
+  color: map_get($colors, secondary-text);
+}
+
+.text-small {
+  font-size: .8rem;
+}
+
+.number {
+  font-size: 1.4rem;
+  &.number-big {
+    font-size: 2.4rem;
+  }
+}

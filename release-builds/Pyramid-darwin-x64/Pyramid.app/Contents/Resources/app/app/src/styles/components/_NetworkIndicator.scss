@@ -1,0 +1,22 @@
+.network-indicator {
+  outline: none;
+  background: transparent;
+  font-size: 24px;
+  border: 1px solid map_get($colors, secondary-text);
+  color: map_get($colors, secondary-text);
+  @include circle(34px);
+  .diagonal {
+    width: 34px;
+    height: 28px;
+    border-bottom: 1px solid map_get($colors, progress);
+    -webkit-transform:
+            translateY(-10px)
+            translateX(10px)
+            rotate(45deg);
+    position: absolute;
+  }
+  &.offline {
+    color: map_get($colors, progress);
+    border-color: map_get($colors, progress);
+  }
+}

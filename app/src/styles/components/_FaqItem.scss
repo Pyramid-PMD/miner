@@ -1,0 +1,17 @@
+.faq-item {
+  .accordion__title {
+    background: map_get($colors, secondary-background);
+    color: map_get($colors, primary-text);
+    border-radius: 36px;
+    padding: 14px 18px;
+    &:hover {
+      background: map_get($colors, secondary-background);
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  .accordion__body {
+    padding: 20px 20px 6px 20px;
+  }
+}

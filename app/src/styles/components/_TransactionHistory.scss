@@ -1,0 +1,17 @@
+.transaction-history {
+  .table {
+    th {
+      font-size: .8rem;
+      color: map_get($colors, secondary-text);
+      font-weight: normal;
+      border: 0;
+    }
+    td.in_progress {
+      color: map_get($colors, progress);
+    }
+
+    td.received {
+      color: map_get($colors, received);
+    }
+  }
+}

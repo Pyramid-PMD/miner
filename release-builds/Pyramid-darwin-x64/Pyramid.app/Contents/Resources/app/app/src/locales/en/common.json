@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "name": "Pyramid",
+    "slogan": "Next generation centralized protocol of storage"
+  },
+  "interface": {
+    "next": "Continue",
+    "skip": "Skip step",
+    "update": "Update",
+    "comingSoon": "Coming soon",
+    "copy": "Copy",
+    "max": "Max",
+    "send": "Send",
+    "address": "Address",
+    "amount": "Amount",
+    "state": "State",
+    "withdraw": "Withdraw",
+    "currency": "Currency",
+    "language": "Language",
+    "ui": "UI",
+    "save": "Save",
+    "cancel": "Cancel",
+    "disk": "Disk"
+  }
+}

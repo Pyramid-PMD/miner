@@ -1,0 +1,120 @@
+.transaction-form {
+  padding-bottom: 16px;
+  .submit-btn {
+    border: 2px solid map_get($colors, secondary);
+    background: darken(map_get($colors, secondary), 20%);
+    padding: 5px 20px;
+    height: 100%;
+    min-width: 100px;
+  }
+
+
+}
+
+.address-dropdown {
+  .rw-input {
+    background: transparent;
+
+  }
+  .rw-select-bordered {
+    border: none;
+    background: transparent;
+  }
+  &.rw-widget>.rw-widget-container {
+    padding: 16px 8px;
+    border: 3px solid map_get($colors, secondary);
+    border-radius: 10px;
+    z-index: 2000;
+    .rw-btn {
+      color: map_get($colors, secondary);
+      opacity: 1;
+    }
+  }
+
+  .rw-list-empty {
+    padding: 20px 16px 16px 16px;
+  }
+  .rw-select.rw-select-bordered {
+    background: transparent !important;
+  }
+  &.rw-widget>.rw-widget-container,
+  &.rw-widget>.rw-widget-container:hover,
+  &.rw-widget>.rw-widget-container:focus,
+  .rw-popup, .rw-popup:hover {
+    background: map_get($colors, field-bg);
+  }
+
+  .rw-popup-container {
+    top: calc(100% - 10px);
+    //padding-top: 16px;
+  }
+  .rw-popup {
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .rw-list-option, #rw_1_listbox_active_option {
+    padding: 16px 8px;
+    border: none;
+    &:hover {
+      background: transparent;
+      color: #fff;
+    }
+  }
+
+  .rw-input, .rw-list-option, #rw_1_listbox_active_option  {
+    color: #b7d8f9;
+  }
+  .rw-list-option.rw-state-selected,  .rw-list-option.rw-state-selected:hover{
+    color: #fff !important;
+    background: transparent;
+  }
+}
+
+.field-underlined {
+  border-bottom: 2px solid map_get($colors, secondary);
+  padding-bottom: 4px;
+
+  button {
+    outline: none;
+    background: none;
+    color: map_get($colors, secondary);
+    margin: 0;
+    border: none;
+    min-width: 60px;
+    cursor: pointer;
+  }
+  .form-control {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 0 16px;
+    font-size: 2rem;
+    color: map_get($colors, secondary);
+  }
+}
+
+.withdrawal-form {
+  .address-dropdown {
+    &.rw-widget>.rw-widget-container {
+      border: 3px solid map_get($colors, withdraw-form);
+      .rw-btn {
+        color: map_get($colors, withdraw-form);
+      }
+    }
+  }
+  .field-underlined {
+    border-bottom: 2px solid map_get($colors, withdraw-form);
+    button {
+      color: map_get($colors, withdraw-form);
+    }
+    .form-control {
+      color: map_get($colors, withdraw-form);
+    }
+  }
+  .submit-btn {
+    border: 2px solid map_get($colors, withdraw-form);
+    background: darken(map_get($colors, withdraw-form), 40%);
+  }
+}
