@@ -2,173 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e75a29-20bf-4b52-8afb-3fc406e43bd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/fonts/pyramid/pyramid.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/fonts/pyramid/pyramid.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/mac/icon.icns" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/128x128.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/24x24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/256x256.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/48x48.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/512x512.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/64x64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/png/96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/icons/win/icon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/bg/page-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/pages/overview/bg-bian.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/pages/overview/bg-fcoin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/pages/overview/icon-bian.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/pages/overview/icon-fcoin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/pages/overview/image-pie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/pages/profit.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Redux/CreateStore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Redux/StartupRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Redux/StartupSagas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Redux/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Redux/rootReducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Redux/rootSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Services/Api.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/fonts/pyramid/pyramid.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/fonts/pyramid/pyramid.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/fonts/pyramid/pyramid.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/img/logo.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/assets/js/network.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/components/AppLogo/AppLogo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/components/IconButton/IconButton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/config/app.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/config/i18n/i18next.client.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/config/i18n/i18next.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/config/ipc/ipc.messages.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/cn/auth.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/cn/common.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/cn/dashboard.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/cn/menu.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/en/auth.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/en/common.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/en/dashboard.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/en/menu.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/locales/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/Dashboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/Menu/Menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/Menu/MenuFooter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/Menu/MenuHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/Menu/MenuItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/NetworkIndicator/NetworkIndicator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/PageHeader/PageHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/SendTransactionRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/SendTransactionSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionHistory/TransactionHistory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionHistory/TransactionHistoryItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Faq/Faq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Faq/FaqItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Faq/faq.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Miner/ChartTheme.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Miner/Miner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Miner/MinerChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Miner/MinerChartConfig.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Miner/MinerRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Miner/MinerSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Notifications/Nofications.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Notifications/NotificationItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Notifications/NotificationsRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Notifications/NotificationsSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Notifications/pages/System.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Notifications/pages/Transactions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Notifications/pages/Withdraw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/ComingSoon.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/ExchangeIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/ExchangeIndexItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/Overview.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/OverviewChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/OverviewRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/OverviewSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Profit/Profit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Profit/ProfitChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Profit/ProfitChartConfig.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Profit/ProfitRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Profit/ProfitSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Settings/Settings.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Settings/SettingsForm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Settings/SettingsRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Settings/SettingsSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Transactions/TransactionRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Transactions/TransactionSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Transactions/Transactions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Transactions/Wallet.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Withdraw/Withdraw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Withdraw/WithdrawRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Withdraw/WithdrawSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Login/Login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Login/LoginRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Login/LoginSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/MinerAlias/Alias.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/MinerAlias/AliasForm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/MinerAlias/AliasRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/MinerAlias/AliasSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/NotFound/NotFound.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Register/Register.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Register/RegisterForm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Register/RegisterRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Register/RegisterSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Register/VerifyEmailRedux.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/pages/Register/VerifyEmailSaga.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/abstracts/_all.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/abstracts/_functions.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/abstracts/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/abstracts/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/base/_all.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/base/_icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/base/_typography.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_AppLogo.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_FaqItem.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_FormButton.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_FormField.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_NetworkIndicator.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_NotificationItem.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_PageHeader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_ReactTabs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_SettingsForm.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_TransactionForm.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_TransactionHistory.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_Wallet.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/components/_all.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/layout/_Menu.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/layout/_all.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/layout/_base.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/main.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/pages/_Login.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/pages/_Notifications.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/pages/_Overview.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/pages/_Register.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/pages/_all.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/pages/_base.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/vendors/_all.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/styles/vendors/_bootstrap.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/electron.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/react.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/webpack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/assets/electron.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/assets/react.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/assets/webpack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/components/Link/index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/components/Link/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/components/Logo/index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/components/Logo/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/global.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/App.jsx" afterPath="$PROJECT_DIR$/app/src/App.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/renderer_process.js" afterPath="$PROJECT_DIR$/app/src/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/main_process.js" afterPath="$PROJECT_DIR$/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/bundle.css" afterPath="$PROJECT_DIR$/app/build/bundle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/bundle.js" afterPath="$PROJECT_DIR$/app/build/bundle.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/fancy-example.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/pyramid.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/pyramid.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/pyramid.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/pyramid.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/pyramid.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/react-widgets.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/rw-widgets.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/styles/abstracts/_variables.scss" afterPath="$PROJECT_DIR$/app/src/styles/abstracts/_variables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/styles/base/_icons.scss" afterPath="$PROJECT_DIR$/app/src/styles/base/_icons.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/styles/components/_TransactionForm.scss" afterPath="$PROJECT_DIR$/app/src/styles/components/_TransactionForm.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -183,12 +33,52 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="menu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/menu.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_TransactionForm.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/styles/components/_TransactionForm.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -207,8 +97,28 @@
       <file leaf-file-name="_variables.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/styles/abstracts/_variables.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+            <state relative-caret-position="300">
+              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_icons.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/styles/base/_icons.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -222,6 +132,8 @@
       <find>react</find>
       <find>babel</find>
       <find>electron-rel</find>
+      <find>url</find>
+      <find>pyramid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -239,12 +151,16 @@
         <option value="$PROJECT_DIR$/app/src/styles/layout/_base.scss" />
         <option value="$PROJECT_DIR$/app/src/Services/Api.js" />
         <option value="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/ExchangeIndexItem.js" />
-        <option value="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/src/Redux/StartupSagas.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/app/src/styles/base/_icons.scss" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" />
+        <option value="$PROJECT_DIR$/app/src/styles/components/_TransactionForm.scss" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/build/bundle.css" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/src/styles/abstracts/_variables.scss" />
       </list>
     </option>
@@ -259,6 +175,7 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/release-builds/Pyramid-darwin-x64/Pyramid.app/Contents/Resources/app/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -280,6 +197,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -372,28 +290,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyramid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyramid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,9 +308,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/build" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/src/assets" />
       <recent name="$PROJECT_DIR$/app/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/styles" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -465,6 +368,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -498,12 +407,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533899757050</updated>
-      <workItem from="1533899758380" duration="9468000" />
+      <workItem from="1533899758380" duration="13117000" />
+      <workItem from="1533915648889" duration="632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9468000" />
+    <option name="totallyTimeSpent" value="13749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="742" extended-state="6" />
@@ -511,21 +421,21 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -540,7 +450,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/global.css">
+    <entry file="file://$PROJECT_DIR$/menu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -548,27 +458,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Logo/styles.css">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2160">
+          <caret line="144" column="29" lean-forward="false" selection-start-line="144" selection-start-column="29" selection-end-line="144" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Logo/index.jsx">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/styles/components/_TransactionForm.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/styles/base/_icons.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/styles/abstracts/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/global.css" />
+    <entry file="file://$PROJECT_DIR$/app/src/components/Logo/styles.css" />
+    <entry file="file://$PROJECT_DIR$/app/src/components/Logo/index.jsx" />
     <entry file="file://$PROJECT_DIR$/app/src/config/ipc/ipc.messages.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -586,7 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -614,7 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,7 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -630,7 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -638,7 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-492">
           <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,15 +593,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/styles/base/_typography.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,15 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/styles/base/_icons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,36 +617,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/fancy-example.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/loader-big.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/react-widgets.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/fancy-example.css" />
+    <entry file="file://$PROJECT_DIR$/app/build/loader-big.gif" />
+    <entry file="file://$PROJECT_DIR$/app/build/react-widgets.css" />
     <entry file="file://$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/ExchangeIndexItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,25 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -761,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,23 +679,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/menu.js">
+    <entry file="file://$PROJECT_DIR$/app/src/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/app/src/styles/base/_icons.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/styles/main.scss">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/styles/vendors/_bootstrap.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/styles/components/_TransactionForm.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -823,10 +741,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/styles/base/_typography.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/bundle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="5" column="138870" lean-forward="true" selection-start-line="5" selection-start-column="138870" selection-end-line="5" selection-end-column="138870" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/styles/abstracts/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        <state relative-caret-position="300">
+          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
           <folding />
         </state>
       </provider>

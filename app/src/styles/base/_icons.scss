@@ -1,4 +1,5 @@
 $font-family: map_get($icons, font-family);
+//$font-path: map_get($icons, font-path);
 $font-path: map_get($icons, font-path);
 
 @font-face {
