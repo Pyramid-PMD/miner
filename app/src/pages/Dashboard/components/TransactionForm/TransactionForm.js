@@ -5,6 +5,8 @@ import { I18n } from 'react-i18next';
 import {Combobox} from 'react-widgets';
 import SendTransactionActions, { SendTransactionSelectors} from './SendTransactionRedux';
 import {SettingsSelectors} from "../../pages/Settings/SettingsRedux";
+// import 'react-widgets/dist/css/react-widgets.css';
+
 
 class TransactionForm extends Component {
 
