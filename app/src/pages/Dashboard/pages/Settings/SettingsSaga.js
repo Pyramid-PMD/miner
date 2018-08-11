@@ -1,6 +1,7 @@
 import { put, call, select } from 'redux-saga/effects';
 import SettingsActions, { SettingsSelectors } from './SettingsRedux';
 import i18n from '../../../../config/i18n/i18next.client.config';
+import {getDriveList} from "../../../../Services/Utils";
 const config = require('../../../../config/app.config');
 
 
@@ -52,18 +53,6 @@ export function setLanguage(lang) {
     return localStorage.setItem('lang', JSON.stringify(lang));
 }
 
-export function getDriveList() {
-    if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve(['A', 'B', 'C']));
-    const os = require('os');
-    if (os.platform() === 'win32') {
-        const exec = require('child_process').exec;
-        const winCmd = 'wmic logicaldisk get name\n';
-        return exec(winCmd);
-
-    } else {
-        return new Promise((resolve, reject) => resolve(['A', 'B', 'C']))
-    }
-}
 
 export function * loadDefaultSettingsSaga(api, action) {
     const lang = yield getSavedLanguage();
@@ -73,7 +62,7 @@ export function * loadDefaultSettingsSaga(api, action) {
     yield getUserInfoSaga(api);
     yield getExchangeRates(api);
     const currency = yield getUserCurrency();
-    yield put(SettingsActions.loadDefaultSuccess(lang, currency));
+    yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist));
 }
 
 export function * saveNewSettingsSaga(api, action) {

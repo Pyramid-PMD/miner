@@ -14,7 +14,8 @@ const create  =  (baseURL = url) => {
             'disk_id': diskId, // 123456
             'version': '1.0.0'
         },
-        timeout: 100000
+
+    timeout: 100000
     });
 
     const getRoot = () => api.get('');

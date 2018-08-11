@@ -13,7 +13,7 @@ export function * checkAuthStatus(api, action) {
     if (diskId) {
         console.log('disk id', diskId);
         yield api.instance.addRequestTransform(request => {
-            request.headers['disk_id'] = diskId;
+            request.headers['disk_id'] = '7654321';
         });
     }
 
