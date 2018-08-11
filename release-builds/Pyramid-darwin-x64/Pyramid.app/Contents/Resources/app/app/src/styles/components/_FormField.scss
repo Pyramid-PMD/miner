@@ -1,9 +1,0 @@
-.form-field {
-  background: map_get($colors, field-bg);
-  border: 3px solid #fff;
-  border-radius: 0;
-  &:focus {
-    background: map_get($colors, field-bg);
-    border-color: #fff;
-  }
-}
