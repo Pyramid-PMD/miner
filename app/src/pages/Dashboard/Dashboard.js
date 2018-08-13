@@ -16,6 +16,7 @@ import PageHeader from "./components/PageHeader/PageHeader";
 
 import SettingsActions, { SettingsSelectors } from './pages/Settings/SettingsRedux';
 import StartupActions, { StartupSelectors } from '../../Redux/StartupRedux';
+import LoginActions from '../Login/LoginRedux';
 
 const pageStyles = {
     backgroundImage: `url(${config.brand.pageBg})`,
@@ -46,7 +47,7 @@ class Dashboard extends Component {
         return (
             <div className="d-flex align-items-stretch root-container">
                 <div>
-                    <Menu balance={ this.props.balance} currency={ this.props.currency } alias={ this.props.alias }/>
+                    <Menu balance={ this.props.balance} currency={ this.props.currency } alias={ this.props.alias } logout={this.props.logout}/>
                 </div>
                 <div className="page" style={pageStyles}>
                     <div className="page-container">
@@ -84,6 +85,7 @@ const mapDispatchToProps = (dispatch) => {
         loadSettings: () => dispatch(SettingsActions.loadDefaultSettings()),
         loadUser: () => dispatch(SettingsActions.userInfoRequest()),
         pollMiner: () => dispatch(StartupActions.pollMinerRequest()),
+        logout: () => dispatch(LoginActions.logoutRequest()),
     }
 };
 

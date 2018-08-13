@@ -26,5 +26,8 @@
     "estimateIncoming": "估计在24小时内进入",
     "globalHashRate": "全局哈希率",
     "localHashRate": "本地哈希率"
+  },
+  "tradePasswordModal": {
+    "enterTradePassword": "Enter trade password"
   }
 }

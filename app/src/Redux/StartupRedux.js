@@ -6,7 +6,8 @@ const { Types, Creators } = createActions({
     pollMinerRequest: ['speed'],
     pollMinerSuccess: null,
     pollMinerFailure: ['error'],
-    pollMinerStop: null
+    pollMinerStop: null,
+
 });
 
 export const StartupTypes = Types;

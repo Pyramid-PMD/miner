@@ -17,7 +17,7 @@ import {SettingsTypes} from '../pages/Dashboard/pages/Settings/SettingsRedux';
 import {ProfitTypes} from '../pages/Dashboard/pages/Profit/ProfitRedux';
 
 /* ------------- Sagas ------------- */
-import {loginSaga} from "../pages/Login/LoginSaga";
+import {loginSaga, logoutSaga} from "../pages/Login/LoginSaga";
 import {registerSaga} from '../pages/Register/RegisterSaga';
 import {verifyEmailSaga} from '../pages/Register/VerifyEmailSaga';
 import {createAliasSaga} from '../pages/MinerAlias/AliasSaga';
@@ -59,6 +59,8 @@ export default function * root () {
         takeLatest(SendTransactionTypes.GET_SAVED_ADDRESS_LIST, getAddressList),
         takeLatest(ProfitTypes.PROFIT_CHART_REQUEST, getProfitChartSaga, api),
         takeLatest(StartupTypes.POLL_MINER_REQUEST, pollMinerSaga, api),
+        takeLatest(LoginTypes.LOGOUT_REQUEST, logoutSaga),
+
     ]);
 };
 

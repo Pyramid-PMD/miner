@@ -20,6 +20,8 @@
     "ui": "界面",
     "save": "保存",
     "cancel": "取消",
-    "disk": "磁盘"
+    "disk": "磁盘",
+    "done": "Done",
+    "logout": "Logout"
   }
 }

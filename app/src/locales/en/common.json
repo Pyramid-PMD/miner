@@ -20,6 +20,8 @@
     "ui": "UI",
     "save": "Save",
     "cancel": "Cancel",
-    "disk": "Disk"
+    "disk": "Disk",
+    "done": "Done",
+    "logout": "Logout"
   }
 }

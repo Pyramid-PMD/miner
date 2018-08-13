@@ -26,5 +26,8 @@
     "estimateIncoming": "Estimate incoming in 24 hrs",
     "globalHashRate": "Global hash rate",
     "localHashRate": "Local hash rate"
+  },
+  "tradePasswordModal": {
+    "enterTradePassword": "Enter trade password"
   }
 }
