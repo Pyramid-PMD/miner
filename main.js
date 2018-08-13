@@ -6,7 +6,7 @@ const url = require('url');
 const MenuBuilder  = require('./menu');
 
 // Let electron reloads by itself when webpack watches changes in ./app/
-require('electron-reload')(__dirname)
+// require('electron-reload')(__dirname)
 
 const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 // To avoid being garbage collected

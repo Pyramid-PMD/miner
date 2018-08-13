@@ -9,7 +9,7 @@ const { Types, Creators } = createActions({
     saveSettingsSuccess: ['settings'],
     saveSettingsFailure: null,
     loadDefaultSettings: null,
-    loadDefaultSuccess: ['language', 'currency'],
+    loadDefaultSuccess: ['language', 'currency', 'driveList'],
     loadDefaultFailure: ['error'],
     savedLanguageRequest: null,
     savedLanguageSuccess: ['language'],
@@ -27,6 +27,7 @@ const INITIAL_STATE = {
     language: null,
     rates: null,
     selectedRate: null,
+    driveList: null
 };
 
 export const SettingsSelectors = {
@@ -44,13 +45,14 @@ export const SettingsSelectors = {
             return (state.settings.user.balance * state.settings.selectedRate.rate).toPrecision(5);
         }
     },
-    selectUserCurrency: (state) => state.settings.selectedRate ? state.settings.selectedRate : null,
+    selectUserCurrency: state => state.settings.selectedRate ? state.settings.selectedRate : null,
+    selectDriveList: state => state.settings.driveList
 };
 export const userInfoRequest = (state) => ({ ...state, loading: true});
 export const userInfoSuccess = (state, action) => ({ ...state, user: action.user });
 export const userInfoFailure = (state, action) => ({ ...state, user: null, error: action.error });
 export const savedLanguageSuccess = (state, action) => ({ ...state, language: action.language });
-export const loadDefaultSuccess = (state, action) => ({ ...state, loading: false, language: action.language, selectedRate: action.currency });
+export const loadDefaultSuccess = (state, action) => ({ ...state, loading: false, language: action.language, selectedRate: action.currency, driveList: action.driveList });
 export const exchangeRateSuccess = (state, action) => ({ ...state, rates: action.rates });
 export const saveSettingsSuccess = (state, action) => ({ ...state, language: action.settings.language, selectedRate: action.settings.currency  });
 

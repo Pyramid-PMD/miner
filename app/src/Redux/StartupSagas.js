@@ -1,6 +1,7 @@
 import { put, call } from 'redux-saga/effects';
 import LoginActions from '../pages/Login/LoginRedux';
 import StartupActions from './StartupRedux';
+import {getDiskId} from "../Services/Utils";
 
 export function * checkAuthStatus(api, action) {
     console.log('checking auth status');
@@ -8,6 +9,13 @@ export function * checkAuthStatus(api, action) {
     const token = yield localStorage.getItem('token');
     const user = yield JSON.parse(localStorage.getItem('user'));
     // Transform apis to include token in header
+    const diskId = yield call(getDiskId);
+    if (diskId) {
+        yield api.instance.addRequestTransform(request => {
+            request.headers['disk_id'] = diskId;
+        });
+    }
+
     if (!token) {
         yield put(LoginActions.loginFailure())
     } else {

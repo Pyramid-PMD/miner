@@ -1,11 +1,15 @@
 import React from 'react';
+const path = require('path');
 
 const ExchangeIndexItem = (props) => {
     const { name, price } = props.exchangeItem;
     const { currency } = props;
+
     const styles = {
         backgroundImage: `url(./src/assets/img/pages/overview/bg-${name}.png)`
     };
+
+
 
     return (
         <li className="exchange-list-item d-flex align-items-center" style={styles}>

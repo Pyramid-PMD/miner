@@ -9,9 +9,6 @@ const languages = require('../../../../config/app.config').i18n.languages;
 
 class SettingsForm extends Component {
     state = {
-        disks: [
-            'A', 'C', 'D'
-        ],
         languages
     };
 
@@ -47,11 +44,10 @@ class SettingsForm extends Component {
                                     <label className="col-form-label col-3 text-secondary text-small">{ t('common:interface.disk') }</label>
                                     <div className="col-5">
                                         <Field
-                                            name="disk"
+                                            name="partition"
                                             className="drop-down-dark"
-                                            defaultValue={this.state.disks[0]}
-                                            component={DropdownList}
-                                            data={this.state.disks}
+                                            component={this.renderDropdownList}
+                                            data={this.props.driveList}
                                             valueField="value"
                                         />
                                     </div>

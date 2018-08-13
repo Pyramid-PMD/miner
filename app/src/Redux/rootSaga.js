@@ -34,33 +34,9 @@ import { getProfitChartSaga } from '../pages/Dashboard/pages/Profit/ProfitSaga';
 
 
 /* ------------- API ------------- */
-
-// TODO: Refactor to utils.js file
-const getDiskId = () => {
-    console.log('process', process);
-    if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
-    const os = require('os');
-    if (os.platform() === 'win32') {
-        const exec = require('child_process').exec;
-        const winCmd = 'wmic DISKDRIVE get SerialNumber';
-        return exec(winCmd);
-    } else {
-        return new Promise((resolve, reject) => resolve('7654321'))
-    }
-};
-
 const api = API.create();
 
-api.instance.addRequestTransform(async request => {
-    let diskId;
-    try {
-        diskId = await getDiskId();
-        request.headers['disk_id'] = diskId;
-    } catch (err) {
-        diskId = '7654321';
-    }
-    request.headers['disk_id'] = diskId;
-});
+
 
 /* ------------- Connect Types To Sagas ------------- */
 export default function * root () {

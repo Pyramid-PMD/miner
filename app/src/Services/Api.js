@@ -1,16 +1,11 @@
 import apisauce from 'apisauce';
+import {getDiskId} from './Utils';
 // const url = process.env.NODE_ENV === 'development' ? '/api': 'http://101.132.161.0/api';
 
 const url = 'http://101.132.161.0/api';
 
 const create  =  (baseURL = url) => {
     let diskId = '7654321';
-    // try {
-    //     diskId = await getDiskId();
-    //     console.log('disk is', diskId);
-    // } catch (err) {
-    //     diskId = '7654321';
-    // }
     const api = apisauce.create({
         baseURL,
         headers: {
@@ -19,7 +14,8 @@ const create  =  (baseURL = url) => {
             'disk_id': diskId, // 123456
             'version': '1.0.0'
         },
-        timeout: 100000
+
+    timeout: 100000
     });
 
     const getRoot = () => api.get('');

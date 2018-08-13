@@ -8,7 +8,7 @@ import {
     Accordion
 } from 'react-accessible-accordion';
 import FaqItem from "./FaqItem";
-import 'react-accessible-accordion/dist/fancy-example.css';
+// import 'react-accessible-accordion/dist/fancy-example.css';
 
 class Faq extends Component {
     renderFaqItems() {

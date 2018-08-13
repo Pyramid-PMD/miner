@@ -20,6 +20,7 @@ class Settings extends Component {
                         initialValues={ this.props.initialValues }
                         saveSettings={ this.props.saveSettings }
                         rates= { this.props.rates }
+                        driveList={this.props.driveList}
                     />
                 </div>
             );
@@ -33,10 +34,12 @@ const mapStateToProps = (state) => {
     return {
         loading: SettingsSelectors.selectLoading(state),
         rates: SettingsSelectors.selectRates(state),
+        driveList: SettingsSelectors.selectDriveList(state),
         initialValues: {
             machine_name: SettingsSelectors.selectAlias(state),
             language: SettingsSelectors.selectLanguage(state),
             currency: SettingsSelectors.selectUserCurrency(state),
+            partition : SettingsSelectors.selectDriveList(state)[0],
         }
     }
 };

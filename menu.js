@@ -13,9 +13,7 @@ class MenuBuilder {
         ) {
             this.setupDevelopmentEnvironment();
         }
-        this.setupDevelopmentEnvironment();
-
-        console.log('platform', process.platform);
+        // this.setupDevelopmentEnvironment();
 
         const template = process.platform === 'darwin'
             ? this.buildDarwinTemplate()
