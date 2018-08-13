@@ -24,7 +24,7 @@ const pageStyles = {
 
 class Dashboard extends Component {
     //TODO: Use redux-observable in polling miner
-    componentDidMount() {
+    componentWillMount() {
         this.startPoll();
         // Load default settings
         this.props.loadSettings();
