@@ -8,7 +8,6 @@ export function * loginSaga(api, action) {
     const { credentials } = action;
     const res = yield call(api.login, credentials);
     let errorMsg;
-    console.log('res', res);
     switch (res.data.code) {
         // Login success
         case "0":

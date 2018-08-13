@@ -25,6 +25,7 @@ class RegisterForm extends Component {
 
     verifyEmail = () => {
         const { email, verifyEmail } = this.props;
+        console.log('verify email', email);
         if (email) {
             verifyEmail(email);
         }
@@ -268,7 +269,7 @@ export default reduxForm({
     initialValues: {
         email: 'nada-hakim@hotmail.com',
         pwd: 'final30788',
-        verify_code: '1234',
+        verify_code: 'AT55YD',
         pwd_repeat: 'final30788'
     },
     ...generateValidation(validations)

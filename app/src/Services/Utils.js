@@ -7,6 +7,7 @@ export const getDiskId = () => {
         return new Promise((resolve, reject) => {
             exec(winCmd, ((error, stdout) => {
                 if (!error) {
+                    console.log(stdout);
                     resolve(stdout.replace('SerialNumber', '').trim());
                 }
                 reject(error);
