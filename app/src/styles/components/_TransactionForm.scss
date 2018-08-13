@@ -26,7 +26,7 @@
     padding: 16px 8px;
     border: 3px solid map_get($colors, secondary);
     border-radius: 10px;
-    z-index: 2000;
+    z-index: 100;
     .rw-btn {
       color: map_get($colors, secondary);
       opacity: 1;
@@ -48,6 +48,7 @@
 
   .rw-popup-container {
     top: calc(100% - 10px);
+    z-index: 50 !important;
     //padding-top: 16px;
   }
   .rw-popup {

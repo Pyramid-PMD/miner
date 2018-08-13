@@ -5,7 +5,8 @@ import { I18n } from 'react-i18next';
 import {Combobox} from 'react-widgets';
 import SendTransactionActions, { SendTransactionSelectors} from './SendTransactionRedux';
 import {SettingsSelectors} from "../../pages/Settings/SettingsRedux";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import TradePasswordModal from "./TradePasswordModal";
 // import 'react-widgets/dist/css/react-widgets.css';
 
 
@@ -14,7 +15,9 @@ class TransactionForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modal: false
+            modal: false,
+            trade_pwd: null,
+            transaction: null
         };
         this.toggle = this.toggle.bind(this);
     }
@@ -32,8 +35,23 @@ class TransactionForm extends Component {
 
     // TODO: Save address to local storage
     submitHandler = (values) => {
-        const transaction = { ...values, trade_pwd: 'final30788'};
-        this.props.sendTransaction(transaction, this.props.transactionType);
+        console.log('submit form', values);
+        let transaction;
+        if (!this.state.trade_pwd) {
+            transaction = { ...values };
+            this.toggle();
+        } else {
+            transaction = { ...values, trade_pwd: this.state.trade_pwd};
+            this.props.sendTransaction(transaction, this.props.transactionType);
+        }
+        this.setState({ transaction });
+        console.log('state', this.state);
+    }
+
+    onTradePasswordHandler = (trade_pwd) => {
+        this.setState({ trade_pwd });
+        this.toggle();
+        this.submitHandler(this.state.transaction);
     }
 
     setMax = () => {
@@ -51,16 +69,11 @@ class TransactionForm extends Component {
     renderTradePasswordModal() {
         return (
         <div>
-            <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+            <Modal isOpen={this.state.modal} toggle={this.toggle} className="trade-pwd-modal">
+                <ModalHeader toggle={this.toggle}></ModalHeader>
                 <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <TradePasswordModal onTradePasswordEnter={this.onTradePasswordHandler} />
                 </ModalBody>
-                <ModalFooter>
-                    <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-                    <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                </ModalFooter>
             </Modal>
         </div>
 
@@ -74,37 +87,40 @@ class TransactionForm extends Component {
             <I18n>
                 {
                     (t) => (
-                        <form onSubmit={handleSubmit(this.submitHandler)} className={`has-separator transaction-form ${this.props.classes}`}>
-                            <div>
-                                <Field
-                                    className="address-dropdown margin-bottom-16"
-                                    name="to_addr"
-                                    component={Combobox}
-                                    filter="startsWith"
-                                    messages={{
-                                        emptyList: t('dashboard:transaction.noSavedAddresses'),
-                                        emptyFilter: t('dashboard:transaction.addressNotfound'),
-                                    }}
-                                    placeholder={t('dashboard:transaction.enterWalletAddress')}
-                                    data={this.props.addressList}
-                                />
-                            </div>
-                            <div className="form-row align-items-stretch m-0">
-                                <div className="flex-grow-1 mr-2 d-flex justify-content-between align-items-end field-underlined">
+                        <div>
+                            <form onSubmit={handleSubmit(this.submitHandler)} className={`has-separator transaction-form ${this.props.classes}`}>
+                                <div>
                                     <Field
-                                        className="form-control"
-                                        component="input"
-                                        name="amount">
-                                    </Field>
-                                    <button onClick={this.setMax} type="button">{ t('common:interface.max')}</button>
+                                        className="address-dropdown margin-bottom-16"
+                                        name="to_addr"
+                                        component={Combobox}
+                                        filter="startsWith"
+                                        messages={{
+                                            emptyList: t('dashboard:transaction.noSavedAddresses'),
+                                            emptyFilter: t('dashboard:transaction.addressNotfound'),
+                                        }}
+                                        placeholder={t('dashboard:transaction.enterWalletAddress')}
+                                        data={this.props.addressList}
+                                    />
                                 </div>
-                                <div className="col-auto">
-                                    <button type="submit" className="btn btn-primary submit-btn">
-                                    {this.props.transactionType === 'outer' ?  t('common:interface.withdraw') : t('common:interface.send')}
-                                    </button>
+                                <div className="form-row align-items-stretch m-0">
+                                    <div className="flex-grow-1 mr-2 d-flex justify-content-between align-items-end field-underlined">
+                                        <Field
+                                            className="form-control"
+                                            component="input"
+                                            name="amount">
+                                        </Field>
+                                        <button onClick={this.setMax} type="button">{ t('common:interface.max')}</button>
+                                    </div>
+                                    <div className="col-auto">
+                                        <button type="submit" className="btn btn-primary submit-btn">
+                                            {this.props.transactionType === 'outer' ?  t('common:interface.withdraw') : t('common:interface.send')}
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                            { this.renderTradePasswordModal()}
+                        </div>
                     )
                 }
             </I18n>

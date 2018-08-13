@@ -14,7 +14,7 @@ export const getDiskId = () => {
             }));
         })
     } else {
-        return new Promise((resolve, reject) => resolve('7654321'))
+        return new Promise((resolve, reject) => resolve('S314JA0FA71976'))
     }
 };
 

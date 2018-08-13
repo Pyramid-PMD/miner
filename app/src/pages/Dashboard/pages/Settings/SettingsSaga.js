@@ -43,7 +43,8 @@ export function saveUserCurrency(currency) {
 
 export function * getSavedLanguage() {
     const lang = localStorage.getItem('lang');
-    if (!lang) {
+    if (lang) {
+        console.log('set new lang', lang)
        return localStorage.setItem('lang', JSON.stringify(config.i18n.languages[0]));
     }
     return JSON.parse(localStorage.getItem('lang'));
@@ -55,14 +56,16 @@ export function setLanguage(lang) {
 
 
 export function * loadDefaultSettingsSaga(api, action) {
-    const lang = yield getSavedLanguage();
-    yield i18n.changeLanguage(lang.code);
-    const drivelist = yield call(getDriveList);
-    console.log('drive list', drivelist);
-    yield getUserInfoSaga(api);
-    yield getExchangeRates(api);
-    const currency = yield getUserCurrency();
-    yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist));
+    const lang = yield call(getSavedLanguage);
+    if (lang) {
+        yield i18n.changeLanguage(lang.code);
+        const drivelist = yield call(getDriveList);
+        yield getUserInfoSaga(api);
+        yield getExchangeRates(api);
+        const currency = yield getUserCurrency();
+        yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist));
+    }
+
 }
 
 export function * saveNewSettingsSaga(api, action) {
