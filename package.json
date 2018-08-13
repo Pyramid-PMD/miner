@@ -6,9 +6,9 @@
   "scripts": {
     "bundle": "webpack --mode development",
     "serve": "electron .",
-    "start": "npm-run-all --parallel bundle serve",
-    "package-mac": "webpack --mode production && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "webpack --mode production && electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
+    "start": "NODE_ENV=development npm-run-all --parallel bundle serve",
+    "package-mac": "NODE_ENV=production webpack --mode production && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "NODE_ENV=production webpack --mode production && electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
   "author": "J. Renato Ramos González <renato.etc.etc.etc@gmail.com>",
   "repository": "pastahito/electron-react-webpack",
@@ -63,6 +63,7 @@
     "react-router-dom": "^4.3.1",
     "react-tabs": "^2.2.2",
     "react-widgets": "^4.4.3",
+    "reactstrap": "^6.3.1",
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
     "redux-form-validation": "^1.0.0-rc1",

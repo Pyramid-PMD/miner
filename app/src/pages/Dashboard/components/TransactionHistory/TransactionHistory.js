@@ -4,10 +4,9 @@ import TransactionHistoryItem from "./TransactionHistoryItem";
 import { I18n } from 'react-i18next';
 
 const TransactionHistory = (props) => {
-    const { history } = props;
+    const { transactionHistory } = props;
     const renderHistory = () => {
-        return _.map(history, (value, key) => {
-            console.log(key, value);
+        return _.map(transactionHistory, (value, key) => {
             return (
                 <I18n key={key}>
                     {

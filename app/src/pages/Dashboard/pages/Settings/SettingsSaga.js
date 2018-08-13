@@ -31,6 +31,7 @@ export function * getExchangeRates(api) {
 export function * getUserCurrency() {
     const currency = localStorage.getItem('currency');
     const defaultRate = yield select(SettingsSelectors.selectRates);
+    console.log('currency', currency, defaultRate);
     if (!currency) {
         localStorage.setItem('currency', JSON.stringify(defaultRate[0]));
     }
@@ -55,14 +56,20 @@ export function setLanguage(lang) {
 
 
 export function * loadDefaultSettingsSaga(api, action) {
-    const lang = yield getSavedLanguage();
-    yield i18n.changeLanguage(lang.code);
-    const drivelist = yield call(getDriveList);
-    console.log('drive list', drivelist);
-    yield getUserInfoSaga(api);
-    yield getExchangeRates(api);
-    const currency = yield getUserCurrency();
-    yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist));
+    console.log('load default settings');
+    const lang = yield call(getSavedLanguage);
+    console.log('lang', lang);
+    if (lang) {
+        yield i18n.changeLanguage(lang.code);
+        const drivelist = yield call(getDriveList);
+        yield getUserInfoSaga(api);
+        yield getExchangeRates(api);
+        const currency = yield call(getUserCurrency);
+        if (currency) {
+            yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist));
+        }
+    }
+
 }
 
 export function * saveNewSettingsSaga(api, action) {

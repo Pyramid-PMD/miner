@@ -22,14 +22,14 @@ export const TransactionSelectors = {
     selectWalletAddress: (state) => state.transaction.transaction ? state.transaction.transaction.wallet_addr : null,
     selectBalance: (state) => state.transaction.transaction ? state.transaction.transaction.balance : null,
     selectHistory: (state) => {
+        const newState = { ...state };
         if (state.transaction.transaction) {
         // TODO: Check if I can mutate state here
-            state.transaction.transaction.history.map(item => {
-                console.log(item.create_at);
-                item.status = item.status === 1 ? { title: "Received", value: 'received'} : { title: "In progress", value: 'in_progress'};
+            newState.transaction.transaction.history.map(item => {
+                item.statusName = item.status === 1 ? { title: "Received", value: 'received'} : { title: "In progress", value: 'in_progress'};
                 item.date = moment.unix(item.create_at).format("DD MMM");
             });
-            return _.groupBy(state.transaction.transaction.history, 'date');
+            return _.groupBy(newState.transaction.transaction.history, 'date');
         }
     }
 };

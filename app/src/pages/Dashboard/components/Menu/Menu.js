@@ -47,7 +47,7 @@ const Menu = (props) => {
                         </div>
 
                         <div style={{marginTop: 'auto'}}>
-                            <MenuFooter alias={ props.alias }/>
+                            <MenuFooter alias={ props.alias } logout={props.logout}/>
                         </div>
 
                     </nav>

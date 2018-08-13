@@ -11,7 +11,14 @@
     "balance": "Balance",
     "enterWalletAddress": "Enter Wallet address",
     "noSavedAddresses": "No wallet addresses saved",
-    "addressNotfound": "Wallet address not found"
+    "addressNotfound": "Wallet address not found",
+    "errors": {
+      "wrongAmount": "Wrong transaction amount",
+      "wrongAddress": "Wrong address",
+      "wrongPassword": "Wrong trade password",
+      "notEnoughBalance": "Not enough balance",
+      "errorSavingTransaction": "Error saving transaction"
+    }
   },
   "notifications": {
     "system": "System",
@@ -26,5 +33,8 @@
     "estimateIncoming": "Estimate incoming in 24 hrs",
     "globalHashRate": "Global hash rate",
     "localHashRate": "Local hash rate"
+  },
+  "tradePasswordModal": {
+    "enterTradePassword": "Enter trade password"
   }
 }

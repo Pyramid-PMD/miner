@@ -12,7 +12,6 @@ class Transactions extends Component {
     }
 
     render() {
-        console.log('history', this.props.history);
         return (
             <div>
                 <Wallet address={ this.props.address } balance={ this.props.balance }/>
@@ -20,7 +19,7 @@ class Transactions extends Component {
                     form="transactionForm"
                     transactionType="inner"
                     sendTransaction={this.props.sendTransaction}/>
-                <TransactionHistory history={ this.props.history }/>
+                <TransactionHistory transactionHistory={ this.props.transactionHistory }/>
             </div>
         );
     }
@@ -30,8 +29,8 @@ const mapStateToProps = (state) => {
     return {
         address: TransactionSelectors.selectWalletAddress(state),
         balance: TransactionSelectors.selectBalance(state),
-        history: TransactionSelectors.selectHistory(state)
-    }
+        transactionHistory: TransactionSelectors.selectHistory(state)
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {

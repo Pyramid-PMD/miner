@@ -40,3 +40,12 @@ export function * loginSaga(api, action) {
             yield put(LoginActions.loginFailure(errorMsg));
     }
 }
+
+
+
+export function * logoutSaga() {
+    yield localStorage.removeItem('token');
+    yield localStorage.removeItem('user');
+    yield put(LoginActions.logoutSuccess());
+    yield put(replace('/login'));
+}

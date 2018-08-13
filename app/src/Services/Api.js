@@ -65,3 +65,7 @@ const create  =  (baseURL = url) => {
 export default {
     create
 };
+
+
+// Handle generic errors
+// -502 is wrong token so logout user

@@ -16,6 +16,7 @@ import PageHeader from "./components/PageHeader/PageHeader";
 
 import SettingsActions, { SettingsSelectors } from './pages/Settings/SettingsRedux';
 import StartupActions, { StartupSelectors } from '../../Redux/StartupRedux';
+import LoginActions from '../Login/LoginRedux';
 
 const pageStyles = {
     backgroundImage: `url(${config.brand.pageBg})`,
@@ -23,7 +24,7 @@ const pageStyles = {
 
 class Dashboard extends Component {
     //TODO: Use redux-observable in polling miner
-    componentDidMount() {
+    componentWillMount() {
         this.startPoll();
         // Load default settings
         this.props.loadSettings();
@@ -31,7 +32,7 @@ class Dashboard extends Component {
     }
 
     startPoll() {
-        const interval = 60 * 60 * 1000;
+        const interval = (60 * 60 * 1000) + 20;
         this.props.pollMiner();
         setTimeout(() => {
             this.startPoll();
@@ -46,7 +47,7 @@ class Dashboard extends Component {
         return (
             <div className="d-flex align-items-stretch root-container">
                 <div>
-                    <Menu balance={ this.props.balance} currency={ this.props.currency } alias={ this.props.alias }/>
+                    <Menu balance={ this.props.balance} currency={ this.props.currency } alias={ this.props.alias } logout={this.props.logout}/>
                 </div>
                 <div className="page" style={pageStyles}>
                     <div className="page-container">
@@ -84,6 +85,7 @@ const mapDispatchToProps = (dispatch) => {
         loadSettings: () => dispatch(SettingsActions.loadDefaultSettings()),
         loadUser: () => dispatch(SettingsActions.userInfoRequest()),
         pollMiner: () => dispatch(StartupActions.pollMinerRequest()),
+        logout: () => dispatch(LoginActions.logoutRequest()),
     }
 };
 
