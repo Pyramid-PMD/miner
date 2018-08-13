@@ -11,7 +11,14 @@
     "balance": "余额",
     "enterWalletAddress": "输入钱包地址",
     "noSavedAddresses": "没有保存钱包地址",
-    "addressNotfound": "找不到钱包地址"
+    "addressNotfound": "找不到钱包地址",
+    "errors": {
+      "wrongAmount": "Wrong transaction amount",
+      "wrongAddress": "Wrong address",
+      "wrongPassword": "Wrong trade password",
+      "notEnoughBalance": "Not enough balance",
+      "errorSavingTransaction": "Error saving transaction"
+    }
   },
   "notifications": {
     "system": "系统通知",

@@ -11,16 +11,17 @@ import TradePasswordModal from "./TradePasswordModal";
 
 
 class TransactionForm extends Component {
+    trade_pwd = null;
+    transaction = {};
 
     constructor(props) {
         super(props);
         this.state = {
             modal: false,
-            trade_pwd: null,
-            transaction: null
         };
         this.toggle = this.toggle.bind(this);
     }
+
     componentDidMount() {
         this.props.getAddressList();
     }
@@ -35,23 +36,21 @@ class TransactionForm extends Component {
 
     // TODO: Save address to local storage
     submitHandler = (values) => {
-        console.log('submit form', values);
-        let transaction;
-        if (!this.state.trade_pwd) {
-            transaction = { ...values };
+        if (!this.trade_pwd) {
+            this.transaction = { ...values };
             this.toggle();
         } else {
-            transaction = { ...values, trade_pwd: this.state.trade_pwd};
-            this.props.sendTransaction(transaction, this.props.transactionType);
+            this.transaction = { ...values, trade_pwd: this.trade_pwd};
+            this.props.sendTransaction(this.transaction, this.props.transactionType);
         }
-        this.setState({ transaction });
-        console.log('state', this.state);
     }
 
     onTradePasswordHandler = (trade_pwd) => {
-        this.setState({ trade_pwd });
         this.toggle();
-        this.submitHandler(this.state.transaction);
+        this.trade_pwd = trade_pwd;
+        this.transaction.trade_pwd = trade_pwd;
+        console.log(this.transaction);
+        this.submitHandler(this.transaction);
     }
 
     setMax = () => {
@@ -81,6 +80,15 @@ class TransactionForm extends Component {
     }
 
 
+    showErrorMessage() {
+        if (this.props.sendError) {
+            this.trade_pwd = null;
+            this.transaction.trade_pwd = null;
+            return <div className="error mb-4 alert alert-danger">{ this.props.sendError }</div>
+        }
+    }
+
+
     render() {
         const { handleSubmit } = this.props;
         return (
@@ -88,6 +96,8 @@ class TransactionForm extends Component {
                 {
                     (t) => (
                         <div>
+                            { this.showErrorMessage() }
+
                             <form onSubmit={handleSubmit(this.submitHandler)} className={`has-separator transaction-form ${this.props.classes}`}>
                                 <div>
                                     <Field
@@ -141,6 +151,7 @@ const mapStateToProps = (state) => {
     return {
         addressList: SendTransactionSelectors.selectAddressList(state),
         balance: SettingsSelectors.selectBalance(state),
+        sendError: SendTransactionSelectors.selectError(state),
     }
 };
 

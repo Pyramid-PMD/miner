@@ -3,7 +3,6 @@ import {I18n} from 'react-i18next';
 import ReactEcharts from 'echarts-for-react';
 
 const OverviewChart = (props) => {
-    console.log(props);
     // Blue: #537de7
     // Orange: #d88d71
     const renderChart = () => {

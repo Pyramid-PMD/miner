@@ -40,13 +40,13 @@ class Profit extends Component {
                             </div>
                             <Tabs onSelect={this.onTabSelectHandler}>
                                 <TabList>
-                                    <Tab>Today</Tab>
+                                    {/*<Tab>Today</Tab>*/}
                                     <Tab>3 days</Tab>
                                     <Tab>7 days</Tab>
                                     <Tab>1 month</Tab>
                                     <Tab>All</Tab>
                                 </TabList>
-                                <TabPanel></TabPanel>
+                                {/*<TabPanel></TabPanel>*/}
                                 <TabPanel></TabPanel>
                                 <TabPanel></TabPanel>
                                 <TabPanel></TabPanel>

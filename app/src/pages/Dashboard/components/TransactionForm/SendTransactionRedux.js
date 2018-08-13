@@ -3,7 +3,7 @@ import { createActions, createReducer } from 'reduxsauce';
 const { Types, Creators } = createActions({
     sendTransactionRequest: ['transaction', 'transactionType'],
     sendTransactionSuccess: null,
-    sendTransactionFailure: null,
+    sendTransactionFailure: ['error'],
     getSavedAddressList: null,
     getSavedAddressListSuccess: ['addressList']
 });
@@ -19,7 +19,8 @@ const INITIAL_STATE = {
 };
 
 export const SendTransactionSelectors = {
-    selectAddressList: (state) => state.sendTransaction.addressList || []
+    selectAddressList: (state) => state.sendTransaction.addressList || [],
+    selectError: state => state.sendTransaction.error
 };
 
 export const request = (state) => ({...state, loading: true, error: null });

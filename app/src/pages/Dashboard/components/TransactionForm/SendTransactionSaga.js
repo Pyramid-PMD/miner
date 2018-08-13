@@ -1,9 +1,13 @@
 import { call, put} from 'redux-saga/effects';
 import _ from 'lodash';
+import i18n from '../../../../config/i18n/i18next.client.config';
+
 
 import SendTransactionActions from './SendTransactionRedux';
 import TransactionActions from '../../pages/Transactions/TransactionRedux';
 import WithdrawActions from '../../pages/Withdraw/WithdrawRedux';
+
+
 
 
 export function * getAddressList() {
@@ -13,18 +17,22 @@ export function * getAddressList() {
 }
 
 export function * saveAddress(address) {
-    let saved = yield getAddressList();
-    saved = yield _.uniq(saved.push(address));
-    console.log('saved', saved);
-    yield localStorage.setItem('addressList', JSON.stringify(saved));
+    const saved = yield getAddressList();
+    if (saved) {
+        saved.push(address);
+        const uniqueSaved = _.uniq(saved);
+        yield localStorage.setItem('addressList', JSON.stringify(uniqueSaved));
+        yield put (SendTransactionActions.getSavedAddressListSuccess(JSON.parse(uniqueSaved)));
+    }
+
 }
 
 export function * sendTransaction(api, action) {
     const { transaction, transactionType } = action;
-    const res = yield call(api.sendTransaction, transaction, transactionType);
     yield call(saveAddress, transaction.to_addr);
+    const res = yield call(api.sendTransaction, transaction, transactionType);
     if (res.data.code === "0") {
-        yield put(SendTransactionActions.sendTransactionSuccess(null));
+        yield put(SendTransactionActions.sendTransactionSuccess());
         if (transactionType === 'inner') {
             yield put (TransactionActions.transactionRequest());
         } else {
@@ -33,24 +41,23 @@ export function * sendTransaction(api, action) {
     } else {
         let errorMsg;
         switch (res.data.code) {
-            // Wrong transaction amount
             case -21:
-                errorMsg = 'Wrong transaction amount';
+                errorMsg = i18n.t('dashboard:transaction.errors.wrongAmount');
                 break;
-            // Wrong transaction address
             case -22:
-                errorMsg = 'Wrong transaction amount';
+                errorMsg = i18n.t('dashboard:transaction.errors.wrongAddress');
                 break;
-            // Wrong trade password
             case -23:
-                errorMsg = 'Wrong transaction amount';
+                errorMsg = i18n.t('dashboard:transaction.errors.wrongPassword');
                 break;
-            // Balance not enough
             case -24:
-                errorMsg = 'Wrong transaction amount';
+                errorMsg = i18n.t('dashboard:transaction.errors.notEnoughBalance');
+                break;
+            case -25:
+                errorMsg = i18n.t('dashboard:transaction.errors.errorSavingTransaction');
                 break;
             default:
-                errorMsg = 'Wrong transaction amount';
+                errorMsg = 'Unknown error';
         }
         yield put(SendTransactionActions.sendTransactionFailure(errorMsg));
     }

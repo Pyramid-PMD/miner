@@ -6,7 +6,6 @@ import { I18n } from 'react-i18next';
 
 class TradePasswordModal extends Component {
     submitHandler = (values) => {
-        console.log('values', values);
         this.props.onTradePasswordEnter(values.trade_pwd);
     }
     render() {
