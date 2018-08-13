@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96e75a29-20bf-4b52-8afb-3fc406e43bd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/bundle.css" afterPath="$PROJECT_DIR$/app/build/bundle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/bundle.js" afterPath="$PROJECT_DIR$/app/build/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/Redux/StartupSagas.js" afterPath="$PROJECT_DIR$/app/src/Redux/StartupSagas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/Services/Utils.js" afterPath="$PROJECT_DIR$/app/src/Services/Utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/cn/auth.json" afterPath="$PROJECT_DIR$/app/src/locales/cn/auth.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/en/auth.json" afterPath="$PROJECT_DIR$/app/src/locales/en/auth.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/OverviewSaga.js" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/pages/Overview/OverviewSaga.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Login/LoginSaga.js" afterPath="$PROJECT_DIR$/app/src/pages/Login/LoginSaga.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Register/RegisterForm.js" afterPath="$PROJECT_DIR$/app/src/pages/Register/RegisterForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Register/RegisterSaga.js" afterPath="$PROJECT_DIR$/app/src/pages/Register/RegisterSaga.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
-    </list>
+    <list default="true" id="96e75a29-20bf-4b52-8afb-3fc406e43bd0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -418,16 +404,15 @@
       <workItem from="1533997588640" duration="584000" />
       <workItem from="1534146705471" duration="1759000" />
       <workItem from="1534148494120" duration="1785000" />
-      <workItem from="1534150424883" duration="35000" />
+      <workItem from="1534150424883" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23584000" />
+    <option name="totallyTimeSpent" value="24148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2503671" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
