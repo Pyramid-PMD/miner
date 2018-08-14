@@ -7,6 +7,8 @@ const { Types, Creators } = createActions({
     pollMinerSuccess: null,
     pollMinerFailure: ['error'],
     pollMinerStop: null,
+    diskSerialRequest: null,
+    diskSerialSuccess: ['diskSerial']
 
 });
 
@@ -17,12 +19,14 @@ export default Creators;
 const INITIAL_STATE = {
     isAuthenticated: false,
     isMinerPolling: null,
-    miner: null
+    miner: null,
+    diskSerial: null
 };
 
 export const StartupSelectors = {
     selectMiner: state => state.startup.miner,
-    selectMinerPolling: state => state.startup.isMinerPolling
+    selectMinerPolling: state => state.startup.isMinerPolling,
+    selectDiskSerial: state => state.startup.diskSerial
 };
 
 export const isAuthenticated = (state, action) => {
@@ -41,9 +45,14 @@ export const minerSuccess = (state, action) => {
 export const minerFailure = (state, action) => {
     return { ...state, isMinerPolling: false, miner: false }
 };
+
+export const diskSerialSuccess = (state, action) => ({ ...state, diskSerial: action.diskSerial });
+
+
 export const reducer = createReducer(INITIAL_STATE, {
     [Types.IS_AUTHENTICATED]: isAuthenticated,
     [Types.POLL_MINER_REQUEST]: minerRequest,
     [Types.POLL_MINER_SUCCESS]: minerSuccess,
-    [Types.POLL_MINER_FAILURE]: minerFailure
+    [Types.POLL_MINER_FAILURE]: minerFailure,
+    [Types.DISK_SERIAL_SUCCESS]: diskSerialSuccess
 });

@@ -13,7 +13,7 @@ const i18nextOptions = {
     },
     saveMissing: true,
     ns: config.i18n.namespace,
-    fallbackLng: config.i18n.fallbackLng,
+    fallbackLng: config.i18n.fallbackLng.code,
     whitelist: config.i18n.locales
 };
 

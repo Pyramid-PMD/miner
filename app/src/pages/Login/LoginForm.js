@@ -15,7 +15,7 @@ class LoginForm extends Component {
         // this.props.history.push("/alias");
     };
 
-    renderInputField = ({ input, label, type, meta}) => {
+    renderInputField = ({ input, label, type, meta, placeholder}) => {
         return (
             <I18n>
                 {
@@ -25,6 +25,7 @@ class LoginForm extends Component {
                                 { ...input }
                                 className="form-control form-field"
                                 type={type}
+                                placeholder={placeholder}
                             />
                             <FormMessages tagName="ul" meta={meta} className="form-errors list-unstyled">
                                 <li when="promise">
@@ -119,8 +120,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default withRouter(reduxForm({
     initialValues: {
-        email: 'nada-hakim@hotmail.com',
-        pwd: 'final30788'
+        email: null,
+        pwd: null
     },
     form: 'loginForm',
     ...generateValidation(validations)

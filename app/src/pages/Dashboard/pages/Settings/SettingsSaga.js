@@ -45,7 +45,7 @@ export function saveUserCurrency(currency) {
 export function * getSavedLanguage() {
     const lang = localStorage.getItem('lang');
     if (!lang) {
-       return localStorage.setItem('lang', JSON.stringify(config.i18n.languages[0]));
+       return localStorage.setItem('lang', JSON.stringify(config.i18n.initialLang));
     }
     return JSON.parse(localStorage.getItem('lang'));
 }

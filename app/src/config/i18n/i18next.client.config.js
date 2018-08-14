@@ -28,8 +28,8 @@ const i18nextOptions = {
         }
     },
     saveMissing: true,
-    lng: config.i18n.initialLang,
-    fallbackLng: config.i18n.fallbackLng,
+    lng: config.i18n.initialLang.code,
+    fallbackLng: config.i18n.fallbackLng.coe,
     whitelist: config.i18n.locales,
     react: {
         wait: true

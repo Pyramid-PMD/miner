@@ -34,7 +34,7 @@ class Wallet extends Component {
 
                                         {/*<button className="btn form-link">{ t('common:interface.copy') }</button>*/}
                                     </div>
-                                    { this.state.copied ? <p>Copied to clipboard</p> : null }
+                                    { this.state.copied ? <p>{t('common:interface.copiedToCB')}</p> : null }
                                 </li>
                                 <li>
                                     <h2 className="text-secondary text-small">{ t('dashboard:transaction.balance') }</h2>

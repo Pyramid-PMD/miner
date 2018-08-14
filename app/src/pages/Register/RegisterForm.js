@@ -52,15 +52,11 @@ class RegisterForm extends Component {
                 </li>
 
                 <li when="minLength">
-                    password must be more than 6 characters
+                    {t('auth:register.errors.passwordMinLength')}
                 </li>
 
                 <li when="maxLength">
-                    password must be less than 15 characters
-                </li>
-
-                <li when="promise">
-                    Password should only contain letter and numbers
+                    {t('auth:register.errors.passwordMaxLength')}
                 </li>
             </FormMessages>
         );
@@ -74,7 +70,7 @@ class RegisterForm extends Component {
                 </li>
 
                 <li when="matchField">
-                    Passwords don't match
+                    {t('auth:register.errors.passwordMismatch')}
                 </li>
             </FormMessages>
         );
@@ -84,7 +80,7 @@ class RegisterForm extends Component {
         return (
             <FormMessages tagName="ul" meta={meta} className="form-errors list-unstyled">
                 <li when="required">
-                    Please enter a valid code
+                    {t('auth:register.errors.enterValidCode')}
                 </li>
             </FormMessages>
         );
@@ -267,10 +263,10 @@ const mapStateToProps = (state) => {
 export default reduxForm({
     form: 'registerForm',
     initialValues: {
-        email: 'nada-hakim@hotmail.com',
-        pwd: 'final30788',
-        verify_code: 'AT55YD',
-        pwd_repeat: 'final30788'
+        email: null,
+        pwd: null,
+        verify_code: null,
+        pwd_repeat: null
     },
     ...generateValidation(validations)
 })(connect(mapStateToProps, mapDispatchToProps)(RegisterForm));
