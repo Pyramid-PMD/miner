@@ -7,8 +7,8 @@
     "bundle": "webpack --mode development",
     "serve": "electron .",
     "start": "NODE_ENV=development npm-run-all --parallel bundle serve",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-darwin",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --out=release-windows --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
   "author": "J. Renato Ramos González <renato.etc.etc.etc@gmail.com>",
   "repository": "pastahito/electron-react-webpack",
