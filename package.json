@@ -1,7 +1,7 @@
 {
   "name": "Pyramid",
   "version": "1.0.0",
-  "description": "Electron + React 16 + Webpack 4 template.",
+  "description": "Pyramid hash rate software for miners.",
   "main": "main.js",
   "scripts": {
     "bundle": "webpack --mode development",
@@ -10,9 +10,9 @@
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-darwin",
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --out=release-windows --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
-  "author": "J. Renato Ramos González <renato.etc.etc.etc@gmail.com>",
+  "author": "Pyramid Dev Team<pyramid@jhfund.vip>",
   "repository": "pastahito/electron-react-webpack",
-  "license": "WTFPL",
+  "license": "Pyramid",
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "babel-core": "^6.26.0",
