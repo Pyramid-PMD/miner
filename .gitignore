@@ -1,5 +1,6 @@
 #
 *-lock.json
+.DS_Store
 .idea
 # Logs
 logs
@@ -42,3 +43,5 @@ jspm_packages
 
 # Builds
 release-builds
+release-darwin
+release-windows
