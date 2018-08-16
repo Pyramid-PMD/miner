@@ -2,7 +2,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const autoprefixer = require('autoprefixer');
 module.exports = {
 
-    watch: process.env.NODE_ENV === 'development',
+    watch: true,
 
     target: 'electron-renderer',
 

@@ -61,7 +61,13 @@ export function * loadDefaultSettingsSaga(api, action) {
     console.log('lang', lang);
     if (lang) {
         yield i18n.changeLanguage(lang.code);
-        const drivelist = yield call(getDriveList);
+        let drivelist = ['A'];
+        try {
+             drivelist = yield call(getDriveList);
+        } catch (e) {
+            console.log(e);
+        }
+
         yield getUserInfoSaga(api);
         yield getExchangeRates(api);
         const currency = yield call(getUserCurrency);
