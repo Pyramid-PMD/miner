@@ -4,17 +4,30 @@ const wmic = require('wmic');
 export const getDiskId = () => {
     //if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
     if (process.platform === 'win32') {
-        const exec = require('child_process').exec;
-        const winCmd = 'wmic DISKDRIVE get SerialNumber';
+
         return new Promise((resolve, reject) => {
-            exec(winCmd, ((error, stdout) => {
-                if (!error) {
-                    console.log(stdout);
-                    resolve(stdout.replace('SerialNumber', '').trim());
+            wmic.get_values('DISKDRIVE', 'Name, SerialNumber, MediaType, InterfaceType', null, function(error, drives) {
+                if (error) {
+                    console.log('error', error);
+                    reject(error);
                 }
-                reject(error);
-            }));
+                console.log('serial', drives);
+                const filtered = drives.filter((drive) => drive.InterfaceType === "IDE");
+                if (filtered.length > 0) {
+                    const serials = filtered.map(drive => drive.SerialNumber);
+                    resolve(serials[0]); // An array of disks
+                }
+            });
+
+            // exec(winCmd, ((error, stdout) => {
+            //     if (!error) {
+            //         console.log(stdout);
+            //         resolve(stdout.replace('SerialNumber', '').trim());
+            //     }
+            //     reject(error);
+            // }));
         })
+
     } else {
         return new Promise((resolve, reject) => resolve('S314JA0FA71976'))
     }
