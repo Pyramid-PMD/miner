@@ -43,5 +43,3 @@ jspm_packages
 
 # Builds
 release-builds
-release-darwin
-release-windows
