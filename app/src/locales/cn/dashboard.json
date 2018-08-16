@@ -30,9 +30,9 @@
     "defaultSettings": "默认设置"
   },
   "miner": {
-    "estimateIncoming": "估计在24小时内进入",
-    "globalHashRate": "全局哈希率",
-    "localHashRate": "本地哈希率"
+    "estimateIncoming": "预计24小时内的收益为: ",
+    "globalHashRate": "全网算力",
+    "localHashRate": "本地算力"
   },
   "tradePasswordModal": {
     "enterTradePassword": "请输入交易密码"
