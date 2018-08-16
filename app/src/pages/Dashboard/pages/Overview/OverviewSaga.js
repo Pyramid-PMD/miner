@@ -1,16 +1,23 @@
 import { put, call } from 'redux-saga/effects';
 import OverviewActions from './OverviewRedux';
+import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getOverview(api, action) {
     const res = yield call(api.getOverview);
     let errorMsg;
     if (res) {
-        switch (res.data.code) {
-            case "0":
-                console.log('overview success', res.data.data);
-                yield put(OverviewActions.overviewSuccess(res.data.data));
-                break;
+        if (res.data.code === "0") {
+            yield put(OverviewActions.overviewSuccess(res.data.data));
+
         }
+        else {
+            switch (res.data.code) {
+                default:
+                    errorMsg = yield call(handleGenericNetworkErrors, res);
+            }
+            yield put(OverviewActions.overviewFailure(errorMsg));
+        }
+
     }
 
 }

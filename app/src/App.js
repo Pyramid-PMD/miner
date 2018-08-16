@@ -15,7 +15,6 @@ import NotFound from "./pages/NotFound/NotFound";
 
 class App extends Component {
     componentDidMount() {
-        console.log('Hello app')
         this.props.checkAuthStatus();
     }
     render() {
@@ -39,23 +38,27 @@ class App extends Component {
             );
         }
         return (
-            <ConnectedRouter history={this.props.history}>
-                {routes}
-            </ConnectedRouter>
+            <div className={`${this.props.currentLanguage} full-height`}>
+                <ConnectedRouter history={this.props.history}>
+                    {routes}
+                </ConnectedRouter>
+            </div>
+
         );
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        checkAuthStatus: () => dispatch(StartupActions.checkAuthStatus())
+        checkAuthStatus: () => dispatch(StartupActions.checkAuthStatus()),
     }
 };
 
 const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.token !== null,
-        user: state.auth.user
+        user: state.auth.user,
+        currentLanguage: 'cn'
     };
 };
 

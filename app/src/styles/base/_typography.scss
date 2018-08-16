@@ -1,5 +1,35 @@
+$font-family: map_get($base-font, font-family);
+//$font-path: map_get($icons, font-path);
+$font-path: map_get($base-font, font-path);
+
+@font-face {
+  font-family: $font-family;
+  src: url('#{$font-path}HelveticaNeueMedium.eot');
+  src: url('#{$font-path}HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-path}HelveticaNeueMedium.woff2') format('woff2'),
+  url('#{$font-path}HelveticaNeueMedium.woff') format('woff'),
+  url('#{$font-path}HelveticaNeueMedium.ttf') format('truetype'),
+  url('#{$font-path}HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url('#{$font-path}HelveticaNeueLight.eot');
+  src: url('#{$font-path}HelveticaNeueLight.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-path}HelveticaNeueLight.woff2') format('woff2'),
+  url('#{$font-path}HelveticaNeueLight.woff') format('woff'),
+  url('#{$font-path}HelveticaNeueLight.ttf') format('truetype'),
+  url('#{$font-path}HelveticaNeueLight.svg#HelveticaNeueLight') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
 body {
   color: map_get($colors, primary-text);
+  font-family: $font-family;
+  font-weight: 300;
 }
 
 .text-primary {

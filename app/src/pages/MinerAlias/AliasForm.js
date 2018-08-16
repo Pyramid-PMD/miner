@@ -3,11 +3,14 @@ import { I18n } from 'react-i18next';
 import { Field, reduxForm } from 'redux-form';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import AliasActions from './AliasRedux';
+import AliasActions, { AliasSelectors} from './AliasRedux';
 
 class AliasForm extends Component {
     submitHandler = (values) => {
         this.props.createAlias(values.alias);
+    };
+    showErrorMessage() {
+        return this.props.error ? <div className="error mb-4 alert alert-danger">{ this.props.error }</div> : null;
     }
 
     render() {
@@ -17,6 +20,7 @@ class AliasForm extends Component {
                 {
                     (t) => (
                         <div>
+                            { this.showErrorMessage() }
                             <form onSubmit={handleSubmit(this.submitHandler)}>
                                 <div className="form-group">
                                     <Field
@@ -43,6 +47,10 @@ class AliasForm extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    error: AliasSelectors.selectError(state)
+});
 
 const mapDispatchToProps = (dispatch) => ({
     createAlias: (alias) => dispatch(AliasActions.aliasRequest(alias))

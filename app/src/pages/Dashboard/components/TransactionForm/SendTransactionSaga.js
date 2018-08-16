@@ -1,6 +1,7 @@
 import { call, put} from 'redux-saga/effects';
 import _ from 'lodash';
 import i18n from '../../../../config/i18n/i18next.client.config';
+import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 
 import SendTransactionActions from './SendTransactionRedux';
@@ -57,7 +58,7 @@ export function * sendTransaction(api, action) {
                 errorMsg = i18n.t('dashboard:transaction.errors.errorSavingTransaction');
                 break;
             default:
-                errorMsg = 'Unknown error';
+                errorMsg = yield call(handleGenericNetworkErrors, res);
         }
         yield put(SendTransactionActions.sendTransactionFailure(errorMsg));
     }

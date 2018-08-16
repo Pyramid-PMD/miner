@@ -15,6 +15,9 @@ const INITIAL_STATE = {
     error: null
 };
 
+export const AliasSelectors = {
+    selectError: state => state.alias.error
+};
 
 /* ------------- Reducers ------------- */
 

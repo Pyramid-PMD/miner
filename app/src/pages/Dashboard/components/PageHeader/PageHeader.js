@@ -14,7 +14,7 @@ const PageHeader = () => {
                             <h1 className="text-uppercase">{ t('common:brand.name')}</h1>
                             <p className="text-secondary">{ t('common:brand.slogan')}</p>
                         </div>
-                        <NetworkIndicator />
+                        <NetworkIndicator t={t} />
                     </header>
                 )
             }

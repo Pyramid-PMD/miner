@@ -3,7 +3,7 @@ import { createActions, createReducer } from 'reduxsauce';
 /* ------------- Types and Action Creators ------------- */
 const { Types, Creators} = createActions({
     verifyEmailRequest: ['email'],
-    verifyEmailSuccess: null,
+    verifyEmailSuccess: ['verified'],
     verifyEmailFailure: null
 });
 
@@ -13,11 +13,14 @@ export default Creators;
 /* ------------- Initial State ------------- */
 const INITIAL_STATE = {
     fetching: null,
-    error: null
+    error: null,
+    verified: null
 };
 
 /* ------------- Selectors ------------- */
-
+export const VerifyEmailSelectors = {
+    isVerified: state => state.verifyEmail.verified
+};
 /* ------------- Reducers ------------- */
 
 export const request = (state) => {
@@ -25,11 +28,11 @@ export const request = (state) => {
 };
 
 export const success = (state) => {
-    return { ...state, fetching: false, error: null };
+    return { ...state, fetching: false, error: null, verified: true };
 };
 
 export const failure = (state, action) => {
-    return { ...state, fetching: false, error: true };
+    return { ...state, fetching: false, error: true, verified: false  };
 };
 
 /* ------------- Hookup Reducers To Types ------------- */

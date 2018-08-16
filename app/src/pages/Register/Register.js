@@ -3,6 +3,7 @@ import {I18n} from 'react-i18next';
 import config from '../../config/app.config';
 import AppLogo from "../../components/AppLogo/AppLogo";
 import { connect } from 'react-redux';
+
 import RegisterForm from "./RegisterForm";
 import { StartupSelectors } from '../../Redux/StartupRedux';
 import {CopyToClipboard} from "react-copy-to-clipboard";
@@ -24,7 +25,9 @@ class Register extends Component {
         setTimeout(() => {
             this.setState({copied: false});
         }, 2000)
-    }
+    };
+
+
     render() {
         return (
             <I18n>
@@ -58,7 +61,7 @@ class Register extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        disk_id: StartupSelectors.selectDiskSerial(state)
+        disk_id: StartupSelectors.selectDiskSerial(state),
     };
 };
 

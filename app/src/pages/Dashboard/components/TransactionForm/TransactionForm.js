@@ -10,7 +10,7 @@ import FormMessages from 'redux-form-validation';
 import SendTransactionActions, { SendTransactionSelectors} from './SendTransactionRedux';
 import {SettingsSelectors} from "../../pages/Settings/SettingsRedux";
 import TradePasswordModal from "./TradePasswordModal";
-// import 'react-widgets/dist/css/react-widgets.css';
+import 'react-widgets/dist/css/react-widgets.css';
 
 
 class TransactionForm extends Component {
@@ -39,6 +39,7 @@ class TransactionForm extends Component {
 
     // TODO: Save address to local storage
     submitHandler = (values) => {
+        console.log('form values', values);
         if (!this.trade_pwd) {
             this.transaction = { ...values };
             this.toggle();
@@ -62,6 +63,7 @@ class TransactionForm extends Component {
 
     renderComboBoxList ({ input, data, valueField, textField, placeholder }) {
         return (<Combobox {...input}
+                              className="address-dropdown margin-bottom-16"
                               data={data}
                               valueField={valueField}
                               placeholder={placeholder}
@@ -104,9 +106,8 @@ class TransactionForm extends Component {
                             <form onSubmit={handleSubmit(this.submitHandler)} className={`has-separator transaction-form ${this.props.classes}`}>
                                 <div>
                                     <Field
-                                        className="address-dropdown margin-bottom-16"
                                         name="to_addr"
-                                        component={Combobox}
+                                        component={this.renderComboBoxList}
                                         filter="startsWith"
                                         messages={{
                                             emptyList: t('dashboard:transaction.noSavedAddresses'),
@@ -169,7 +170,6 @@ const validations = {
 
 TransactionForm = reduxForm({
     initialValues: {
-        to_addr: null,
         amount: '0'
     },
     ...generateValidation(validations)

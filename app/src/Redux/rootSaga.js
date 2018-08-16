@@ -35,9 +35,6 @@ import { getProfitChartSaga } from '../pages/Dashboard/pages/Profit/ProfitSaga';
 
 /* ------------- API ------------- */
 const api = API.create();
-
-
-
 /* ------------- Connect Types To Sagas ------------- */
 export default function * root () {
     yield all([

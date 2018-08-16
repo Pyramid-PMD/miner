@@ -2,6 +2,8 @@
   background: map_get($colors, field-bg);
   border: 3px solid #fff;
   border-radius: 0;
+  height: auto;
+  padding: 12px;
   &:focus {
     background: map_get($colors, field-bg);
     border-color: #fff;

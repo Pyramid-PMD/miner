@@ -1,5 +1,6 @@
 import { put, call} from 'redux-saga/effects';
 import MinerActions from './MinerRedux';
+import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getMinerChartSaga(api, action) {
     const res = yield call(api.getMinerChart);
@@ -8,7 +9,12 @@ export function * getMinerChartSaga(api, action) {
         if (res.data.code === "0") {
             yield put(MinerActions.minerChartSuccess(res.data.data));
         } else {
-            yield put(MinerActions.minerChartFailure('error'));
+            let errorMsg;
+            switch (res.data.code) {
+                default:
+                    errorMsg = yield call(handleGenericNetworkErrors, res);
+            }
+            yield put(MinerActions.minerChartFailure(errorMsg));
         }
     }
 }

@@ -117,6 +117,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(reduxForm({
+    initialValues: {
+        email: 'nada-hakim@hotmail.com',
+        pwd: 'final30788'
+    },
     form: 'loginForm',
     ...generateValidation(validations)
 })(connect(mapStateToProps, mapDispatchToProps)(LoginForm)));

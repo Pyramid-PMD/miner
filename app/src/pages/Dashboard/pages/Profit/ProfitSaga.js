@@ -1,5 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import ProfitActions from './ProfitRedux';
+import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getProfitChartSaga(api, action) {
     const { interval } = action;
@@ -8,7 +9,12 @@ export function * getProfitChartSaga(api, action) {
         if (res.data.code === "0") {
             yield put(ProfitActions.profitChartSuccess(res.data.data));
         } else {
-            yield put(ProfitActions.profitChartFailure('error'));
+            let errorMsg;
+            switch (res.data.code) {
+                default:
+                    errorMsg = yield call(handleGenericNetworkErrors, res);
+            }
+            yield put(ProfitActions.profitChartFailure(errorMsg));
         }
     }
 }

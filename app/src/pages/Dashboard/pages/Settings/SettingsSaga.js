@@ -3,6 +3,7 @@ import SettingsActions, { SettingsSelectors } from './SettingsRedux';
 import i18n from '../../../../config/i18n/i18next.client.config';
 import {getDriveList} from "../../../../Services/Utils";
 const config = require('../../../../config/app.config');
+import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 
 export function * getUserInfoSaga(api) {
@@ -11,7 +12,12 @@ export function * getUserInfoSaga(api) {
         if (res.data.code === "0") {
             yield put(SettingsActions.userInfoSuccess(res.data.data));
         } else {
-            yield put(SettingsActions.userInfoFailure('error'));
+            let errorMsg;
+            switch (res.data.code) {
+                default:
+                    errorMsg = yield call(handleGenericNetworkErrors, res);
+            }
+            yield put(SettingsActions.userInfoFailure(errorMsg));
         }
     }
 }

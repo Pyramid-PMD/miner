@@ -18,6 +18,7 @@ const create  =  (baseURL = url) => {
     timeout: 100000
     });
 
+    // Root api
     const getRoot = () => api.get('');
 
     // Auth
@@ -37,9 +38,10 @@ const create  =  (baseURL = url) => {
     const getProfitChart = (q) => api.get('bonus/info', {q});
     const pollMiner = (speed) => api.post('miner', { speed });
     const getMinerFuture = () => api.get('miner/future');
-
     // Todo: Add pagination
     const getNotifications = () => api.get('msg/list');
+
+    // Response interceptor for generic error handling
 
     return {
         instance: api,

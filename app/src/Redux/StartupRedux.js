@@ -8,7 +8,8 @@ const { Types, Creators } = createActions({
     pollMinerFailure: ['error'],
     pollMinerStop: null,
     diskSerialRequest: null,
-    diskSerialSuccess: ['diskSerial']
+    diskSerialSuccess: ['diskSerial'],
+    handleGenericNetworkErrors: ['response']
 
 });
 

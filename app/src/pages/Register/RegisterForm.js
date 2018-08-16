@@ -4,6 +4,9 @@ import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { generateValidation } from 'redux-form-validation';
 import FormMessages from 'redux-form-validation';
+import { UncontrolledAlert } from 'reactstrap';
+import { VerifyEmailSelectors } from './VerifyEmailRedux';
+
 
 import RegisterActions, {RegisterSelectors} from './RegisterRedux';
 import VerifyEmailActions from './VerifyEmailRedux';
@@ -25,7 +28,6 @@ class RegisterForm extends Component {
 
     verifyEmail = () => {
         const { email, verifyEmail } = this.props;
-        console.log('verify email', email);
         if (email) {
             verifyEmail(email);
         }
@@ -86,6 +88,16 @@ class RegisterForm extends Component {
         );
     }
 
+    showVerifiedEmailMessage(t) {
+        if (this.props.isEmailVerified) {
+            return (
+                <UncontrolledAlert color="success">
+                    {t('auth:register.emailVerifiedSuccess', { email: this.props.email })}
+                </UncontrolledAlert>
+            );
+        }
+    }
+
     renderErrors(input, meta, t) {
         switch (input.name) {
             case 'email':
@@ -140,7 +152,7 @@ class RegisterForm extends Component {
                                 <button type="button" className="btn col-2 form-link" onClick={this.verifyEmail}>{ t('auth:sendCode')}</button>
                             </div>
                             {
-                                this.props.verified.error ? <div>Please enter a valid email address </div> : null
+                                this.props.verified.error ? <div>{t('auth:register.errors.codeVerificationError')}</div> : null
                             }
                             {this.renderErrors(input, meta, t)}
                         </div>
@@ -164,6 +176,7 @@ class RegisterForm extends Component {
                     (t) => (
                         <div>
                             { this.showErrorMessage() }
+                            { this.showVerifiedEmailMessage(t)}
                             <form onSubmit={handleSubmit(this.handleSubmit)} noValidate>
                                 <div className="form-group">
                                     <Field
@@ -255,6 +268,7 @@ const mapStateToProps = (state) => {
     return {
         email,
         verified: state.verifyEmail,
+        isEmailVerified: VerifyEmailSelectors.isVerified(state),
         error: RegisterSelectors.selectError(state)
     }
 };
