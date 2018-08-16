@@ -57,7 +57,7 @@ class LoginForm extends Component {
         return (
             <div>
                 { this.showErrorMessage() }
-                <p className="text-secondary">Some intro text</p>
+                <p className="text-secondary">{t('auth:login.introText')}</p>
                 <form onSubmit={handleSubmit(this.submitHandler)} noValidate>
                     <I18n>
                         {
