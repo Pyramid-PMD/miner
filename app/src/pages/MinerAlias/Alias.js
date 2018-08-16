@@ -17,7 +17,7 @@ const Alias = () => {
                         <div className="page-container">
                             <AppLogo />
                             <div className="form-container">
-                                <p className="text-secondary">Some intro text</p>
+                                {/*<p className="text-secondary">Some intro text</p>*/}
                                 <p className="text-secondary">{ t('auth:alias.desc')}</p>
                                 <AliasForm />
                             </div>

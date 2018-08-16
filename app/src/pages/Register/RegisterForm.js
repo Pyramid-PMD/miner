@@ -262,11 +262,11 @@ const mapStateToProps = (state) => {
 
 export default reduxForm({
     form: 'registerForm',
-    initialValues: {
-        email: null,
-        pwd: null,
-        verify_code: null,
-        pwd_repeat: null
-    },
+    // initialValues: {
+    //     email: null,
+    //     pwd: null,
+    //     verify_code: null,
+    //     pwd_repeat: null
+    // },
     ...generateValidation(validations)
 })(connect(mapStateToProps, mapDispatchToProps)(RegisterForm));

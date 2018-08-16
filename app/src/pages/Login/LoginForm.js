@@ -28,12 +28,9 @@ class LoginForm extends Component {
                                 placeholder={placeholder}
                             />
                             <FormMessages tagName="ul" meta={meta} className="form-errors list-unstyled">
-                                <li when="promise">
-                                    {meta && meta.error && meta.error.promise}
-                                </li>
                                 <li when="required">
                                     {
-                                        input.name === 'email'? t('auth:login.errors.emailRequired') : t('auth:login.passwordRequired')
+                                        input.name === 'email'? t('auth:login.errors.emailRequired') : t('auth:login.errors.passwordRequired')
                                     }
                                 </li>
                                 <li when="email">
@@ -98,10 +95,12 @@ class LoginForm extends Component {
 const validations = {
     email: {
         required: true,
-        email:true
+        email:true,
+        validateOnBlur: true
     },
     pwd: {
-        required: true
+        required: true,
+        validateOnBlur: true
     }
 };
 
@@ -118,10 +117,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(reduxForm({
-    initialValues: {
-        email: null,
-        pwd: null
-    },
     form: 'loginForm',
     ...generateValidation(validations)
 })(connect(mapStateToProps, mapDispatchToProps)(LoginForm)));
