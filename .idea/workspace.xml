@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e75a29-20bf-4b52-8afb-3fc406e43bd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/bundle.js" afterPath="$PROJECT_DIR$/app/build/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/cn/auth.json" afterPath="$PROJECT_DIR$/app/src/locales/cn/auth.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" afterPath="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/cn/common.json" afterPath="$PROJECT_DIR$/app/src/locales/cn/common.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/cn/dashboard.json" afterPath="$PROJECT_DIR$/app/src/locales/cn/dashboard.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +34,8 @@
       <file leaf-file-name="auth.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/locales/cn/auth.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="426">
+              <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -56,7 +56,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-              <folding />
+              <folding>
+                <marker date="1534413890138" expanded="true" signature="0:889" ph="{...}" />
+                <marker date="1534413890138" expanded="true" signature="164:360" ph="{&quot;walletAddress&quot;: &quot;钱包地址&quot;...}" />
+                <marker date="1534413890138" expanded="true" signature="336:360" ph="{&quot;wrongAmount&quot;: &quot;Wrong transaction amount&quot;...}" />
+                <marker date="1534413890138" expanded="true" signature="882:887" ph="{&quot;enterTradePassword&quot;: &quot;Enter trade password&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,9 +159,9 @@
         <option value="$PROJECT_DIR$/app/src/config/app.config.js" />
         <option value="$PROJECT_DIR$/app/src/config/i18n/i18next.client.config.js" />
         <option value="$PROJECT_DIR$/app/src/config/i18n/i18next.config.js" />
-        <option value="$PROJECT_DIR$/app/src/locales/cn/auth.json" />
         <option value="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" />
         <option value="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" />
+        <option value="$PROJECT_DIR$/app/src/locales/cn/auth.json" />
       </list>
     </option>
   </component>
@@ -519,12 +524,12 @@
       <workItem from="1534323465864" duration="803000" />
       <workItem from="1534334732505" duration="452000" />
       <workItem from="1534337282237" duration="2711000" />
-      <workItem from="1534413678541" duration="163000" />
+      <workItem from="1534413678541" duration="254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12793000" />
+    <option name="totallyTimeSpent" value="12884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="742" extended-state="6" />
@@ -875,7 +880,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1534413890138" expanded="true" signature="0:889" ph="{...}" />
+            <marker date="1534413890138" expanded="true" signature="164:360" ph="{&quot;walletAddress&quot;: &quot;钱包地址&quot;...}" />
+            <marker date="1534413890138" expanded="true" signature="336:360" ph="{&quot;wrongAmount&quot;: &quot;Wrong transaction amount&quot;...}" />
+            <marker date="1534413890138" expanded="true" signature="882:887" ph="{&quot;enterTradePassword&quot;: &quot;Enter trade password&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -951,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/locales/cn/auth.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="426">
+          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
           <folding />
         </state>
       </provider>
