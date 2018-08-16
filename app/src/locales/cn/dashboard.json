@@ -13,11 +13,11 @@
     "noSavedAddresses": "没有保存钱包地址",
     "addressNotfound": "找不到钱包地址",
     "errors": {
-      "wrongAmount": "Wrong transaction amount",
-      "wrongAddress": "Wrong address",
-      "wrongPassword": "Wrong trade password",
-      "notEnoughBalance": "Not enough balance",
-      "errorSavingTransaction": "Error saving transaction"
+      "wrongAmount": "交易数额不正确",
+      "wrongAddress": "钱包地址格式不正确",
+      "wrongPassword": "交易密码错误，请确认后再尝试",
+      "notEnoughBalance": "可供转账的余额不足",
+      "errorSavingTransaction": "交易失败"
     }
   },
   "notifications": {
@@ -30,11 +30,11 @@
     "defaultSettings": "默认设置"
   },
   "miner": {
-    "estimateIncoming": "估计在24小时内进入",
-    "globalHashRate": "全局哈希率",
-    "localHashRate": "本地哈希率"
+    "estimateIncoming": "预计24小时内的收益为: ",
+    "globalHashRate": "全网算力",
+    "localHashRate": "本地算力"
   },
   "tradePasswordModal": {
-    "enterTradePassword": "Enter trade password"
+    "enterTradePassword": "请输入交易密码"
   }
 }

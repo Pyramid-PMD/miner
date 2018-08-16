@@ -6,7 +6,7 @@ const url = require('url');
 const MenuBuilder  = require('./menu');
 
 // Let electron reloads by itself when webpack watches changes in ./app/
-// process.env.NODE_ENV === 'development' ? require('electron-reload')(__dirname) : null;
+process.env.NODE_ENV === 'development' ? require('electron-reload')(__dirname) : null;
 
 const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 // To avoid being garbage collected
@@ -20,7 +20,6 @@ app.on('ready', () => {
         height: 900,
         minWidth: 800,
         minHeight: 600,
-        frame: false,
         backgroundColor: '#282f33',
         icon: iconPath
     });

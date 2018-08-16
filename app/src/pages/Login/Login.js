@@ -22,6 +22,7 @@ class Login extends Component {
                         <div className="page-container">
                             <AppLogo />
                             <div className="form-container">
+                                <p className="text-secondary">{t('auth:login.introText')}</p>
                                 <LoginForm />
                             </div>
                         </div>

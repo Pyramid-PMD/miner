@@ -3,9 +3,12 @@ import { reduxForm, Field, change as changeFieldValue } from 'redux-form';
 import { connect } from 'react-redux';
 import { I18n } from 'react-i18next';
 import {Combobox} from 'react-widgets';
+import { generateValidation } from 'redux-form-validation';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import FormMessages from 'redux-form-validation';
+
 import SendTransactionActions, { SendTransactionSelectors} from './SendTransactionRedux';
 import {SettingsSelectors} from "../../pages/Settings/SettingsRedux";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import TradePasswordModal from "./TradePasswordModal";
 // import 'react-widgets/dist/css/react-widgets.css';
 
@@ -138,14 +141,7 @@ class TransactionForm extends Component {
     }
 }
 
-// const validations = {
-//     to_addr: {
-//         required: true
-//     },
-//     amount: {
-//         required: true
-//     }
-// };
+
 
 const mapStateToProps = (state) => {
     return {
@@ -162,11 +158,21 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
+const validations = {
+    to_addr: {
+        required: true
+    },
+    amount: {
+        required: true
+    }
+};
+
 TransactionForm = reduxForm({
     initialValues: {
-        to_addr: '0x863D0C461818D74D7012443E362DC21B7E4A9C52',
-        amount: '1'
-    }
+        to_addr: null,
+        amount: '0'
+    },
+    ...generateValidation(validations)
 })(TransactionForm);
 
 

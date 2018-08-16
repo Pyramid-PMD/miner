@@ -22,6 +22,8 @@
     "cancel": "Cancel",
     "disk": "Disk",
     "done": "Done",
-    "logout": "Logout"
+    "logout": "Logout",
+    "diskSerial": "Disk serial",
+    "copiedToCB": "Copied to clipboard"
   }
 }

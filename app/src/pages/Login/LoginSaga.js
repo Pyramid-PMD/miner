@@ -18,7 +18,7 @@ export function * loginSaga(api, action) {
                 request.headers['uid'] = res.data.data.uid;
             });
             yield put(LoginActions.loginSuccess(res.data.data));
-            if (res.data.data.isNew === 0) {
+            if (res.data.data.isNew === 1) {
                 yield put(replace('/alias'));
             } else {
                 yield put(replace('/'));

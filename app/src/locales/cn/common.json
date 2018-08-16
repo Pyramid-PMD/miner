@@ -21,7 +21,9 @@
     "save": "保存",
     "cancel": "取消",
     "disk": "磁盘",
-    "done": "Done",
-    "logout": "Logout"
+    "done": "完成",
+    "logout": "注销",
+    "diskSerial": "硬盘 ID",
+    "copiedToCB": "复制"
   }
 }

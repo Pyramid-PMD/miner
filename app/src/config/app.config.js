@@ -13,8 +13,14 @@ module.exports = {
                 title: '简体中文'
             }
         ],
-        fallbackLng: 'en',
-        initialLang: 'en',
+        fallbackLng: {
+            code: 'cn',
+            title: '简体中文'
+        },
+        initialLang: {
+            code: 'cn',
+            title: '简体中文'
+        },
         namespace: ['common', 'menu', 'auth', 'dashboard']
     },
     brand: {

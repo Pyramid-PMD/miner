@@ -10,8 +10,8 @@ export function * checkAuthStatus(api, action) {
     const user = yield JSON.parse(localStorage.getItem('user'));
     // Transform apis to include token in header
     const diskId = yield call(getDiskId);
-    console.log('disk id', diskId);
     if (diskId) {
+        yield put(StartupActions.diskSerialSuccess(diskId));
         yield api.instance.addRequestTransform(request => {
             request.headers['disk_id'] = diskId;
         });

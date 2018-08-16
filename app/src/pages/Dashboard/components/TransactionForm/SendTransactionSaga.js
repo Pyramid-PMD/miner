@@ -22,7 +22,7 @@ export function * saveAddress(address) {
         saved.push(address);
         const uniqueSaved = _.uniq(saved);
         yield localStorage.setItem('addressList', JSON.stringify(uniqueSaved));
-        yield put (SendTransactionActions.getSavedAddressListSuccess(JSON.parse(uniqueSaved)));
+        yield put (SendTransactionActions.getSavedAddressListSuccess(uniqueSaved));
     }
 
 }
