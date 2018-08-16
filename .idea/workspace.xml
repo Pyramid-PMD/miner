@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e75a29-20bf-4b52-8afb-3fc406e43bd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/cn/auth.json" afterPath="$PROJECT_DIR$/app/src/locales/cn/auth.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/cn/common.json" afterPath="$PROJECT_DIR$/app/src/locales/cn/common.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/locales/cn/dashboard.json" afterPath="$PROJECT_DIR$/app/src/locales/cn/dashboard.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/bundle.js" afterPath="$PROJECT_DIR$/app/build/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Login/Login.js" afterPath="$PROJECT_DIR$/app/src/pages/Login/Login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" afterPath="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="auth.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/locales/cn/auth.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="426">
@@ -91,8 +89,8 @@
       <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/pages/Login/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="59" column="70" lean-forward="false" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+            <state relative-caret-position="30">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -122,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/pages/Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            <state relative-caret-position="285">
+              <caret line="24" column="93" lean-forward="false" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -160,8 +158,9 @@
         <option value="$PROJECT_DIR$/app/src/config/i18n/i18next.client.config.js" />
         <option value="$PROJECT_DIR$/app/src/config/i18n/i18next.config.js" />
         <option value="$PROJECT_DIR$/app/src/pages/Dashboard/components/TransactionForm/TransactionForm.js" />
-        <option value="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" />
         <option value="$PROJECT_DIR$/app/src/locales/cn/auth.json" />
+        <option value="$PROJECT_DIR$/app/src/pages/Login/LoginForm.js" />
+        <option value="$PROJECT_DIR$/app/src/pages/Login/Login.js" />
       </list>
     </option>
   </component>
@@ -524,12 +523,12 @@
       <workItem from="1534323465864" duration="803000" />
       <workItem from="1534334732505" duration="452000" />
       <workItem from="1534337282237" duration="2711000" />
-      <workItem from="1534413678541" duration="254000" />
+      <workItem from="1534413678541" duration="330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12884000" />
+    <option name="totallyTimeSpent" value="12960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="742" extended-state="6" />
@@ -933,24 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/Login/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="59" column="70" lean-forward="false" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/locales/en/auth.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -963,6 +944,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/Login/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="93" lean-forward="false" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
           <folding />
         </state>
       </provider>
