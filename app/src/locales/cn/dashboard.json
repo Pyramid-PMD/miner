@@ -17,7 +17,10 @@
       "wrongAddress": "钱包地址格式不正确",
       "wrongPassword": "交易密码错误，请确认后再尝试",
       "notEnoughBalance": "可供转账的余额不足",
-      "errorSavingTransaction": "交易失败"
+      "errorSavingTransaction": "交易失败",
+      "invalidAddress": "Please enter a valid address",
+      "addressRequired": "Address is required",
+      "amountRequired": "Please enter amount"
     }
   },
   "notifications": {

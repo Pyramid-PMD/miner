@@ -11,6 +11,7 @@ import SendTransactionActions, { SendTransactionSelectors} from './SendTransacti
 import {SettingsSelectors} from "../../pages/Settings/SettingsRedux";
 import TradePasswordModal from "./TradePasswordModal";
 import 'react-widgets/dist/css/react-widgets.css';
+import { isAddress } from '../../../../Services/Utils';
 
 
 class TransactionForm extends Component {
@@ -39,7 +40,6 @@ class TransactionForm extends Component {
 
     // TODO: Save address to local storage
     submitHandler = (values) => {
-        console.log('form values', values);
         if (!this.trade_pwd) {
             this.transaction = { ...values };
             this.toggle();
@@ -53,28 +53,48 @@ class TransactionForm extends Component {
         this.toggle();
         this.trade_pwd = trade_pwd;
         this.transaction.trade_pwd = trade_pwd;
-        console.log(this.transaction);
         this.submitHandler(this.transaction);
-    }
+    };
 
     setMax = () => {
         this.props.change('amount', this.props.balance);
-    }
+    };
 
-    renderComboBoxList ({ input, data, valueField, textField, placeholder }) {
-        return (<Combobox {...input}
-                              className="address-dropdown margin-bottom-16"
-                              data={data}
-                              valueField={valueField}
-                              placeholder={placeholder}
-                              textField={textField} />);
+    renderComboBoxList ({ input, data, valueField, textField, placeholder, meta }) {
+        return (
+        <I18n>
+            {
+                (t) => (
+                    <div>
+                        <Combobox {...input}
+                                  className="address-dropdown margin-bottom-16"
+                                  data={data}
+                                  valueField={valueField}
+                                  placeholder={placeholder}
+                                  textField={textField} />
+                        { input.name === 'to_addr' ?
+                            <FormMessages tagName="ul" meta={meta} className="form-errors list-unstyled">
+                                <li when="promise">
+                                    { t('dashboard:transaction.errors.invalidAddress')}
+                                </li>
+                            </FormMessages> : null
+                        }
+
+                    </div>
+                )
+            }
+
+        </I18n>
+
+        );
     }
 
     renderTradePasswordModal() {
         return (
         <div>
             <Modal isOpen={this.state.modal} toggle={this.toggle} className="trade-pwd-modal">
-                <ModalHeader toggle={this.toggle}></ModalHeader>
+                <ModalHeader toggle={this.toggle}>
+                </ModalHeader>
                 <ModalBody>
                     <TradePasswordModal onTradePasswordEnter={this.onTradePasswordHandler} />
                 </ModalBody>
@@ -161,7 +181,17 @@ const mapDispatchToProps = (dispatch) => {
 
 const validations = {
     to_addr: {
-        required: true
+        required: true,
+        promise: function (fieldName, fieldValue, dispatch) {
+            return new Promise((resolve, reject) => {
+                if (isAddress(fieldValue)) {
+                    resolve();
+                } else {
+                    reject();
+                }
+            })
+        },
+        validateOnBlur: true
     },
     amount: {
         required: true

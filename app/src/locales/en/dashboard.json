@@ -17,7 +17,10 @@
       "wrongAddress": "Wrong address",
       "wrongPassword": "Wrong trade password",
       "notEnoughBalance": "Not enough balance",
-      "errorSavingTransaction": "Error saving transaction"
+      "errorSavingTransaction": "Error saving transaction",
+      "invalidAddress": "Please enter a valid address",
+      "addressRequired": "Address is required",
+      "amountRequired": "Please enter amount"
     }
   },
   "notifications": {
