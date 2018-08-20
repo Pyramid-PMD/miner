@@ -3,6 +3,8 @@ import { I18n } from 'react-i18next';
 import { Field, reduxForm } from 'redux-form';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { UncontrolledAlert } from 'reactstrap';
+
 import AliasActions, { AliasSelectors} from './AliasRedux';
 
 class AliasForm extends Component {
@@ -10,7 +12,14 @@ class AliasForm extends Component {
         this.props.createAlias(values.alias);
     };
     showErrorMessage() {
-        return this.props.error ? <div className="error mb-4 alert alert-danger">{ this.props.error }</div> : null;
+        if (this.props.error) {
+            return (
+                <UncontrolledAlert color="danger" fade={false}>
+                    { this.props.error }
+                </UncontrolledAlert>
+            );
+        }
+        // return this.props.error ? <div className="error mb-4 alert alert-danger">{ this.props.error }</div> : null;
     }
 
     render() {

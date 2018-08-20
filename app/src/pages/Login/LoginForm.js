@@ -5,6 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { generateValidation } from 'redux-form-validation';
 import FormMessages from 'redux-form-validation';
+import { UncontrolledAlert } from 'reactstrap';
 
 import LoginActions, { LoginSelectors } from './LoginRedux';
 
@@ -46,7 +47,14 @@ class LoginForm extends Component {
     };
 
     showErrorMessage() {
-        return this.props.error ? <div className="error mb-4 alert alert-danger">{ this.props.error }</div> : null;
+        if (this.props.error) {
+            return (
+                <UncontrolledAlert color="danger" fade={false}>
+                    { this.props.error }
+                </UncontrolledAlert>
+            );
+        }
+        // return this.props.error ? <div className="error mb-4 alert alert-danger">{ this.props.error }</div> : null;
     }
 
     render() {

@@ -1,8 +1,10 @@
 import { put, call } from 'redux-saga/effects';
 import OverviewActions from './OverviewRedux';
+import LoadingIndicatorActions from '../../../../components/LoadingIndicator/LoadingIndicatorRedux';
 import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
-export function * getOverview(api, action) {
+export function * getOverview(api) {
+    // yield put(LoadingIndicatorActions.showLoadingIndicator(true));
     const res = yield call(api.getOverview);
     let errorMsg;
     if (res) {
@@ -19,5 +21,5 @@ export function * getOverview(api, action) {
         }
 
     }
-
+    // yield put(LoadingIndicatorActions.showLoadingIndicator(false));
 }

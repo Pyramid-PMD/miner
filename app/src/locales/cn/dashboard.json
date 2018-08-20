@@ -26,7 +26,8 @@
   "notifications": {
     "system": "系统通知",
     "transactions": "转账通知",
-    "withdraw": "提币通知"
+    "withdraw": "提币通知",
+    "noNotifications": "No notifications"
   },
   "settings": {
     "mining": "挖矿",

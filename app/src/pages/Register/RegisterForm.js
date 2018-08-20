@@ -7,7 +7,6 @@ import FormMessages from 'redux-form-validation';
 import { UncontrolledAlert } from 'reactstrap';
 import { VerifyEmailSelectors } from './VerifyEmailRedux';
 
-
 import RegisterActions, {RegisterSelectors} from './RegisterRedux';
 import VerifyEmailActions from './VerifyEmailRedux';
 
@@ -164,7 +163,14 @@ class RegisterForm extends Component {
     };
 
     showErrorMessage() {
-        return this.props.error ? <div className="error mb-4 alert alert-danger">{ this.props.error }</div> : null;
+        if (this.props.error) {
+            return (
+                <UncontrolledAlert color="danger" fade={false}>
+                    { this.props.error }
+                </UncontrolledAlert>
+            );
+        }
+        // return this.props.error ? <div className="error mb-4 alert alert-danger">{ this.props.error }</div> : null;
     }
 
 

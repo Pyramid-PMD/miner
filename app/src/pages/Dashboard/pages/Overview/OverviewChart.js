@@ -6,14 +6,15 @@ const OverviewChart = (props) => {
     // Blue: #537de7
     // Orange: #d88d71
     const renderChart = () => {
+
         const option = {
             backgroundColor: 'transparent',
             series: [
                 {
                     name: 'Overview',
                     type:'pie',
-                    radius : '80%',
-                    center: ['50%', '50%'],
+                    // radius : '0%',
+                    // center: ['50%', '50%'],
                     label: {
                         show: false
                     },
@@ -64,7 +65,7 @@ const OverviewChart = (props) => {
                         },
 
                     ],
-                    roseType: 'radius'
+                    // roseType: 'radius'
                 }
             ]
         };

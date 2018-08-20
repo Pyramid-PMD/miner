@@ -6,6 +6,7 @@ import {Combobox} from 'react-widgets';
 import { generateValidation } from 'redux-form-validation';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import FormMessages from 'redux-form-validation';
+import { UncontrolledAlert } from 'reactstrap';
 
 import SendTransactionActions, { SendTransactionSelectors} from './SendTransactionRedux';
 import {SettingsSelectors} from "../../pages/Settings/SettingsRedux";
@@ -92,7 +93,7 @@ class TransactionForm extends Component {
     renderTradePasswordModal() {
         return (
         <div>
-            <Modal isOpen={this.state.modal} toggle={this.toggle} className="trade-pwd-modal">
+            <Modal isOpen={this.state.modal} toggle={this.toggle} className="trade-pwd-modal" centered>
                 <ModalHeader toggle={this.toggle}>
                 </ModalHeader>
                 <ModalBody>
@@ -109,7 +110,12 @@ class TransactionForm extends Component {
         if (this.props.sendError) {
             this.trade_pwd = null;
             this.transaction.trade_pwd = null;
-            return <div className="error mb-4 alert alert-danger">{ this.props.sendError }</div>
+            return (
+                <UncontrolledAlert color="danger" fade={false}>
+                    { this.props.error }
+                </UncontrolledAlert>
+            );
+            // return <div className="error mb-4 alert alert-danger">{ this.props.sendError }</div>
         }
     }
 

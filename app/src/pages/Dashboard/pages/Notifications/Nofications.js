@@ -60,7 +60,7 @@ class Notifications extends Component {
                                             { this.renderNotificationItems() }
                                             </tbody>
                                         </table>
-                                    : !this.props.loading ? <div>No notifications</div> : null
+                                    : !this.props.loading ? <div>{ t('dashboard:notifications.noNotifications')}</div> : null
 
                                 }
 

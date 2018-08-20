@@ -1,5 +1,6 @@
 import { put, call } from 'redux-saga/effects';
 import AliasActions from './AliasRedux';
+import LoadingIndicatorActions from '../../components/LoadingIndicator/LoadingIndicatorRedux';
 import { handleGenericNetworkErrors } from '../../Redux/StartupSagas';
 import i18n from '../../config/i18n/i18next.client.config';
 
@@ -7,6 +8,7 @@ import { replace } from 'connected-react-router';
 
 export function * createAliasSaga(api, action) {
     const { alias } = action;
+    yield put(LoadingIndicatorActions.showLoadingIndicator(true));
     const res = yield call(api.createMinerAlias, alias);
     if (res) {
         if (res.data.code === "0") {
@@ -29,4 +31,6 @@ export function * createAliasSaga(api, action) {
             yield put(AliasActions.aliasFailure(errorMsg));
         }
     }
+    yield put(LoadingIndicatorActions.showLoadingIndicator(false));
+
 }

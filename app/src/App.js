@@ -11,12 +11,15 @@ import Register from "./pages/Register/Register";
 import Alias from "./pages/MinerAlias/Alias";
 import Login from "./pages/Login/Login";
 import NotFound from "./pages/NotFound/NotFound";
+import LoadingIndicator from "./components/LoadingIndicator/LoadingIndicator";
+import { LoadingIndicatorSelectors } from "./components/LoadingIndicator/LoadingIndicatorRedux";
 
 
 class App extends Component {
     componentDidMount() {
         this.props.checkAuthStatus();
     }
+
     render() {
         let routes;
         if (this.props.isAuthenticated) {
@@ -39,6 +42,7 @@ class App extends Component {
         }
         return (
             <div className={`${this.props.currentLanguage} full-height`}>
+                <LoadingIndicator show={this.props.showLoading} />
                 <ConnectedRouter history={this.props.history}>
                     {routes}
                 </ConnectedRouter>
@@ -58,7 +62,8 @@ const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.token !== null,
         user: state.auth.user,
-        currentLanguage: 'cn'
+        currentLanguage: 'cn',
+        showLoading: LoadingIndicatorSelectors.selectLoadingIndicator(state)
     };
 };
 

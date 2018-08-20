@@ -1,5 +1,6 @@
 import { put, call } from 'redux-saga/effects';
 import RegisterActions from './RegisterRedux';
+import LoadingIndicatorActions from '../../components/LoadingIndicator/LoadingIndicatorRedux';
 import { handleGenericNetworkErrors } from '../../Redux/StartupSagas';
 import { replace } from 'connected-react-router';
 import i18n from '../../config/i18n/i18next.client.config';
@@ -8,6 +9,7 @@ import i18n from '../../config/i18n/i18next.client.config';
 export function * registerSaga(api, action) {
     const { user } = action;
     console.log(user);
+    yield put(LoadingIndicatorActions.showLoadingIndicator(true));
     const res = yield call(api.register, user);
     if (res) {
         if (res.data.code === "0") {
@@ -47,4 +49,5 @@ export function * registerSaga(api, action) {
             yield put(RegisterActions.registerFailure(errorMsg));
         }
     }
+    yield put(LoadingIndicatorActions.showLoadingIndicator(false));
 }

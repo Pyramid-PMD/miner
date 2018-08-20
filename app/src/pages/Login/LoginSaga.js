@@ -1,5 +1,6 @@
 import { put, call } from 'redux-saga/effects';
 import LoginActions from './LoginRedux';
+import LoadingIndicatorActions from '../../components/LoadingIndicator/LoadingIndicatorRedux';
 import { handleGenericNetworkErrors } from '../../Redux/StartupSagas';
 import { replace } from 'connected-react-router';
 import i18n from '../../config/i18n/i18next.client.config';
@@ -8,6 +9,7 @@ import i18n from '../../config/i18n/i18next.client.config';
 export function * loginSaga(api, action) {
     const { credentials } = action;
     try {
+        yield put(LoadingIndicatorActions.showLoadingIndicator(true));
         const res = yield call(api.login, credentials);
         if (res.data.code === "0") {
             yield localStorage.setItem('token', res.data.data.token);
@@ -47,13 +49,17 @@ export function * loginSaga(api, action) {
         console.log('error', error);
     }
 
+    yield put(LoadingIndicatorActions.showLoadingIndicator(false));
+
 }
 
 
 
 export function * logoutSaga() {
+    yield put(LoadingIndicatorActions.showLoadingIndicator(true));
     yield localStorage.removeItem('token');
     yield localStorage.removeItem('user');
     yield put(LoginActions.logoutSuccess());
+    yield put(LoadingIndicatorActions.showLoadingIndicator(false));
     yield put(replace('/login'));
 }

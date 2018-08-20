@@ -21,7 +21,9 @@ app.on('ready', () => {
         minWidth: 800,
         minHeight: 600,
         backgroundColor: '#282f33',
-        icon: iconPath
+        icon: iconPath,
+        autoHideMenuBar: true,
+        titleBarStyle: 'hidden'
     });
 
     const startUrl = url.format({
@@ -32,8 +34,10 @@ app.on('ready', () => {
 
     mainWindow.loadURL(startUrl);
 
+
     const menuBuilder = new MenuBuilder(mainWindow);
     menuBuilder.buildMenu();
 
 
 });
+
