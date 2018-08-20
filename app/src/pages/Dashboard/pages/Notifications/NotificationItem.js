@@ -4,10 +4,10 @@ const NotificationItem = (props) => {
     const { notification } = props;
     return (
         <tr className="has-separator notification-item">
-            <td className="pb-4 pt-4"><span className="number mr-1">{ notification.day }</span><span className="text-small">{ notification.month }</span></td>
+            <td className="pb-4 pt-4"><span className="number number-big mr-1">{ notification.day }</span><span>{ notification.month }</span></td>
             <td className="pb-4 pt-4">
-                <p className="text-secondary text-small">{ notification.title }</p>
-                <p>{ notification.content }</p>
+                <p className="text-secondary">{ notification.title }</p>
+                <p className="content">{ notification.content }</p>
             </td>
         </tr>
     );

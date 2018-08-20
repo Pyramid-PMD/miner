@@ -1,8 +1,10 @@
 .notification-item {
   p {
     margin: 0;
-    &:first-child {
-
+    line-height: 1.8;
+    font-size: .9rem;
+    &.content {
+      font-weight: normal;
     }
   }
 }

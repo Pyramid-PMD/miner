@@ -9,7 +9,7 @@ const FaqItem = (props) => {
                 <h3>{ faq.head }</h3>
             </AccordionItemTitle>
             <AccordionItemBody>
-                <p>{ faq.body}</p>
+                <p className="faq-body text-secondary">{ faq.body}</p>
             </AccordionItemBody>
         </AccordionItem>
     );
