@@ -153,8 +153,9 @@ class TransactionForm extends Component {
                                         <button onClick={this.setMax} type="button">{ t('common:interface.max')}</button>
                                     </div>
                                     <div className="col-auto">
-                                        <button type="submit" className="btn btn-primary submit-btn">
-                                            {this.props.transactionType === 'outer' ?  t('common:interface.withdraw') : t('common:interface.send')}
+                                        <button type="submit" className="btn btn-primary submit-btn d-flex justify-content-center" disabled={this.props.loading}>
+                                            <span>{this.props.transactionType === 'outer' ?  t('common:interface.withdraw') : t('common:interface.send')} </span>
+                                            { this.props.loading ? <img src="./src/assets/img/loaders/oval.svg"/> : null }
                                         </button>
                                     </div>
                                 </div>
@@ -175,6 +176,7 @@ const mapStateToProps = (state) => {
         addressList: SendTransactionSelectors.selectAddressList(state),
         balance: SettingsSelectors.selectBalance(state),
         sendError: SendTransactionSelectors.selectError(state),
+        loading: SendTransactionSelectors.selectLoading(state),
     }
 };
 
