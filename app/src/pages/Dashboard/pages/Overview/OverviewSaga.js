@@ -1,6 +1,5 @@
 import { put, call } from 'redux-saga/effects';
 import OverviewActions from './OverviewRedux';
-import LoadingIndicatorActions from '../../../../components/LoadingIndicator/LoadingIndicatorRedux';
 import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getOverview(api) {
