@@ -1,5 +1,7 @@
 .page-register {
-  .app-logo {
+  .app-logo, .app-logo + h2 {
+    position: relative;
+    left: -2%;
     img {
       max-width: 90px;
     }

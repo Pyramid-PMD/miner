@@ -23,7 +23,7 @@ const AsyncWithdraw = AsyncComponent(() => import("./pages/Withdraw/Withdraw"));
 const AsyncFaq = AsyncComponent(() => import("./pages/Faq/Faq"));
 const AsyncSettings = AsyncComponent(() => import("./pages/Settings/Settings"));
 const AsyncProfit = AsyncComponent(() => import("./pages/Profit/Profit"));
-const AsyncNotifications = AsyncComponent(() => import("./pages/Notifications/Nofications"));
+const AsyncNotifications = AsyncComponent(() => import("./pages/Notifications/Notifications"));
 
 
 

@@ -1,8 +1,13 @@
+if (require('electron-squirrel-startup')) return;
+require('./autoupdater');
+
 // Basic init
 const electron = require('electron')
 const {app, BrowserWindow} = electron
 const path = require('path');
 const url = require('url');
+
+
 const MenuBuilder  = require('./menu');
 
 // Let electron reloads by itself when webpack watches changes in ./app/
