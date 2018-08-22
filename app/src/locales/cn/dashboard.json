@@ -32,7 +32,8 @@
   "settings": {
     "mining": "挖矿",
     "defaultSettings": "默认设置",
-    "saveSettingsSuccess": "New settings successfully saved"
+    "saveSettingsSuccess": "New settings successfully saved",
+    "loading": "Loading settings"
   },
   "miner": {
     "estimateIncoming": "预计24小时内的收益为: ",

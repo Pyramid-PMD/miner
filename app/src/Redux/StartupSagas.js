@@ -6,7 +6,10 @@ import {getDiskId} from "../Services/Utils";
 import i18n from '../config/i18n/i18next.client.config';
 
 export function * checkAuthStatus(api, action) {
-    console.log('checking auth status');
+    const lang = yield getSavedLanguage();
+    if (lang) {
+        yield i18n.changeLanguage(lang.code);
+    }
     // Get saved user and token
     const token = yield localStorage.getItem('token');
     const user = yield JSON.parse(localStorage.getItem('user'));
@@ -31,10 +34,7 @@ export function * checkAuthStatus(api, action) {
         });
         yield put(LoginActions.loginSuccess(user))
     }
-    const lang = yield getSavedLanguage();
-    if (lang) {
-        yield i18n.changeLanguage(lang.code);
-    }
+
 }
 
 export function measureUploadSpeed() {

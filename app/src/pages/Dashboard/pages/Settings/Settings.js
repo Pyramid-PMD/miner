@@ -30,31 +30,27 @@ class Settings extends Component {
     }
 
     render() {
+        return (
+            <I18n>
+                {
+                    (t) => (
+                        !this.props.loading ?
+                        <div>
+                            { this.renderSaveFeedback(t) }
+                            <SettingsForm
+                                initialValues={ this.props.initialValues }
+                                setDefaultSettings = { this.setDefaultSettings }
+                                cancelChangedSettings = { this.cancelChangedSettings }
+                                saveSettings={ this.props.saveSettings }
+                                rates= { this.props.rates }
+                                driveList={this.props.driveList}
+                            />
+                        </div> : <div>{ t('dashboard:settings.loading') }</div>
+                    )
+                }
+            </I18n>
 
-        if (this.props.rates) {
-            return (
-                <I18n>
-                    {
-                        (t) => (
-                            <div>
-                                { this.renderSaveFeedback(t) }
-                                <SettingsForm
-                                    initialValues={ this.props.initialValues }
-                                    setDefaultSettings = { this.setDefaultSettings }
-                                    cancelChangedSettings = { this.cancelChangedSettings }
-                                    saveSettings={ this.props.saveSettings }
-                                    rates= { this.props.rates }
-                                    driveList={this.props.driveList}
-                                />
-                            </div>
-                        )
-                    }
-                </I18n>
-
-            );
-        }
-        return <div>Loading settings</div>;
-
+        );
     }
 }
 

@@ -89,7 +89,7 @@ const mapStateToProps = (state) => {
         currency: SettingsSelectors.selectUserCurrency(state),
         miner: null,
         alias: SettingsSelectors.selectAlias(state),
-        isPollingMiner: StartupSelectors.selectMinerPolling(state)
+        isPollingMiner: StartupSelectors.selectMinerPolling(state),
     }
 };
 
