@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { UncontrolledAlert } from 'reactstrap';
 import SettingsForm from "./SettingsForm";
 import SettingsActions , {SettingsSelectors, selectInitialValues} from "./SettingsRedux";
+import { I18n } from 'react-i18next';
 
 class Settings extends Component {
     constructor(props) {
@@ -22,23 +23,34 @@ class Settings extends Component {
         this.props.cancelChangedSettings();
     }
 
+    renderSaveFeedback(t) {
+        if (this.props.success) {
+            return <UncontrolledAlert>{ t('dashboard:settings.saveSettingsSuccess') }</UncontrolledAlert>;
+        }
+    }
 
     render() {
-        // if (this.props.loading) {
-        //    return <div>Loading settings</div>;
-        // }
+
         if (this.props.rates) {
             return (
-                <div>
-                    <SettingsForm
-                        initialValues={ this.props.initialValues }
-                        setDefaultSettings = { this.setDefaultSettings }
-                        cancelChangedSettings = { this.cancelChangedSettings }
-                        saveSettings={ this.props.saveSettings }
-                        rates= { this.props.rates }
-                        driveList={this.props.driveList}
-                    />
-                </div>
+                <I18n>
+                    {
+                        (t) => (
+                            <div>
+                                { this.renderSaveFeedback(t) }
+                                <SettingsForm
+                                    initialValues={ this.props.initialValues }
+                                    setDefaultSettings = { this.setDefaultSettings }
+                                    cancelChangedSettings = { this.cancelChangedSettings }
+                                    saveSettings={ this.props.saveSettings }
+                                    rates= { this.props.rates }
+                                    driveList={this.props.driveList}
+                                />
+                            </div>
+                        )
+                    }
+                </I18n>
+
             );
         }
         return <div>Loading settings</div>;
@@ -52,7 +64,8 @@ const mapStateToProps = (state) => {
         loading: SettingsSelectors.selectLoading(state),
         rates: SettingsSelectors.selectRates(state),
         driveList: SettingsSelectors.selectDriveList(state),
-        initialValues: selectInitialValues(state)
+        initialValues: selectInitialValues(state),
+        success: SettingsSelectors.selectSaveSuccess(state)
     }
 };
 

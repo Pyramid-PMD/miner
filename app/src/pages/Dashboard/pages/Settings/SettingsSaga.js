@@ -37,7 +37,6 @@ export function * getExchangeRates(api) {
 export function * getUserCurrency() {
     const currency = localStorage.getItem('currency');
     const defaultRate = yield select(SettingsSelectors.selectRates);
-    console.log('currency', currency, defaultRate);
     if (!currency) {
         localStorage.setItem('currency', JSON.stringify(defaultRate[0]));
     }
@@ -74,15 +73,12 @@ export function setLanguage(lang) {
 
 
 export function * loadDefaultSettingsSaga(api, action) {
-    console.log('load default settings');
     const lang = yield call(getSavedLanguage);
-    console.log('lang', lang);
     if (lang) {
         yield i18n.changeLanguage(lang.code);
         try {
             const drivelist = yield call(getDriveList);
             if (drivelist) {
-                console.log('drivelist', drivelist);
                 yield getUserInfoSaga(api);
                 yield getExchangeRates(api);
                 const currency = yield call(getUserCurrency);
@@ -104,7 +100,18 @@ export function * loadDefaultSettingsSaga(api, action) {
 export function * saveNewSettingsSaga(api, action) {
     //check form values
     const { machine_name, language, currency, partition } = action.settings;
-    yield call(api.createMinerAlias, machine_name);
+    // TODO: save machine name only if user changes it
+    const savedAlias = yield select(SettingsSelectors.selectAlias);
+    if (machine_name !== savedAlias) {
+        try {
+            yield call(api.createMinerAlias, machine_name);
+
+        } catch (error) {
+            // TODO: dispatch error saving machine name
+            console.log('error');
+        }
+    }
+
     yield i18n.changeLanguage(language.code);
     yield saveUserCurrency(currency);
     yield saveUserDisk(partition);

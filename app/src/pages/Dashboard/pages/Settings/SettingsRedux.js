@@ -31,7 +31,8 @@ const INITIAL_STATE = {
     selectedRate: null,
     driveList: null,
     selectedDrive: null,
-    loadDefault: false
+    loadDefault: false,
+    success: null
 };
 
 export const SettingsSelectors = {
@@ -58,7 +59,8 @@ export const SettingsSelectors = {
         if (state.settings.rates && state.settings.rates.list.length > 0) {
             return state.settings.rates.list.find(rate => rate.name === config.defaultCurrency)
         }
-    }
+    },
+    selectSaveSuccess: state => state.settings.success
 };
 
 export const selectInitialValues =  (state) => {
@@ -81,13 +83,15 @@ export const selectInitialValues =  (state) => {
         }
     }
 };
-export const userInfoRequest = (state) => ({ ...state, loading: true});
+export const userInfoRequest = (state) => ({ ...state, loading: true });
 export const userInfoSuccess = (state, action) => ({ ...state, user: action.user });
 export const userInfoFailure = (state, action) => ({ ...state, user: null, error: action.error });
 export const savedLanguageSuccess = (state, action) => ({ ...state, language: action.language });
-export const loadDefaultSuccess = (state, action) => ({ ...state, loading: false, language: action.language, selectedRate: action.currency, driveList: action.driveList, selectedDrive: action.selectedDrive });
+export const loadDefaultSettings = (state, action) => ({ ...state, success: null });
+export const loadDefaultSuccess = (state, action) => ({ ...state, loading: false, language: action.language, selectedRate: action.currency, driveList: action.driveList, selectedDrive: action.selectedDrive});
 export const exchangeRateSuccess = (state, action) => ({ ...state, rates: action.rates });
-export const saveSettingsSuccess = (state, action) => ({ ...state, loadDefault: false, language: action.settings.language, selectedRate: action.settings.currency  });
+export const saveSettingsRequest = state => ({ ...state, success: null })
+export const saveSettingsSuccess = (state, action) => ({ ...state, loadDefault: false, language: action.settings.language, selectedRate: action.settings.currency, success: true  });
 
 export const setDefaultAppSettings = (state) => ({ ...state, loadDefault: true });
 export const cancelSettingsChanges = (state, action) => {
@@ -99,8 +103,10 @@ export const reducer = createReducer(INITIAL_STATE, {
     [Types.USER_INFO_SUCCESS]: userInfoSuccess,
     [Types.USER_INFO_FAILURE]: userInfoFailure,
     [Types.SAVED_LANGUAGE_SUCCESS]: savedLanguageSuccess,
+    [Types.LOAD_DEFAULT_SETTINGS]: loadDefaultSettings,
     [Types.LOAD_DEFAULT_SUCCESS]: loadDefaultSuccess,
     [Types.EXCHANGE_RATE_SUCCESS]: exchangeRateSuccess,
+    [Types.SAVE_SETTINGS_REQUEST]: saveSettingsRequest,
     [Types.SAVE_SETTINGS_SUCCESS]: saveSettingsSuccess,
     [Types.LOAD_DEFAULT_SUCCESS]: loadDefaultSuccess,
     [Types.SET_DEFAULT_APP_SETTINGS]: setDefaultAppSettings,

@@ -31,7 +31,8 @@
   },
   "settings": {
     "mining": "Mining",
-    "defaultSettings": "Default settings"
+    "defaultSettings": "Default settings",
+    "saveSettingsSuccess": "New settings successfully saved"
   },
   "miner": {
     "estimateIncoming": "Estimate incoming in 24 hrs",
