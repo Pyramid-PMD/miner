@@ -30,5 +30,6 @@ module.exports = {
         slogan: 'Next generation decentralized protocol of storage'
     },
     currencies: [],
+    defaultCurrency: 'cny',
     disks: []
 };

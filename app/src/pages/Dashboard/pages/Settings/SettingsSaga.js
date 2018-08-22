@@ -48,6 +48,18 @@ export function saveUserCurrency(currency) {
     localStorage.setItem('currency', JSON.stringify(currency));
 }
 
+export function saveUserDisk(disk) {
+    localStorage.setItem('disk', disk);
+}
+
+export function * getUserSavedDisk(defaultDisk) {
+    const disk = localStorage.getItem('disk');
+    if (!disk) {
+        localStorage.setItem('disk', defaultDisk);
+    }
+    return localStorage.getItem('disk');
+}
+
 export function * getSavedLanguage() {
     const lang = localStorage.getItem('lang');
     if (!lang) {
@@ -67,29 +79,35 @@ export function * loadDefaultSettingsSaga(api, action) {
     console.log('lang', lang);
     if (lang) {
         yield i18n.changeLanguage(lang.code);
-        let drivelist = ['A'];
         try {
-             drivelist = yield call(getDriveList);
+            const drivelist = yield call(getDriveList);
+            if (drivelist) {
+                console.log('drivelist', drivelist);
+                yield getUserInfoSaga(api);
+                yield getExchangeRates(api);
+                const currency = yield call(getUserCurrency);
+                const selectedDrive = yield call(getUserSavedDisk, drivelist[drivelist.length - 1]);
+                if (currency && selectedDrive) {
+                    yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist, selectedDrive));
+                }
+            }
+
         } catch (e) {
             console.log(e);
         }
 
-        yield getUserInfoSaga(api);
-        yield getExchangeRates(api);
-        const currency = yield call(getUserCurrency);
-        if (currency) {
-            yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist));
-        }
+
     }
 
 }
 
 export function * saveNewSettingsSaga(api, action) {
     //check form values
-    const { machine_name, language, currency } = action.settings;
+    const { machine_name, language, currency, partition } = action.settings;
     yield call(api.createMinerAlias, machine_name);
     yield i18n.changeLanguage(language.code);
     yield saveUserCurrency(currency);
+    yield saveUserDisk(partition);
     yield setLanguage(language);
     yield loadDefaultSettingsSaga(api);
     yield put(SettingsActions.saveSettingsSuccess(action.settings));

@@ -8,17 +8,18 @@ const languages = require('../../../../config/app.config').i18n.languages;
 
 
 class SettingsForm extends Component {
-    state = {
-        languages
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            languages
+        };
+        this.resetForm = this.resetForm.bind(this);
+    }
+
 
     submitHandler = (values) => {
         this.props.saveSettings(values);
-    }
-
-    changeLanguage(ev) {
-        console.log('ev', ev);
-    }
+    };
 
     renderDropdownList ({ input, data, valueField, textField }) {
         return (<DropdownList {...input}
@@ -28,6 +29,10 @@ class SettingsForm extends Component {
                       textField={textField} />);
     }
 
+    resetForm() {
+        this.props.reset();
+        this.props.cancelChangedSettings()
+    }
 
 
 
@@ -100,10 +105,12 @@ class SettingsForm extends Component {
 
                             <div className="row offset-2 mt-4">
                                 <div className="d-flex w-100 col-auto pl-1 settings-buttons">
-                                    <button type="button" className="btn button-calm mr-5">{ t('dashboard:settings.defaultSettings') }</button>
+                                    <button type="button"
+                                            onClick={this.props.setDefaultSettings}
+                                            className="btn button-calm mr-5">{ t('dashboard:settings.defaultSettings') }</button>
                                     <div className="ml-auto">
                                         <button type="submit" className="btn button-calm btn-primary mr-3">{ t('common:interface.save') }</button>
-                                        <button type="button" className="btn button-calm btn-primary">{ t('common:interface.cancel') }</button>
+                                        <button type="button" className="btn button-calm btn-primary" onClick={this.resetForm }>{ t('common:interface.cancel') }</button>
                                     </div>
 
                                 </div>
