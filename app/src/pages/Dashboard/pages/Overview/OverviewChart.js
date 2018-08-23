@@ -91,13 +91,13 @@ const OverviewChart = (props) => {
                             </div>
                             <div className="flex-1 d-flex justify-content-end">
                                 <div>
-                                    <div className="has-separator">
-                                        <p>
-                                            <span className="number number-big margin-right-4">{ pmdAll }</span>
-                                            <span className="text-small">PMD</span>
-                                        </p>
-                                        <p className="text-small text-secondary"><span className="margin-right-4">≈ { currency ? (currency.rate * pmdAll).toPrecision(5) : null }</span><span className="text-uppercase">{ currency ? currency.name : null }</span></p>
-                                    </div>
+                                    {/*<div className="has-separator">*/}
+                                        {/*<p>*/}
+                                            {/*<span className="number number-big margin-right-4">{ pmdAll }</span>*/}
+                                            {/*<span className="text-small">PMD</span>*/}
+                                        {/*</p>*/}
+                                        {/*<p className="text-small text-secondary"><span className="margin-right-4">≈ { currency ? (currency.rate * pmdAll).toPrecision(5) : null }</span><span className="text-uppercase">{ currency ? currency.name : null }</span></p>*/}
+                                    {/*</div>*/}
                                     <ul className="list-unstyled">
                                         <li>
                                             <p>

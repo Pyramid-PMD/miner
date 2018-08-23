@@ -60,7 +60,11 @@ class Dashboard extends Component {
         return (
             <div className="d-flex align-items-stretch root-container">
                 <div>
-                    <Menu balance={ this.props.balance} currency={ this.props.currency } alias={ this.props.alias } logout={this.props.logout}/>
+                    <Menu
+                        balance={ this.props.balance}
+                        adjustedBalance={this.props.adjustedBalance}
+                        currency={ this.props.currency }
+                        alias={ this.props.alias } logout={this.props.logout}/>
                 </div>
                 <div className="page" style={pageStyles}>
                     <div className="page-container">
@@ -85,7 +89,8 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        balance: SettingsSelectors.selectAdjustedBalance(state),
+        balance: SettingsSelectors.selectBalance(state),
+        adjustedBalance: SettingsSelectors.selectAdjustedBalance(state),
         currency: SettingsSelectors.selectUserCurrency(state),
         miner: null,
         alias: SettingsSelectors.selectAlias(state),

@@ -8,9 +8,9 @@
   "scripts": {
     "bundle": "webpack --mode development",
     "serve": "electron .",
-    "start": "NODE_ENV=development npm-run-all --parallel bundle serve",
+    "start": "cross-env NODE_ENV=development npm-run-all --parallel bundle serve",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --ignore=release-builds --ignore=app/src --ignore=installers --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
   "repository": "pastahito/electron-react-webpack",
   "license": "Pyramid",
@@ -26,7 +26,6 @@
     "babel-preset-react-app": "^3.1.2",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
-    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "electron": "^1.8.2",
     "electron-reload": "^1.2.2",

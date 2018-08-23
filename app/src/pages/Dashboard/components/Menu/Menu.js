@@ -11,7 +11,7 @@ const Menu = (props) => {
                 (t) => (
                     <nav className="main-menu d-flex flex-column">
                         <div>
-                            <MenuHeader balance={ props.balance } currency={ props.currency }/>
+                            <MenuHeader balance={ props.balance } adjustedBalance={ props.adjustedBalance} currency={ props.currency }/>
                         </div>
                         <div className="main-menu-links">
                             <ul className="list-unstyled">

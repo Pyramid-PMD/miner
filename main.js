@@ -44,5 +44,9 @@ app.on('ready', () => {
     menuBuilder.buildMenu();
 
 
+    mainWindow.webContents.on('did-finish-load', () => {
+        mainWindow.setTitle(`${app.getName()} ${app.getVersion()}`)
+    });
+    
 });
 
