@@ -28,6 +28,7 @@ app.on('ready', () => {
         backgroundColor: '#282f33',
         icon: iconPath,
         autoHideMenuBar: true,
+        title: `${app.getName()} ${app.getVersion()}`,
         titleBarStyle: 'hidden'
     });
 
@@ -38,15 +39,12 @@ app.on('ready', () => {
         });
 
     mainWindow.loadURL(startUrl);
-
-
     const menuBuilder = new MenuBuilder(mainWindow);
     menuBuilder.buildMenu();
+    mainWindow.on('page-title-changed', e => e.preventDefault())
+});
 
-
-    mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.setTitle(`${app.getName()} ${app.getVersion()}`)
-    });
-    
+app.on('window-all-closed', function() {
+    app.quit();
 });
 

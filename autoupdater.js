@@ -2,17 +2,18 @@
 const {autoUpdater, dialog, app} = require('electron');
 const appVersion = app.getVersion();
 
-if (process.platform !== 'darwin') {
-    let updateFeed = 'http://localhost:3000/updates/latest';
 
-    if (process.env.NODE_ENV !== 'development') {
-        updateFeed = 'https://s3.amazonaws.com/pyramid-desktop/releases/win32';
-    }
-    autoUpdater.setFeedURL(updateFeed + '?v=' + appVersion);
+if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
+    // let updateFeed = 'https://s3.amazonaws.com/pyramid-desktop/releases/win32';
+
+    let updateFeed = `http://localhost:3000/updates/win32/${appVersion}`;
+
+    console.log('feed', updateFeed);
+    autoUpdater.setFeedURL(updateFeed);
 
     setInterval(() => {
         autoUpdater.checkForUpdates()
-    }, 60000);
+    }, 60 * 1000);
 
     autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
         const dialogOpts = {
