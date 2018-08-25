@@ -10,7 +10,8 @@
     "serve": "electron .",
     "start": "cross-env NODE_ENV=development npm-run-all --parallel bundle serve",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --ignore=release-builds --ignore=app/src --ignore=installers --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --ignore=release-builds --ignore=installers --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE",
+    "package-win-64": "electron-packager . --overwrite --asar=true --platform=win32 --arch=x64 --icon=app/src/assets/icons/win/icon.ico --prune=true --ignore=release-builds --ignore=installers --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
   "repository": "pastahito/electron-react-webpack",
   "license": "Pyramid",

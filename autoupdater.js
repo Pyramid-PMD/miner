@@ -4,13 +4,10 @@ const appVersion = app.getVersion();
 
 
 if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
-    // let updateFeed = 'https://s3.amazonaws.com/pyramid-desktop/releases/win32';
 
-    let updateFeed = `http://localhost:3000/updates/win32/${appVersion}`;
-
-    console.log('feed', updateFeed);
+    // let updateFeed = `http://localhost:3000/updates/win32/${appVersion}`;
+    let updateFeed = `http://101.132.161.0/releases/win/latest`;
     autoUpdater.setFeedURL(updateFeed);
-
     setInterval(() => {
         autoUpdater.checkForUpdates()
     }, 60 * 1000);
