@@ -5,15 +5,16 @@ import {getDiskId} from './Utils';
 
 const url = 'http://101.132.161.0/api';
 
+//TODO: dynamic or static version?
 const create  =  (baseURL = url) => {
-    let diskId = '7654321';
+    // let diskId = '7654321';
     const api = apisauce.create({
         baseURL,
         headers: {
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/json',
-            'disk_id': diskId, // 123456
-            'version': app.getVersion()
+            // 'disk_id': diskId, // 123456
+            'version': '1.0.0' //app.getVersion()
         },
 
     timeout: 100000

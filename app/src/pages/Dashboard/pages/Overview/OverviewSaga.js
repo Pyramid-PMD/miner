@@ -16,6 +16,7 @@ export function * getOverview(api) {
                 default:
                     errorMsg = yield call(handleGenericNetworkErrors, res);
             }
+
             yield put(OverviewActions.overviewFailure(errorMsg));
         }
 
