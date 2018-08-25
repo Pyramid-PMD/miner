@@ -3,6 +3,7 @@ import SettingsActions, { SettingsSelectors } from './SettingsRedux';
 import i18n from '../../../../config/i18n/i18next.client.config';
 import {getDriveList} from "../../../../Services/Utils";
 const config = require('../../../../config/app.config');
+import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 
 export function * getUserInfoSaga(api) {
@@ -11,7 +12,12 @@ export function * getUserInfoSaga(api) {
         if (res.data.code === "0") {
             yield put(SettingsActions.userInfoSuccess(res.data.data));
         } else {
-            yield put(SettingsActions.userInfoFailure('error'));
+            let errorMsg;
+            switch (res.data.code) {
+                default:
+                    errorMsg = yield call(handleGenericNetworkErrors, res);
+            }
+            yield put(SettingsActions.userInfoFailure(errorMsg));
         }
     }
 }
@@ -31,7 +37,6 @@ export function * getExchangeRates(api) {
 export function * getUserCurrency() {
     const currency = localStorage.getItem('currency');
     const defaultRate = yield select(SettingsSelectors.selectRates);
-    console.log('currency', currency, defaultRate);
     if (!currency) {
         localStorage.setItem('currency', JSON.stringify(defaultRate[0]));
     }
@@ -40,6 +45,18 @@ export function * getUserCurrency() {
 
 export function saveUserCurrency(currency) {
     localStorage.setItem('currency', JSON.stringify(currency));
+}
+
+export function saveUserDisk(disk) {
+    localStorage.setItem('disk', disk);
+}
+
+export function * getUserSavedDisk(defaultDisk) {
+    const disk = localStorage.getItem('disk');
+    if (!disk) {
+        localStorage.setItem('disk', defaultDisk);
+    }
+    return localStorage.getItem('disk');
 }
 
 export function * getSavedLanguage() {
@@ -56,34 +73,49 @@ export function setLanguage(lang) {
 
 
 export function * loadDefaultSettingsSaga(api, action) {
-    console.log('load default settings');
     const lang = yield call(getSavedLanguage);
-    console.log('lang', lang);
     if (lang) {
         yield i18n.changeLanguage(lang.code);
-        let drivelist = ['A'];
         try {
-             drivelist = yield call(getDriveList);
+            const drivelist = yield call(getDriveList);
+            if (drivelist && drivelist.length > 0) {
+                yield getUserInfoSaga(api);
+                yield getExchangeRates(api);
+                const currency = yield call(getUserCurrency);
+                console.log('drivelist', drivelist);
+                const selectedDrive = yield call(getUserSavedDisk, drivelist[drivelist.length - 1]);
+                if (currency && selectedDrive) {
+                    yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist, selectedDrive));
+                }
+            }
+
         } catch (e) {
             console.log(e);
         }
 
-        yield getUserInfoSaga(api);
-        yield getExchangeRates(api);
-        const currency = yield call(getUserCurrency);
-        if (currency) {
-            yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist));
-        }
+
     }
 
 }
 
 export function * saveNewSettingsSaga(api, action) {
     //check form values
-    const { machine_name, language, currency } = action.settings;
-    yield call(api.createMinerAlias, machine_name);
+    const { machine_name, language, currency, partition } = action.settings;
+    // TODO: save machine name only if user changes it
+    const savedAlias = yield select(SettingsSelectors.selectAlias);
+    if (machine_name !== savedAlias) {
+        try {
+            yield call(api.createMinerAlias, machine_name);
+
+        } catch (error) {
+            // TODO: dispatch error saving machine name
+            console.log('error');
+        }
+    }
+
     yield i18n.changeLanguage(language.code);
     yield saveUserCurrency(currency);
+    yield saveUserDisk(partition);
     yield setLanguage(language);
     yield loadDefaultSettingsSaga(api);
     yield put(SettingsActions.saveSettingsSuccess(action.settings));

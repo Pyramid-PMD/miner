@@ -1,6 +1,11 @@
-.page-login {
+.page-login, .page-alias {
   .app-logo {
     margin-bottom: 30px;
+    position: relative;
+    left: -2%;
+    img {
+      max-width: 90px;
+    }
   }
   .page-container {
     min-width: 400px;

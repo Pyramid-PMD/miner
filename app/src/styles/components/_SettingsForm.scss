@@ -1,4 +1,16 @@
 .settings-form {
+
+  .form-field {
+    height: auto;
+    padding: 6px 12px;
+    border-width: 2px;
+  }
+
+  .settings-buttons {
+    button {
+      min-width: 120px;
+    }
+  }
   .drop-down-dark, .drop-down-dark.rw-state-focus {
     .rw-widget-container {
       background: #5a5b5a;

@@ -1,4 +1,11 @@
 .page-register {
+  .app-logo, .app-logo + h2 {
+    position: relative;
+    left: -2%;
+    img {
+      max-width: 90px;
+    }
+  }
   .form-container {
     width: 80%;
     margin: 30px auto 0;

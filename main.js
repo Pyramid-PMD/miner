@@ -1,16 +1,21 @@
+if (require('electron-squirrel-startup')) return;
+require('./autoupdater');
+
 // Basic init
 const electron = require('electron')
 const {app, BrowserWindow} = electron
 const path = require('path');
 const url = require('url');
+
+
 const MenuBuilder  = require('./menu');
 
 // Let electron reloads by itself when webpack watches changes in ./app/
-require('electron-reload')(__dirname);
+if (process.env.NODE_ENV === 'development') require('electron-reload')(__dirname);
 
 const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 // To avoid being garbage collected
-let mainWindow
+let mainWindow;
 
 app.on('ready', () => {
 
@@ -21,7 +26,10 @@ app.on('ready', () => {
         minWidth: 800,
         minHeight: 600,
         backgroundColor: '#282f33',
-        icon: iconPath
+        icon: iconPath,
+        autoHideMenuBar: true,
+        title: `${app.getName()} ${app.getVersion()}`,
+        titleBarStyle: 'hidden'
     });
 
     const startUrl = url.format({
@@ -31,9 +39,12 @@ app.on('ready', () => {
         });
 
     mainWindow.loadURL(startUrl);
-
     const menuBuilder = new MenuBuilder(mainWindow);
     menuBuilder.buildMenu();
-
-
+    mainWindow.on('page-title-changed', e => e.preventDefault())
 });
+
+app.on('window-all-closed', function() {
+    app.quit();
+});
+

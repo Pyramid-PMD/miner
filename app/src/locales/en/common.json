@@ -24,6 +24,12 @@
     "done": "Done",
     "logout": "Logout",
     "diskSerial": "Disk serial",
-    "copiedToCB": "Copied to clipboard"
+    "copiedToCB": "Copied to clipboard",
+    "netTest": "Test net"
+  },
+  "networkErrors": {
+    "somethingWentWrong": "Something went wrong. Please try again",
+    "tokenExpired": "Token expired",
+    "installNewUpdate": "Your current version is outdated. Please restart the app to update"
   }
 }

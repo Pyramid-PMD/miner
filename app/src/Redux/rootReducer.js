@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
     settings: require('../pages/Dashboard/pages/Settings/SettingsRedux').reducer,
     profit: require('../pages/Dashboard/pages/Profit/ProfitRedux').reducer,
     startup: require('./StartupRedux').reducer,
+    loadingIndicator: require('../components/LoadingIndicator/LoadingIndicatorRedux').reducer,
 });
 
 export default rootReducer;

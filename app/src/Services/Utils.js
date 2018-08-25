@@ -1,10 +1,8 @@
-import _ from 'lodash';
-// const drivelist = require('drivelist');
 const wmic = require('wmic');
+const sha3 = require("crypto-js/sha3");
 export const getDiskId = () => {
     //if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
     if (process.platform === 'win32') {
-
         return new Promise((resolve, reject) => {
             wmic.get_values('DISKDRIVE', 'Name, SerialNumber, MediaType, InterfaceType', null, function(error, drives) {
                 if (error) {
@@ -18,14 +16,6 @@ export const getDiskId = () => {
                     resolve(serials[0]); // An array of disks
                 }
             });
-
-            // exec(winCmd, ((error, stdout) => {
-            //     if (!error) {
-            //         console.log(stdout);
-            //         resolve(stdout.replace('SerialNumber', '').trim());
-            //     }
-            //     reject(error);
-            // }));
         })
 
     } else {
@@ -61,47 +51,48 @@ export const getDriveList = () => {
         else {
             resolve(defaultList);
         }
-        // console.log('drivelist', drivelist);
-        // drivelist.list((error, drives) => {
-        //     if (error) {
-        //         console.log('error', error);
-        //         reject(error);
-        //     }
-        //     const filtered = drives.filter((drive) => drive.isSystem && !drive.isVirtual && !drive.isRemovable);
-        //     let mountpoints = [];
-        //     // filtered.forEach(drive => {
-        //     //     const { mountpoints } = drive;
-        //     //     mountpoints.push(...mountpoints)
-        //     // });
-        //     // console.log('mount points', mountpoints);
-        //     console.log('drives', filtered);
-        //     resolve(['A', 'B', 'C']);
-        // });
-        // if (process.platform === 'win32') {
-        //     const exec = require('child_process').exec;
-        //     const winCmd = 'wmic logicaldisk get name\n';
-        //     exec(winCmd, ((error, stdout) => {
-        //         console.log('drive list', stdout);
-        //         const rgx = /\s/gi;
-        //         const driveList = stdout
-        //             .replace('Name', '')
-        //             .trim()
-        //             .replace(rgx, '')
-        //             .split(':');
-        //
-        //         driveList.pop();
-        //         if (!error) {
-        //             resolve(driveList);
-        //         }
-        //         reject(error);
-        //     }));
-        // } else {
-        //     resolve(['A', 'B', 'C'])
-        // }
-
-
-
-
-
     });
 };
+
+
+/**
+ * Checks if the given string is a checksummed address
+ *
+ * @method isChecksumAddress
+ * @param {String} address the given HEX adress
+ * @return {Boolean}
+ */
+const isChecksumAddress = function (address) {
+    // Check each case
+    address = address.replace('0x','');
+    const addressHash = sha3(address.toLowerCase());
+    for (let i = 0; i < 40; i++ ) {
+        // the nth letter should be uppercase if the nth digit of casemap is 1
+        if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
+            return false;
+        }
+    }
+    return true;
+};
+
+/**
+ * Checks if the given string is an address
+ *
+ * @method isAddress
+ * @param {String} address the given HEX adress
+ * @return {Boolean}
+ */
+export const isAddress = function (address) {
+    if (!/^(0x)?[0-9a-f]{40}$/i.test(address)) {
+        // check if it has the basic requirements of an address
+        return false;
+    } else if (/^(0x)?[0-9a-f]{40}$/.test(address) || /^(0x)?[0-9A-F]{40}$/.test(address)) {
+        // If it's all small caps or all all caps, return true
+        return true;
+    } else {
+        // Otherwise check each case
+        return isChecksumAddress(address);
+    }
+};
+
+

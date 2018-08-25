@@ -8,17 +8,18 @@ const languages = require('../../../../config/app.config').i18n.languages;
 
 
 class SettingsForm extends Component {
-    state = {
-        languages
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            languages
+        };
+        this.resetForm = this.resetForm.bind(this);
+    }
+
 
     submitHandler = (values) => {
         this.props.saveSettings(values);
-    }
-
-    changeLanguage(ev) {
-        console.log('ev', ev);
-    }
+    };
 
     renderDropdownList ({ input, data, valueField, textField }) {
         return (<DropdownList {...input}
@@ -28,6 +29,10 @@ class SettingsForm extends Component {
                       textField={textField} />);
     }
 
+    resetForm() {
+        this.props.reset();
+        this.props.cancelChangedSettings()
+    }
 
 
 
@@ -41,8 +46,8 @@ class SettingsForm extends Component {
                             <section>
                                 <h2>{ t('dashboard:settings.mining') }</h2>
                                 <div className="form-group row">
-                                    <label className="col-form-label col-3 text-secondary text-small">{ t('common:interface.disk') }</label>
-                                    <div className="col-5">
+                                    <label className="col-form-label col-2 text-secondary text-small">{ t('common:interface.disk') }</label>
+                                    <div className="col-6">
                                         <Field
                                             name="partition"
                                             className="drop-down-dark"
@@ -53,8 +58,8 @@ class SettingsForm extends Component {
                                     </div>
                                 </div>
                                 <div className="form-group row">
-                                    <label className="col-form-label col-3 text-secondary text-small">{ t('auth:alias.title') }</label>
-                                    <div className="col-5">
+                                    <label className="col-form-label col-2 text-secondary text-small">{ t('auth:alias.title') }</label>
+                                    <div className="col-6">
                                         <Field
                                             className="form-control form-field"
                                             name="machine_name"
@@ -70,8 +75,8 @@ class SettingsForm extends Component {
                             <section>
                                 <h2>{ t('common:interface.currency') }</h2>
                                 <div className="form-group row currency-drop-down">
-                                    <label className="col-form-label col-3 text-secondary text-small">{ t('common:interface.currency') }</label>
-                                    <div className="col-5">
+                                    <label className="col-form-label col-2 text-secondary text-small">{ t('common:interface.currency') }</label>
+                                    <div className="col-6">
                                         <Field
                                             name="currency"
                                             className="drop-down-dark"
@@ -85,8 +90,8 @@ class SettingsForm extends Component {
                             <section>
                                 <h2>{ t('common:interface.ui') }</h2>
                                 <div className="form-group row">
-                                    <label className="col-form-label col-3 text-secondary text-small">{ t('common:interface.language') }</label>
-                                    <div className="col-5">
+                                    <label className="col-form-label col-2 text-secondary text-small">{ t('common:interface.language') }</label>
+                                    <div className="col-6">
                                         <Field
                                             name="language"
                                             className="drop-down-dark"
@@ -98,11 +103,16 @@ class SettingsForm extends Component {
                                 </div>
                             </section>
 
-                            <div className="row offset-3">
-                                <div className="d-flex w-100 col-auto">
-                                    <button type="button" className="btn button-calm mr-5">{ t('dashboard:settings.defaultSettings') }</button>
-                                    <button type="submit" className="btn button-calm btn-primary mr-3">{ t('common:interface.save') }</button>
-                                    <button type="button" className="btn button-calm btn-primary">{ t('common:interface.cancel') }</button>
+                            <div className="row offset-2 mt-4">
+                                <div className="d-flex w-100 col-auto pl-1 settings-buttons">
+                                    <button type="button"
+                                            onClick={this.props.setDefaultSettings}
+                                            className="btn button-calm mr-5">{ t('dashboard:settings.defaultSettings') }</button>
+                                    <div className="ml-auto">
+                                        <button type="submit" className="btn button-calm btn-primary mr-3">{ t('common:interface.save') }</button>
+                                        <button type="button" className="btn button-calm btn-primary" onClick={this.resetForm }>{ t('common:interface.cancel') }</button>
+                                    </div>
+
                                 </div>
                             </div>
                         </form>

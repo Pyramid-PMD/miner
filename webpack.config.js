@@ -2,7 +2,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const autoprefixer = require('autoprefixer');
 module.exports = {
 
-    watch: true,
+    watch: process.env.NODE_ENV === 'development',
 
     target: 'electron-renderer',
 
@@ -30,7 +30,7 @@ module.exports = {
                         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.(woff|woff2|eot|ttf)/],
                         loader: require.resolve('url-loader'),
                         options: {
-                            limit: 10000,
+                            limit: 30000,
                             name: '[name].[hash:8].[ext]',
                         },
                     },

@@ -1,12 +1,17 @@
 import { put, call } from 'redux-saga/effects';
 import WithdrawActions from './WithdrawRedux';
+import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getOuterList(api, action) {
     const res = yield call(api.getTransactionList, 'outer');
-    console.log(res);
     if (res.data.code === "0") {
         yield put(WithdrawActions.outerListSuccess(res.data.data));
     } else {
-        yield put(WithdrawActions.outerListFailure('error'));
+        let errorMsg;
+        switch (res.data.code) {
+            default:
+                errorMsg = yield call(handleGenericNetworkErrors, res);
+        }
+        yield put(WithdrawActions.outerListFailure(errorMsg));
     }
 }

@@ -6,14 +6,15 @@ const OverviewChart = (props) => {
     // Blue: #537de7
     // Orange: #d88d71
     const renderChart = () => {
+
         const option = {
             backgroundColor: 'transparent',
             series: [
                 {
                     name: 'Overview',
                     type:'pie',
-                    radius : '80%',
-                    center: ['50%', '50%'],
+                    // radius : '0%',
+                    // center: ['50%', '50%'],
                     label: {
                         show: false
                     },
@@ -64,7 +65,7 @@ const OverviewChart = (props) => {
                         },
 
                     ],
-                    roseType: 'radius'
+                    // roseType: 'radius'
                 }
             ]
         };
@@ -90,13 +91,13 @@ const OverviewChart = (props) => {
                             </div>
                             <div className="flex-1 d-flex justify-content-end">
                                 <div>
-                                    <div className="has-separator">
-                                        <p>
-                                            <span className="number number-big margin-right-4">{ pmdAll }</span>
-                                            <span className="text-small">PMD</span>
-                                        </p>
-                                        <p className="text-small text-secondary"><span className="margin-right-4">≈ { currency ? (currency.rate * pmdAll).toPrecision(5) : null }</span><span className="text-uppercase">{ currency ? currency.name : null }</span></p>
-                                    </div>
+                                    {/*<div className="has-separator">*/}
+                                        {/*<p>*/}
+                                            {/*<span className="number number-big margin-right-4">{ pmdAll }</span>*/}
+                                            {/*<span className="text-small">PMD</span>*/}
+                                        {/*</p>*/}
+                                        {/*<p className="text-small text-secondary"><span className="margin-right-4">≈ { currency ? (currency.rate * pmdAll).toPrecision(5) : null }</span><span className="text-uppercase">{ currency ? currency.name : null }</span></p>*/}
+                                    {/*</div>*/}
                                     <ul className="list-unstyled">
                                         <li>
                                             <p>

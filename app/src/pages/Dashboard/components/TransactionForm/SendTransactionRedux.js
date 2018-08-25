@@ -20,7 +20,8 @@ const INITIAL_STATE = {
 
 export const SendTransactionSelectors = {
     selectAddressList: (state) => state.sendTransaction.addressList || [],
-    selectError: state => state.sendTransaction.error
+    selectError: state => state.sendTransaction.error,
+    selectLoading: state => state.sendTransaction.loading
 };
 
 export const request = (state) => ({...state, loading: true, error: null });

@@ -17,17 +17,23 @@
       "wrongAddress": "钱包地址格式不正确",
       "wrongPassword": "交易密码错误，请确认后再尝试",
       "notEnoughBalance": "可供转账的余额不足",
-      "errorSavingTransaction": "交易失败"
+      "errorSavingTransaction": "交易失败",
+      "invalidAddress": "请输入有效的地址",
+      "addressRequired": "地址是必需的",
+      "amountRequired": "请输入金额"
     }
   },
   "notifications": {
     "system": "系统通知",
     "transactions": "转账通知",
-    "withdraw": "提币通知"
+    "withdraw": "提币通知",
+    "noNotifications": "没有通知"
   },
   "settings": {
     "mining": "挖矿",
-    "defaultSettings": "默认设置"
+    "defaultSettings": "默认设置",
+    "saveSettingsSuccess": "新设置已成功保存",
+    "loading": "加载设置"
   },
   "miner": {
     "estimateIncoming": "预计24小时内的收益为: ",

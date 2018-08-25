@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { UncontrolledTooltip } from 'reactstrap';
 
 class NetworkIndicator extends Component {
     state = {
@@ -22,13 +23,19 @@ class NetworkIndicator extends Component {
     render() {
         const status = this.state.online ? 'online' : 'offline';
         return (
-            <div className={`network-indicator d-flex align-items-center justify-content-center ${status}`}>
+        <div>
+            <div className={`network-indicator d-flex align-items-center justify-content-center ${status}`} id="UncontrolledTooltipExample">
                 { !this.state.online ?
                     <span className="diagonal">
                     </span> : null }
                 <span className={`icon icon-miner d-flex align-items-center justify-content-center`}>
                 </span>
             </div>
+            <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample">
+                { this.props.t('common:interface.netTest') }
+            </UncontrolledTooltip>
+        </div>
+
         );
     }
 }

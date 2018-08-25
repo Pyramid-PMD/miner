@@ -1,23 +1,26 @@
 import apisauce from 'apisauce';
+const { app } =  require('electron').remote;
 import {getDiskId} from './Utils';
 // const url = process.env.NODE_ENV === 'development' ? '/api': 'http://101.132.161.0/api';
 
 const url = 'http://101.132.161.0/api';
 
+//TODO: dynamic or static version?
 const create  =  (baseURL = url) => {
-    let diskId = '7654321';
+    // let diskId = '7654321';
     const api = apisauce.create({
         baseURL,
         headers: {
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/json',
-            'disk_id': diskId, // 123456
-            'version': '1.0.0'
+            // 'disk_id': diskId, // 123456
+            'version': '1.0.0' //app.getVersion()
         },
 
     timeout: 100000
     });
 
+    // Root api
     const getRoot = () => api.get('');
 
     // Auth
@@ -37,9 +40,10 @@ const create  =  (baseURL = url) => {
     const getProfitChart = (q) => api.get('bonus/info', {q});
     const pollMiner = (speed) => api.post('miner', { speed });
     const getMinerFuture = () => api.get('miner/future');
-
     // Todo: Add pagination
     const getNotifications = () => api.get('msg/list');
+
+    // Response interceptor for generic error handling
 
     return {
         instance: api,

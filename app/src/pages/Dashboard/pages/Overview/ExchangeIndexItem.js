@@ -9,8 +9,6 @@ const ExchangeIndexItem = (props) => {
         backgroundImage: `url(./src/assets/img/pages/overview/bg-${name}.png)`
     };
 
-
-
     return (
         <li className="exchange-list-item d-flex align-items-center" style={styles}>
             <img src={`./src/assets/img/pages/overview/icon-${name}.png`}/>

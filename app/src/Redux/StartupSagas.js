@@ -1,14 +1,21 @@
 import { put, call } from 'redux-saga/effects';
 import LoginActions from '../pages/Login/LoginRedux';
 import StartupActions from './StartupRedux';
+import { getSavedLanguage } from '../pages/Dashboard/pages/Settings/SettingsSaga';
 import {getDiskId} from "../Services/Utils";
+import i18n from '../config/i18n/i18next.client.config';
 
 export function * checkAuthStatus(api, action) {
-    console.log('checking auth status');
+    const lang = yield getSavedLanguage();
+    if (lang) {
+        yield i18n.changeLanguage(lang.code);
+    }
     // Get saved user and token
     const token = yield localStorage.getItem('token');
     const user = yield JSON.parse(localStorage.getItem('user'));
-    // Transform apis to include token in header
+
+
+    // Get disk id and transform apis to include token in header
     const diskId = yield call(getDiskId);
     if (diskId) {
         yield put(StartupActions.diskSerialSuccess(diskId));
@@ -17,6 +24,7 @@ export function * checkAuthStatus(api, action) {
         });
     }
 
+    // Get default language
     if (!token) {
         yield put(LoginActions.loginFailure())
     } else {
@@ -26,6 +34,7 @@ export function * checkAuthStatus(api, action) {
         });
         yield put(LoginActions.loginSuccess(user))
     }
+
 }
 
 export function measureUploadSpeed() {
@@ -64,28 +73,29 @@ export function * pollMinerSaga(api) {
     }
 
 }
-//
-// export function * pollMinerSagaWatcher() {
-//     while (true) {
-//         yield take(StartupTypes.pollMinerRequest);
-//         yield race([
-//             call(pollMinerSaga),
-//             take(StartupTypes.pollMinerStop)
-//         ]);
-//     }
-// }
-//
-// export const pollEpic = action$ => {
-//     action$.ofType(StartupTypes.pollMinerRequest)
-//
-//         // .switchMap(() =>
-//         //     Observable.timer(0, 4000)
-//         //         .takeUntil(action$.ofType(StartupTypes.pollMinerStop))
-//         //         .exhaustMap(() =>
-//         //             // action.api.pollMiner(action.speed)
-//         //             Observable.ajax({ url: '/', crossDomain: true })
-//         //                 .map(res => StartupActions.pollMinerSuccess())
-//         //                 .catch(error => Observable.of(StartupActions.pollMinerFailure(error)))
-//         //         )
-//         // );
-// };
+
+
+export function * handleGenericNetworkErrors (response) {
+    // Dispatch generic errors if code not equal "0"
+    // -500: Wrong parameter
+    // -501: Wrong version
+    // -502: Wrong token, logout user
+    // -503: Wrong header
+    const { code } = response.data;
+    let errorMsg;
+    switch(code) {
+        case -502:
+            // Dispatch logout action and show token expired message
+            yield put(LoginActions.logoutRequest());
+            errorMsg = i18n.t('common:networkErrors.tokenExpired');
+            break;
+        case -501:
+            errorMsg = i18n.t('common:networkErrors.installNewUpdate');
+            break;
+        default:
+            // Something went wrong message
+            errorMsg = i18n.t('common:networkErrors.somethingWentWrong');
+    }
+    return errorMsg;
+
+}

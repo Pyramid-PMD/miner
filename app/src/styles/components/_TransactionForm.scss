@@ -7,10 +7,15 @@
     background: darken(map_get($colors, secondary), 20%);
     padding: 5px 20px;
     height: 100%;
-    min-width: 100px;
+    min-width: 115px;
   }
 
 
+  .loading-indicator {
+    width: 24px;
+    fill: white;
+    margin-left: 10px;
+  }
 }
 
 .address-dropdown {
@@ -27,7 +32,7 @@
     border: 3px solid map_get($colors, secondary);
     border-radius: 10px;
     z-index: 100;
-    .rw-btn {
+    .rw-btn-select {
       color: map_get($colors, secondary);
       opacity: 1;
     }
@@ -57,13 +62,19 @@
     border-bottom-left-radius: 10px;
   }
 
-  .rw-list-option, #rw_1_listbox_active_option {
-    padding: 16px 8px;
+  .rw-list-option {
+    padding: 8px 16px;
     border: none;
     &:hover {
       background: transparent;
       color: #fff;
     }
+  }
+  .rw-list-option:first-child {
+    padding: 0;
+  }
+  .rw-list-option:nth-child(2) {
+    padding-top: 24px;
   }
 
   .rw-input, .rw-list-option, #rw_1_listbox_active_option  {
@@ -102,7 +113,7 @@
   .address-dropdown {
     &.rw-widget>.rw-widget-container {
       border: 3px solid map_get($colors, withdraw-form);
-      .rw-btn {
+      .rw-btn-select {
         color: map_get($colors, withdraw-form);
       }
     }

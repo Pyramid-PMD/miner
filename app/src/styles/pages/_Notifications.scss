@@ -11,16 +11,10 @@
         }
       }
     }
-    //a {
-    //  color: map_get($colors, secondary-text);
-    //  &.active {
-    //    color: map_get($colors, primary-text);
-    //  }
-    //}
   }
 
   td:nth-child(1) {
     vertical-align: top;
-    padding-right: 30px;
+    padding-right: 50px;
   }
 }
