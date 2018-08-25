@@ -41,7 +41,7 @@ app.on('ready', () => {
     mainWindow.loadURL(startUrl);
     const menuBuilder = new MenuBuilder(mainWindow);
     menuBuilder.buildMenu();
-    mainWindow.on('page-title-changed', e => e.preventDefault())
+    mainWindow.on('page-title-updated', e => e.preventDefault())
 });
 
 app.on('window-all-closed', function() {
