@@ -89,6 +89,9 @@ export function * handleGenericNetworkErrors (response) {
             yield put(LoginActions.logoutRequest());
             errorMsg = i18n.t('common:networkErrors.tokenExpired');
             break;
+        case -501:
+            errorMsg = i18n.t('common:networkErrors.installNewUpdate');
+            break;
         default:
             // Something went wrong message
             errorMsg = i18n.t('common:networkErrors.somethingWentWrong');

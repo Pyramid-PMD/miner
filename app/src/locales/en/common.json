@@ -29,6 +29,7 @@
   },
   "networkErrors": {
     "somethingWentWrong": "Something went wrong. Please try again",
-    "tokenExpired": "Token expired"
+    "tokenExpired": "Token expired",
+    "installNewUpdate": "Your current version is outdated. Please restart the app to update"
   }
 }

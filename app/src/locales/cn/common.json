@@ -29,6 +29,7 @@
   },
   "networkErrors": {
     "somethingWentWrong": "出了些问题。请再试一次",
-    "tokenExpired": "令牌已过期"
+    "tokenExpired": "令牌已过期",
+    "installNewUpdate": "您当前的版本已过时。请重新启动应用以进行更新"
   }
 }

@@ -1,4 +1,5 @@
 import apisauce from 'apisauce';
+const { app } =  require('electron').remote;
 import {getDiskId} from './Utils';
 // const url = process.env.NODE_ENV === 'development' ? '/api': 'http://101.132.161.0/api';
 
@@ -12,7 +13,7 @@ const create  =  (baseURL = url) => {
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/json',
             'disk_id': diskId, // 123456
-            'version': '1.0.0'
+            'version': app.getVersion()
         },
 
     timeout: 100000
