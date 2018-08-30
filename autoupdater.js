@@ -6,7 +6,7 @@ const appVersion = app.getVersion();
 if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
 
     // let updateFeed = `http://localhost:3000/updates/win32/${appVersion}`;
-    let updateFeed = `http://101.132.161.0/releases/win/latest`;
+    let updateFeed = `http://101.132.161.0:5666/releases/win/latest`;
     autoUpdater.setFeedURL(updateFeed);
     setInterval(() => {
         autoUpdater.checkForUpdates()
