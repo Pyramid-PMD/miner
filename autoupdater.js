@@ -6,7 +6,7 @@ const appVersion = app.getVersion();
 if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
 
     // let updateFeed = `http://localhost:3000/updates/win32/${appVersion}`;
-    let updateFeed = `http://101.132.161.0/releases/win/latest`;
+    let updateFeed = `http://101.132.161.0:5666/releases/win/latest`;
     autoUpdater.setFeedURL(updateFeed);
     setInterval(() => {
         autoUpdater.checkForUpdates()
@@ -30,4 +30,26 @@ if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
         console.error('There was a problem updating the application')
         console.error(message)
     });
+
+    autoUpdater.on('update-available', message => {
+        showDialogue('update available');
+    });
+    autoUpdater.on('checking-for-update', message => {
+        showDialogue('checking for update');
+    });
+
+    autoUpdater.on('update-not-available', message => {
+        showDialogue('update not available');
+    });
+
+    function showDialogue(message) {
+        const dialogOpts = {
+            type: 'info',
+            title: 'Application Update',
+            message,
+            detail: message
+        };
+
+        dialog.showMessageBox(dialogOpts)
+    }
 }
