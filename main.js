@@ -1,8 +1,9 @@
 if (require('electron-squirrel-startup')) return;
 require('./autoupdater');
+require('./encryption');
 
 // Basic init
-const electron = require('electron')
+const electron = require('electron');
 const {app, BrowserWindow} = electron
 const path = require('path');
 const url = require('url');
