@@ -3,7 +3,7 @@ const { app } =  require('electron').remote;
 import {getDiskId} from './Utils';
 // const url = process.env.NODE_ENV === 'development' ? '/api': 'http://101.132.161.0/api';
 
-const url = 'http://101.132.161.0/api';
+const url = 'http://101.132.161.0/api/desk/';
 
 //TODO: dynamic or static version?
 const create  =  (baseURL = url) => {
