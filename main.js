@@ -18,10 +18,6 @@ const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 let mainWindow;
 
 app.on('ready', () => {
-
-    macaddress.one((res, mac) => {
-        console.log('res', mac);
-    })
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 900,

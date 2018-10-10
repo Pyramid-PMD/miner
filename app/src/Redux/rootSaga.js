@@ -31,7 +31,7 @@ import {getNotifications} from '../pages/Dashboard/pages/Notifications/Notificat
 import {getMinerChartSaga, getMinerFutureSaga} from '../pages/Dashboard/pages/Miner/MinerSaga';
 import { saveNewSettingsSaga, loadDefaultSettingsSaga } from '../pages/Dashboard/pages/Settings/SettingsSaga';
 import { getProfitChartSaga } from '../pages/Dashboard/pages/Profit/ProfitSaga';
-import { getQrCode } from '../pages/QrCodeLogin/QrCodeLoginSaga';
+import { getQrCodeSaga, autoLoginSaga } from '../pages/QrCodeLogin/QrCodeLoginSaga';
 
 
 
@@ -59,7 +59,8 @@ export default function * root () {
         takeLatest(ProfitTypes.PROFIT_CHART_REQUEST, getProfitChartSaga, api),
         takeLatest(StartupTypes.POLL_MINER_REQUEST, pollMinerSaga, api),
         takeLatest(LoginTypes.LOGOUT_REQUEST, logoutSaga),
-        takeLatest(QrCodeLoginTypes.QR_CODE_REQUEST, getQrCode),
+        takeLatest(QrCodeLoginTypes.QR_CODE_REQUEST, getQrCodeSaga),
+        takeLatest(QrCodeLoginTypes.AUTO_LOGIN_REQUEST, autoLoginSaga, api),
     ]);
 };
 
