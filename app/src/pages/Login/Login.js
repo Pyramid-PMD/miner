@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {I18n} from 'react-i18next';
 import config from '../../config/app.config';
 import AppLogo from "../../components/AppLogo/AppLogo";
-import { connect } from 'react-redux';
 import LoginForm from "./LoginForm";
 
 const pageStyles = {
@@ -10,9 +9,6 @@ const pageStyles = {
 };
 
 class Login extends Component {
-    login() {
-
-    }
     render() {
         return (
             <I18n>
@@ -34,10 +30,4 @@ class Login extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        books: state.login
-    }
-}
-
-export default connect(mapStateToProps, {})(Login);
+export default Login;

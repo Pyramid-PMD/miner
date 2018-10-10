@@ -6,7 +6,7 @@ const electron = require('electron')
 const {app, BrowserWindow} = electron
 const path = require('path');
 const url = require('url');
-
+const macaddress = require('macaddress-secure');
 
 const MenuBuilder  = require('./menu');
 
@@ -19,7 +19,9 @@ let mainWindow;
 
 app.on('ready', () => {
 
-
+    macaddress.one((res, mac) => {
+        console.log('res', mac);
+    })
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 900,

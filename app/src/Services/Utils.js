@@ -1,5 +1,8 @@
 const wmic = require('wmic');
 const sha3 = require("crypto-js/sha3");
+const macaddress = require('macaddress-secure');
+const qrCodeGen = require('qrcode');
+
 export const getDiskId = () => {
     //if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
     if (process.platform === 'win32') {
@@ -54,6 +57,20 @@ export const getDriveList = () => {
     });
 };
 
+export const getMacAddress = () => {
+    return new Promise((resolve, reject) => {
+        macaddress.one((err, address) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(address);
+        });
+    });
+};
+
+export const generateQrCode = (source) => {
+    return qrCodeGen.toDataURL(source);
+};
 
 /**
  * Checks if the given string is a checksummed address

@@ -31,6 +31,10 @@ const AsyncLogin = AsyncComponent(() => {
     return import("./pages/Login/Login");
 });
 
+const AsyncQrCodeLogin = AsyncComponent(() => {
+    return import("./pages/QrCodeLogin/QrCodeLogin");
+});
+
 const AsyncNotFound = AsyncComponent(() => {
     return import("./pages/NotFound/NotFound");
 });
@@ -56,7 +60,8 @@ class App extends Component {
                 <Switch>
                     <Route path="/register" component={AsyncRegister}/>
                     <Route path="/login" component={AsyncLogin}/>
-                    <Redirect to="/login"/>
+                    <Route path="/qr-code-login" component={AsyncQrCodeLogin}/>
+                    <Redirect to="/qr-code-login"/>
                 </Switch>
             );
         }
