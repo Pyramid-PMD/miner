@@ -61,5 +61,5 @@ export function * logoutSaga() {
     yield localStorage.removeItem('user');
     yield put(LoginActions.logoutSuccess());
     yield put(LoadingIndicatorActions.showLoadingIndicator(false));
-    yield put(replace('/login'));
+    yield put(replace('/qrcode-login'));
 }

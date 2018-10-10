@@ -3,7 +3,7 @@ const { app } =  require('electron').remote;
 import {getDiskId} from './Utils';
 // const url = process.env.NODE_ENV === 'development' ? '/api': 'http://101.132.161.0/api';
 
-const url = 'http://101.132.161.0/api';
+const url = 'http://101.132.161.0/api/desk/';
 
 //TODO: dynamic or static version?
 const create  =  (baseURL = url) => {
@@ -25,6 +25,7 @@ const create  =  (baseURL = url) => {
 
     // Auth
     const login = (credentials) => api.post('login', credentials);
+    const autoLogin = () => api.post('autologin');
     const register = (user) => api.post('register', user);
     const verifyEmail = (email) => api.get('sendVerify', {email});
     const createMinerAlias = (machine_name) => api.post('machine/set', { machine_name });
@@ -49,6 +50,7 @@ const create  =  (baseURL = url) => {
         instance: api,
         getRoot,
         login,
+        autoLogin,
         register,
         verifyEmail,
         createMinerAlias,
