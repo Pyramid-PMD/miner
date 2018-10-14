@@ -2,7 +2,7 @@ if (require('electron-squirrel-startup')) return;
 require('./autoupdater');
 
 // Basic init
-const electron = require('electron')
+const electron = require('electron');
 const {app, BrowserWindow} = electron
 const path = require('path');
 const url = require('url');
@@ -18,6 +18,10 @@ const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 let mainWindow;
 
 app.on('ready', () => {
+<<<<<<< HEAD
+    if (process.env.NODE_ENV !== 'development')  require('./encryption');
+=======
+>>>>>>> af58bdf941d8b90d0fed04026a6cfddf21fe92d0
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 900,
