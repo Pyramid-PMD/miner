@@ -13,7 +13,7 @@ const create  =  (baseURL = url) => {
         headers: {
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/json',
-            // 'disk_id': diskId, // 123456
+            // 'disk_id': 'S314JA0FA71976', // 123456
             'version': '1.0.0' //app.getVersion()
         },
 
@@ -66,6 +66,19 @@ const create  =  (baseURL = url) => {
         pollMiner,
         getMinerFuture
     };
+};
+
+export const addTokenToRequestHeaders = (api, token, uid) => {
+    api.instance.addRequestTransform(request => {
+        request.headers['token'] = token;
+        request.headers['uid'] = uid;
+    });
+};
+
+export const addDiskIdToRequestHeaders = (api, diskId) => {
+    api.instance.addRequestTransform(request => {
+        request.headers['disk_id'] = diskId;
+    });
 };
 
 export default {

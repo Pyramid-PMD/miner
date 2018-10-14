@@ -10,9 +10,7 @@ const pageStyles = {
 
 class QrCodeLogin extends Component {
     componentDidMount() {
-        console.log('component did mount');
         this.props.generateQrCode();
-        this.props.autLogin();
     }
     render() {
         const {qrCode} = this.props;
@@ -39,8 +37,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    generateQrCode: () => dispatch(QrLoginActions.qrCodeRequest()),
-    autLogin: () => dispatch(QrLoginActions.autoLoginRequest()),
+    generateQrCode: () => dispatch(QrLoginActions.qrCodeRequest())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QrCodeLogin);

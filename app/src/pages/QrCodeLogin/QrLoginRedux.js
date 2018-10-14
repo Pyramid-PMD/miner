@@ -9,7 +9,9 @@ const { Types, Creators } = createActions({
     qrCodeFailure: ['error'],
     autoLoginRequest: null,
     autoLoginSuccess: ['user'],
-    autoLoginFailure: ['error']
+    autoLoginFailure: ['error'],
+    startAutoLogin: null,
+    stopAutoLogin: null,
 });
 
 export const QrCodeLoginTypes = Types;
@@ -51,12 +53,12 @@ export const loginRequest = (state) => {
     return ({ ...state, loading: true, user: null, error: null, token: null })
 };
 
-export const loginSuccess = (state) => {
+export const loginSuccess = (state, action) => {
     const { user } = action;
     return ({ ...state, loading: false, error: null, user, token: user.token })
 };
 
-export const loginFailure = (state) => {
+export const loginFailure = (state, action) => {
     return ({ ...state, loading: false, error: action.error , user: null, token: null });
 };
 

@@ -12,7 +12,7 @@ const MenuFooter = ({ alias, logout }) => {
                         {/*<NavLink to="/dashboard/settings" className="form-link form-link-small">*/}
                             {/*{ t('common:interface.logout')}*/}
                         {/*</NavLink>*/}
-                        <button className="btn form-link form-link-small" onClick={logout}>{ t('common:interface.logout')}</button>
+                        {/*<button className="btn form-link form-link-small" onClick={logout}>{ t('common:interface.logout')}</button>*/}
                     </div>
                 )
             }

@@ -1,8 +1,12 @@
-import {put, call} from 'redux-saga/effects';
+import {put, call, take, race} from 'redux-saga/effects';
+import {delay} from 'redux-saga';
+import { replace } from 'connected-react-router';
 import {getMacAddress, getDiskId, generateQrCode} from "../../Services/Utils";
-import QrCodeLoginActions from './QrLoginRedux';
+import QrCodeLoginActions, {QrCodeLoginTypes} from './QrLoginRedux';
+import {api} from '../../Redux/rootSaga';
+import {addTokenToRequestHeaders, addDiskIdToRequestHeaders} from "../../Services/Api";
 
-export function* getQrCodeSaga () {
+export function* getQrCodeSaga(api, action) {
     try {
         // Windows mac and disk
         // MAC: DE-15-D3-D3-13-B2
@@ -13,7 +17,8 @@ export function* getQrCodeSaga () {
 
         const macAddress = 'DE-15-D3-D3-13-B2';
         const diskId = 'S314JA0FA71976';
-        const source = `MAC:${macAddress}\rDISK:${diskId}`;
+        yield addDiskIdToRequestHeaders(api, diskId);
+        const source = `mac:${macAddress}\rdisk:${diskId}`;
         const qrCode = yield call(generateQrCode, source);
         console.log('macAddress', macAddress, diskId, qrCode);
         yield put(QrCodeLoginActions.qrCodeSuccess(qrCode));
@@ -22,12 +27,77 @@ export function* getQrCodeSaga () {
     }
 }
 
-export function* autoLoginSaga(api, action) {
-    try {
-        const res = yield call(api.autoLogin);
-        console.log('res', res);
-    } catch (error) {
-        console.log('error', error);
+
+export function* autoLoginSagaWatcher() {
+    console.log('auto login watcher fired');
+    while (true) {
+        yield take(QrCodeLoginTypes.START_AUTO_LOGIN);
+        yield race([
+            call(autoLoginSaga),
+            take(QrCodeLoginTypes.STOP_AUTO_LOGIN)
+        ]);
     }
 }
+
+export function* autoLoginSaga() {
+    console.log('auto login fired');
+    while (true) {
+        try {
+            // const diskId = yield call(getDiskId);
+            const diskId = 'S314JA0FA71976';
+            yield addDiskIdToRequestHeaders(api, diskId);
+            const res = yield call(api.autoLogin);
+            console.log('res', res);
+            yield call(handleAutoLoginResponse, res);
+            yield call(delay, 4000);
+        } catch (err) {
+            // yield put(getDataFailureAction(err));
+        }
+    }
+}
+
+export function* handleAutoLoginResponse(res) {
+    if (res.data) {
+        if (res.data.code === '0') {
+            yield call(handleAutoLoginSuccess, res);
+        } else {
+            yield call(handleAutoLoginFailure, res);
+        }
+    } else {
+        // TODO: handle generic errors
+
+    }
+}
+
+export function* handleAutoLoginSuccess(res) {
+    const user = res.data.data;
+    const {token, uid, isNew} = user;
+    yield call(addTokenToRequestHeaders, api, token, uid);
+    yield call(saveTokenToStorage, token, user);
+    yield put(QrCodeLoginActions.autoLoginSuccess(user));
+    if (isNew === 1) {
+        yield put(replace('/alias'));
+    } else {
+        yield put(replace('/dashboard'));
+    }
+    yield put(QrCodeLoginActions.stopAutoLogin());
+}
+
+export function* handleAutoLoginFailure(res) {
+    // TODO: Ask backend developer for error codes
+    switch (res.data.code) {
+        case -500:
+            console.log('wating scan');
+            yield put(replace('/qr-code-login'));
+            break;
+    }
+    yield put(QrCodeLoginActions.autoLoginFailure('login error'));
+}
+
+export function* saveTokenToStorage(token, user) {
+    yield localStorage.setItem('token', token.toString());
+    yield localStorage.setItem('user', JSON.stringify(user));
+}
+
+
 

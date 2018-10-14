@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import createHashHistory from "history/createHashHistory";
 import { connectRouter, routerMiddleware } from 'connected-react-router';
+import {autoLoginSagaWatcher} from "../pages/QrCodeLogin/QrCodeLoginSaga";
 
 
 export default (rootReducer, rootSaga) => {
@@ -38,6 +39,7 @@ export default (rootReducer, rootSaga) => {
 
     // kick off root saga
     let sagasManager = sagaMiddleware.run(rootSaga);
+    sagaMiddleware.run(autoLoginSagaWatcher);
 
     // epicMiddleware.run(rootEpic);
 

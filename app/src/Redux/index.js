@@ -1,6 +1,6 @@
 import rootReducer from './rootReducer';
 import configureStore from './CreateStore';
-import rootSaga from './rootSaga';
+import rootSaga, {api} from './rootSaga';
 
 export default () => {
     // let { store, sagasManager, sagaMiddleware, history } = configureStore(rootReducer, rootSaga);
