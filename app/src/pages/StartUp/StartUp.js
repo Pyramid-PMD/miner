@@ -4,6 +4,7 @@ import {I18n} from 'react-i18next';
 import config from '../../config/app.config';
 import AppLogo from "../../components/AppLogo/AppLogo";
 import QrLoginActions, {QrCodeLoginSelectors} from '../../pages/QrCodeLogin/QrLoginRedux';
+import {Link} from 'react-router-dom';
 
 const pageStyles = {
     backgroundImage: `url(${config.brand.pageBg})`,
@@ -31,9 +32,16 @@ class StartUp extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        user: QrCodeLoginSelectors.selectUser(state),
+        loading: QrCodeLoginSelectors.selectLoading(state),
+    }
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
-        startAutLogin: () => dispatch(QrLoginActions.startAutoLogin()),
+        startAutLogin: () => dispatch(QrLoginActions.startAutoLogin())
     }
 };
 export default connect(null, mapDispatchToProps)(StartUp);

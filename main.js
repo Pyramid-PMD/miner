@@ -18,10 +18,8 @@ const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 let mainWindow;
 
 app.on('ready', () => {
-<<<<<<< HEAD
-    if (process.env.NODE_ENV !== 'development')  require('./encryption');
-=======
->>>>>>> af58bdf941d8b90d0fed04026a6cfddf21fe92d0
+    if (process.env.NODE_ENV !== 'development' && process.platform === 'win32')  require('./encryption');
+
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 900,
