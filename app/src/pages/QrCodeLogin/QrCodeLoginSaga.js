@@ -13,7 +13,7 @@ export function* getQrCodeSaga () {
 
         const macAddress = 'DE-15-D3-D3-13-B2';
         const diskId = 'S314JA0FA71976';
-        const source = `MAC:${macAddress}\rDISK:${diskId}`;
+        const source = `MAC:${macAddress}\\rDISK:${diskId}`;
         const qrCode = yield call(generateQrCode, source);
         console.log('macAddress', macAddress, diskId, qrCode);
         yield put(QrCodeLoginActions.qrCodeSuccess(qrCode));
