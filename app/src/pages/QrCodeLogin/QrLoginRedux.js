@@ -19,19 +19,22 @@ export default Creators;
 
 /* ------------- Initial State ------------- */
 
-export const INITIAL_STATE = Immutable({
+export const INITIAL_STATE = {
     qrCode: null,
     error: null,
     user: null,
     token: null,
-    loading: null
-});
+    loading: true,
+};
 
 /* ------------- Selectors ------------- */
 
 export const QrCodeLoginSelectors = {
     selectError: state => state.qrCodeLogin.error,
     selectQrCode: state => state.qrCodeLogin.qrCode,
+    selectIsAuthenticated: state => state.qrCodeLogin.token,
+    selectUser: state => state.qrCodeLogin.user,
+    selectLoading: state => state.qrCodeLogin.loading,
 };
 
 /* ------------- Reducers ------------- */
@@ -50,7 +53,7 @@ export const failure = (state, action) =>
     ({ ...state, error: action.error , qrCode: null });
 
 export const loginRequest = (state) => {
-    return ({ ...state, loading: true, user: null, error: null, token: null })
+    return ({ ...state, loading: true, error: null })
 };
 
 export const loginSuccess = (state, action) => {

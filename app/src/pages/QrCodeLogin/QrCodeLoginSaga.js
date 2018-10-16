@@ -1,10 +1,13 @@
-import {put, call, take, race} from 'redux-saga/effects';
+import {put, call, take, race, select} from 'redux-saga/effects';
 import {delay} from 'redux-saga';
 import { replace } from 'connected-react-router';
 import {getMacAddress, getDiskId, generateQrCode} from "../../Services/Utils";
 import QrCodeLoginActions, {QrCodeLoginTypes} from './QrLoginRedux';
 import {api} from '../../Redux/rootSaga';
 import {addTokenToRequestHeaders, addDiskIdToRequestHeaders} from "../../Services/Api";
+
+
+export const selectUser = state => state.qrCodeLogin.user;
 
 export function* getQrCodeSaga(api, action) {
     try {
@@ -71,17 +74,28 @@ export function* handleAutoLoginResponse(res) {
 }
 
 export function* handleAutoLoginSuccess(res) {
+    const initialUser = yield select(selectUser);
     const user = res.data.data;
     const {token, uid, isNew} = user;
     yield call(addTokenToRequestHeaders, api, token, uid);
-    yield call(saveTokenToStorage, token, user);
     yield put(QrCodeLoginActions.autoLoginSuccess(user));
-    if (isNew === 1) {
-        yield put(replace('/alias'));
-    } else {
-        yield put(replace('/dashboard'));
+    yield call(saveTokenToStorage, token, user);
+    if (!initialUser) {
+        console.log('initial user', initialUser);
+        if (isNew === 1) {
+            yield put(replace('/alias'));
+        } else {
+            yield put(replace('/dashboard'));
+        }
     }
-    yield put(QrCodeLoginActions.stopAutoLogin());
+
+
+    // if (isNew === 1) {
+    //     yield put(replace('/alias'));
+    // } else {
+    //     yield put(replace('/dashboard'));
+    // }
+    // yield put(QrCodeLoginActions.stopAutoLogin());
 }
 
 export function* handleAutoLoginFailure(res) {
@@ -89,9 +103,9 @@ export function* handleAutoLoginFailure(res) {
     switch (res.data.code) {
         case -500:
             console.log('wating scan');
-            yield put(replace('/qr-code-login'));
             break;
     }
+    yield put(replace('/qr-code-login'));
     yield put(QrCodeLoginActions.autoLoginFailure('login error'));
 }
 

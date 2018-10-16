@@ -57,6 +57,10 @@ export function * sendTransaction(api, action) {
             case -25:
                 errorMsg = i18n.t('dashboard:transaction.errors.errorSavingTransaction');
                 break;
+            case -27:
+                // TODO: ask about code -27
+                errorMsg = i18n.t('dashboard:transaction.errors.errorSavingTransaction');
+                break;
             default:
                 errorMsg = yield call(handleGenericNetworkErrors, res);
         }
