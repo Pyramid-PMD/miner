@@ -1,4 +1,4 @@
-import { takeLatest, all, call } from 'redux-saga/effects'
+import { takeLatest, all, call, take, race, takeEvery } from 'redux-saga/effects'
 import API from '../Services/Api';
 
 /* ------------- Types ------------- */
@@ -31,12 +31,13 @@ import {getNotifications} from '../pages/Dashboard/pages/Notifications/Notificat
 import {getMinerChartSaga, getMinerFutureSaga} from '../pages/Dashboard/pages/Miner/MinerSaga';
 import { saveNewSettingsSaga, loadDefaultSettingsSaga } from '../pages/Dashboard/pages/Settings/SettingsSaga';
 import { getProfitChartSaga } from '../pages/Dashboard/pages/Profit/ProfitSaga';
-import { getQrCodeSaga, autoLoginSaga } from '../pages/QrCodeLogin/QrCodeLoginSaga';
+import { getQrCodeSaga } from '../pages/QrCodeLogin/QrCodeLoginSaga';
 
 
 
 /* ------------- API ------------- */
-const api = API.create();
+export const api = API.create();
+
 /* ------------- Connect Types To Sagas ------------- */
 export default function * root () {
     yield all([
@@ -59,9 +60,12 @@ export default function * root () {
         takeLatest(ProfitTypes.PROFIT_CHART_REQUEST, getProfitChartSaga, api),
         takeLatest(StartupTypes.POLL_MINER_REQUEST, pollMinerSaga, api),
         takeLatest(LoginTypes.LOGOUT_REQUEST, logoutSaga),
-        takeLatest(QrCodeLoginTypes.QR_CODE_REQUEST, getQrCodeSaga),
-        takeLatest(QrCodeLoginTypes.AUTO_LOGIN_REQUEST, autoLoginSaga, api),
+        takeLatest(QrCodeLoginTypes.QR_CODE_REQUEST, getQrCodeSaga, api),
+        // takeLatest(QrCodeLoginTypes.START_AUTO_LOGIN, autoLoginSagaWatcher, api),
+        // takeLatest(QrCodeLoginTypes.AUTO_LOGIN_REQUEST, autoLoginSaga, api),
     ]);
 };
+
+
 
 
