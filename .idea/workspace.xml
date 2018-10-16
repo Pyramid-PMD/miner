@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5738e45-195d-48bc-a0ff-abe0e888b5a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/pages/StartUp/StartUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/0.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/1.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/10.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/11.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/12.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/13.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/14.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/15.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/16.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/17.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/18.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/19.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/2.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/20.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/21.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/3.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/4.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/5.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/6.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/7.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/8.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/9.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/bundle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Redux/CreateStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Redux/CreateStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Redux/StartupSagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Redux/StartupSagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Redux/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Redux/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Redux/rootSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Services/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Services/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/Dashboard/components/Menu/MenuFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/Dashboard/components/Menu/MenuFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLogin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLoginSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLoginSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrLoginRedux.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrLoginRedux.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/build/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -55,14 +21,15 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.62" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
-          <entry key="js" value="10" />
+          <entry key="js" value="12" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
@@ -70,7 +37,7 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="10" />
+          <entry key="JavaScript" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -99,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
+            <state relative-caret-position="936">
               <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -116,13 +83,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLoginSaga.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+            <state relative-caret-position="504">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/pages/StartUp/StartUp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -157,10 +133,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/app/src/pages/Login/LoginSaga.js" />
         <option value="$PROJECT_DIR$/app/src/App.js" />
         <option value="$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLoginSaga.js" />
+        <option value="$PROJECT_DIR$/main.js" />
       </list>
     </option>
   </component>
@@ -283,6 +259,7 @@
       <workItem from="1539189089127" duration="1617000" />
       <workItem from="1539191443631" duration="1300000" />
       <workItem from="1539684439307" duration="1083000" />
+      <workItem from="1539700660256" duration="214000" />
     </task>
     <servers />
   </component>
@@ -291,6 +268,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -320,13 +298,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/Login/LoginSaga.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -353,19 +324,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
+        <state relative-caret-position="936">
           <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/encryption.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Redux/StartupSagas.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -376,12 +341,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLoginSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/StartUp/StartUp.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -389,6 +350,23 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/encryption.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/QrCodeLogin/QrCodeLoginSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
         </state>
       </provider>
     </entry>
