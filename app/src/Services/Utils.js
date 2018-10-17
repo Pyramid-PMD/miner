@@ -66,7 +66,7 @@ export const getMacAddress = () => {
             if (err) {
                 reject(err);
             }
-            resolve(address.replace(/:/g, '-'));
+            resolve(address.toUpperCase().replace(/:/g, '-'));
         });
     });
 };
