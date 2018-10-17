@@ -17,10 +17,6 @@ export function* getQrCodeSaga(api, action) {
 
         const macAddress = yield call(getMacAddress);
         const diskId = yield call(getDiskId);
-
-        // const macAddress = 'DE-15-D3-D3-13-B2';
-        // const diskId = 'S314JA0FA71976';
-
         yield addDiskIdToRequestHeaders(api, diskId);
         const source = `mac:${macAddress}\rdisk:${diskId}`;
         const qrCode = yield call(generateQrCode, source);
@@ -83,8 +79,9 @@ export function* handleAutoLoginSuccess(res) {
     yield call(addTokenToRequestHeaders, api, token, uid);
     yield put(QrCodeLoginActions.autoLoginSuccess(user));
     yield call(saveTokenToStorage, token, user);
+    console.log('initial user', initialUser);
     if (!initialUser) {
-        console.log('initial user', initialUser);
+
         if (isNew === 1) {
             yield put(replace('/alias'));
         } else {
@@ -98,6 +95,9 @@ export function* handleAutoLoginFailure(res) {
     switch (res.data.code) {
         case -500:
             console.log('wating scan');
+            break;
+        case -10203:
+            console.log('no user in disk id');
             break;
     }
     yield put(replace('/qr-code-login'));
