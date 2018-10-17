@@ -24,7 +24,9 @@ export function* getQrCodeSaga(api, action) {
         yield addDiskIdToRequestHeaders(api, diskId);
         const source = `mac:${macAddress}\rdisk:${diskId}`;
         const qrCode = yield call(generateQrCode, source);
-        console.log('macAddress', macAddress, diskId, qrCode);
+        console.log('macAddress', macAddress);
+        console.log('disk id', diskId);
+        console.log('qrcode', qrCode);
         yield put(QrCodeLoginActions.qrCodeSuccess(qrCode));
     } catch (error) {
         console.log('error', error);
@@ -51,10 +53,11 @@ export function* autoLoginSaga() {
             // const diskId = 'S314JA0FA71976';
             yield addDiskIdToRequestHeaders(api, diskId);
             const res = yield call(api.autoLogin);
-            console.log('res', res);
+            console.log('autologin response', res);
             yield call(handleAutoLoginResponse, res);
             yield call(delay, 4000);
         } catch (err) {
+            console.log('error', err);
             // yield put(getDataFailureAction(err));
         }
     }
@@ -88,14 +91,6 @@ export function* handleAutoLoginSuccess(res) {
             yield put(replace('/dashboard'));
         }
     }
-
-
-    // if (isNew === 1) {
-    //     yield put(replace('/alias'));
-    // } else {
-    //     yield put(replace('/dashboard'));
-    // }
-    // yield put(QrCodeLoginActions.stopAutoLogin());
 }
 
 export function* handleAutoLoginFailure(res) {
