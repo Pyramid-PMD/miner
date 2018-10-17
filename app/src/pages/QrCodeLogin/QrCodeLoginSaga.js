@@ -16,6 +16,7 @@ export function* getQrCodeSaga(api, action) {
         // DISK: S314JA0FA71976
 
         const macAddress = yield call(getMacAddress);
+        // const macAddress = 'DE-15-D3-D3-13-B2';
         const diskId = yield call(getDiskId);
         yield addDiskIdToRequestHeaders(api, diskId);
         const source = `mac:${macAddress}\rdisk:${diskId}`;

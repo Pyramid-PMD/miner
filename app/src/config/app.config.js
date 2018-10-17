@@ -31,5 +31,6 @@ module.exports = {
     },
     currencies: [],
     defaultCurrency: 'cny',
-    disks: []
+    disks: [],
+    pollMinerInterval: 60 * 5 * 1000
 };

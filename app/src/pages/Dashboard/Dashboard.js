@@ -45,7 +45,7 @@ class Dashboard extends Component {
     }
 
     startPoll() {
-        const interval = (60 * 60 * 1000) + 20;
+        const interval = (60 * 5 * 1000);
         this.props.pollMiner();
         setTimeout(() => {
             this.startPoll();
