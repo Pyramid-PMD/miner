@@ -4,6 +4,7 @@ const macaddress = require('macaddress-secure');
 const qrCodeGen = require('qrcode');
 
 export const getDiskId = () => {
+
     //if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
     if (process.platform === 'win32') {
         return new Promise((resolve, reject) => {
@@ -17,6 +18,8 @@ export const getDiskId = () => {
                 if (filtered.length > 0) {
                     const serials = filtered.map(drive => drive.SerialNumber);
                     resolve(serials[0]); // An array of disks
+                } else {
+                    reject('no disks available')
                 }
             });
         })
