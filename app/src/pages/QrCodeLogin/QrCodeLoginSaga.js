@@ -17,14 +17,11 @@ export function* getQrCodeSaga(api, action) {
 
         const macAddress = yield call(getMacAddress);
         const diskId = yield call(getDiskId);
-
-        // const macAddress = 'DE-15-D3-D3-13-B2';
-        // const diskId = 'S314JA0FA71976';
         yield addDiskIdToRequestHeaders(api, diskId);
         const source = `mac:${macAddress}\rdisk:${diskId}`;
         const qrCode = yield call(generateQrCode, source);
         console.log('macAddress', macAddress);
-        console.log('diskId', diskId);
+        console.log('disk id', diskId);
         console.log('qrcode', qrCode);
         yield put(QrCodeLoginActions.qrCodeSuccess(qrCode));
     } catch (error) {
@@ -48,14 +45,15 @@ export function* autoLoginSaga() {
     console.log('auto login fired');
     while (true) {
         try {
-            // const diskId = yield call(getDiskId);
-            const diskId = 'S314JA0FA71976';
+            const diskId = yield call(getDiskId);
+            // const diskId = 'S314JA0FA71976';
             yield addDiskIdToRequestHeaders(api, diskId);
             const res = yield call(api.autoLogin);
-            console.log('res', res);
+            console.log('autologin response', res);
             yield call(handleAutoLoginResponse, res);
             yield call(delay, 4000);
         } catch (err) {
+            console.log('error', err);
             // yield put(getDataFailureAction(err));
         }
     }
