@@ -17,7 +17,7 @@ export const getDiskId = () => {
                 const filtered = drives.filter((drive) => drive.InterfaceType === "IDE" || drive.InterfaceType === "SCSI" );
                 if (filtered.length > 0) {
                     const serials = filtered.map(drive => drive.SerialNumber);
-                    resolve(serials[0]); // An array of disks
+                    resolve(serials[0].replace(/./g, '')); // An array of disks
                 } else {
                     reject('no disks available')
                 }
@@ -66,7 +66,7 @@ export const getMacAddress = () => {
             if (err) {
                 reject(err);
             }
-            resolve(address);
+            resolve(address.replace(/:/g, '-'));
         });
     });
 };
