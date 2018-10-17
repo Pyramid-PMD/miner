@@ -18,8 +18,7 @@ export const getDiskId = () => {
                 const filtered = drives.filter((drive) => drive.MediaType === 'Fixed hard disk media' );
                 if (filtered.length > 0) {
                     const serials = filtered.map(drive => drive.SerialNumber);
-                    // .replace(/./g, '')
-                    resolve(serials[0]);
+                    resolve(serials[0].replace(/\./g, ''));
                 } else {
                     reject('No local disks found');
                 }
