@@ -13,10 +13,14 @@ export const getDiskId = () => {
                     reject(error);
                 }
                 console.log('serial', drives);
-                const filtered = drives.filter((drive) => drive.InterfaceType === "IDE" || drive.InterfaceType === "SCSI" );
+                //InterfaceType === "IDE" || drive.InterfaceType === "SCSI"
+                const filtered = drives.filter((drive) => drive.MediaType === 'Fixed hard disk media' );
                 if (filtered.length > 0) {
                     const serials = filtered.map(drive => drive.SerialNumber);
-                    resolve(serials[0].replace(/./g, '')); // An array of disks
+                    // .replace(/./g, '')
+                    resolve(serials[0]); // An array of disks
+                } else {
+                    reject('No local disks found');
                 }
             });
         })
@@ -63,7 +67,7 @@ export const getMacAddress = () => {
             if (err) {
                 reject(err);
             }
-            resolve(address.replace(/:/g, '-'));
+            resolve(address.toUpperCase().replace(/:/g, '-'));
         });
     });
 };
