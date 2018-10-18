@@ -1,21 +1,36 @@
 const edge = require('electron-edge');
 const {dialog, app} = require('electron');
+const {getDiskId, getMacAddress} = require('./app/src/Services/Utils');
 
-helloWorld = edge.func('./resources/delivery/Doji.Sharp.dll');
+encryptor = edge.func('./resources/delivery/Doji.Sharp.dll');
 
-helloWorld('MAC:\\r819323,DISK:1823018230\\r', function (error, result) {
-    if (error) throw error;
-    console.log(result);
-    const dialogOpts = {
-        type: 'info',
-        title: 'Hardware Info',
-        message: result,
-        detail: result
-    };
 
-    setTimeout(() => {
-        dialog.showMessageBox(dialogOpts, (response) => {
-        })
-    }, 3000);
 
-});
+const runEncryption = async () => {
+    const diskId = await getDiskId(),
+          macaddress = await getMacAddress(),
+          stringToEncrypt = `MAC:\\r${macaddress},DISK:${diskId}\\r`;
+    return new Promise((resolve, reject) => {
+        encryptor(stringToEncrypt, function (error, result) {
+            if (error) {
+                reject(error);
+            }
+            console.log(result);
+            resolve(result);
+            const dialogOpts = {
+                type: 'info',
+                title: 'Hardware Info',
+                message: result,
+                detail: result
+            };
+
+            setTimeout(() => {
+                dialog.showMessageBox(dialogOpts, (response) => {
+                })
+            }, 3000);
+
+        });
+    });
+};
+
+module.exports = runEncryption;

@@ -17,9 +17,14 @@ const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 // To avoid being garbage collected
 let mainWindow;
 
-app.on('ready', () => {
+app.on('ready', async () => {
 
-    if (process.env.NODE_ENV !== 'development' && process.platform === 'win32')  require('./encryption');
+    if (process.env.NODE_ENV !== 'development' && process.platform === 'win32')  {
+        const encryption = require('./encryption');
+        const encryptedDisk = await encryption.runEncryption();
+        console.log('encrypted disk', encryptedDisk);
+    }
+
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 900,
