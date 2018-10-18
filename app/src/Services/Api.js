@@ -1,23 +1,36 @@
 import apisauce from 'apisauce';
+const { ipcRenderer } =  require('electron')
 const { app } =  require('electron').remote;
 import {getDiskId} from './Utils';
 // const url = process.env.NODE_ENV === 'development' ? '/api': 'http://101.132.161.0/api';
 
 const url = 'http://101.132.161.0/api/desk/';
 
+// TODO: get disk id by ipcMain
+
+let encryptedDiskInfo;
+if (process.env.NODE_ENV !== 'development' && process.platform === 'win32')  {
+    encryptedDiskInfo = ipcRenderer.sendSync('encryption');
+    console.log('encryptedDiskInfo', encryptedDiskInfo);
+}
+
 //TODO: dynamic or static version?
 const create  =  (baseURL = url) => {
-    // let diskId = '7654321';
+    const headers = {
+        'Cache-Control': 'no-cache',
+        'Content-Type': 'application/json',
+        // 'disk_id': 'S314JA0FA71976', // 123456
+        'version': '1.0.0' //app.getVersion()
+    };
+
+    if (encryptedDiskInfo) {
+        headers['tx'] = encryptedDiskInfo;
+    }
+
     const api = apisauce.create({
         baseURL,
-        headers: {
-            'Cache-Control': 'no-cache',
-            'Content-Type': 'application/json',
-            // 'disk_id': 'S314JA0FA71976', // 123456
-            'version': '1.0.0' //app.getVersion()
-        },
-
-    timeout: 100000
+        headers,
+        timeout: 60 * 1000
     });
 
     // Root api

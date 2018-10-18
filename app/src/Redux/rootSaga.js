@@ -1,4 +1,4 @@
-import { takeLatest, all, call, take, race, takeEvery } from 'redux-saga/effects'
+import { takeLatest, all} from 'redux-saga/effects'
 import API from '../Services/Api';
 
 /* ------------- Types ------------- */
@@ -37,6 +37,7 @@ import { getQrCodeSaga } from '../pages/QrCodeLogin/QrCodeLoginSaga';
 
 /* ------------- API ------------- */
 export const api = API.create();
+
 
 /* ------------- Connect Types To Sagas ------------- */
 export default function * root () {
