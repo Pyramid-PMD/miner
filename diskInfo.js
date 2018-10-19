@@ -2,6 +2,7 @@ const wmic = require('wmic');
 const macaddress = require('macaddress-secure');
 const qrCodeGen = require('qrcode');
 
+
 const getDiskId = () => {
     //if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
     if (process.platform === 'win32') {
@@ -35,6 +36,7 @@ const getMacAddress = () => {
             if (err) {
                 reject(err);
             }
+            console.log(JSON.stringify(address));
             resolve(address.toUpperCase().replace(/:/g, '-'));
         });
     });
