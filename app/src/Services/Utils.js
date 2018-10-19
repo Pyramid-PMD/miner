@@ -2,6 +2,7 @@ const wmic = require('wmic');
 const sha3 = require("crypto-js/sha3");
 const macaddress = require('macaddress-secure');
 const qrCodeGen = require('qrcode');
+const {getEthernetMac} = require('./mac-address');
 
 export const getDiskId = () => {
 
@@ -62,14 +63,15 @@ export const getDriveList = () => {
 };
 
 export const getMacAddress = () => {
-    return new Promise((resolve, reject) => {
-        macaddress.one((err, address) => {
-            if (err) {
-                reject(err);
-            }
-            resolve(address.toUpperCase().replace(/:/g, '-'));
-        });
-    });
+    // return new Promise((resolve, reject) => {
+    //     macaddress.one((err, address) => {
+    //         if (err) {
+    //             reject(err);
+    //         }
+    //         resolve(address.toUpperCase().replace(/:/g, '-'));
+    //     });
+    // });
+    return getEthernetMac();
 };
 
 export const generateQrCode = (source) => {
