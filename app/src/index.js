@@ -10,7 +10,6 @@ import createStore from './Redux';
 
 const { store, history } = createStore();
 
-
 // let initialI18nStore = ipcRenderer.sendSync(ipcMessages.i18n.getInitialTrans);
 
 ReactDOM.render(

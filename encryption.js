@@ -25,7 +25,9 @@ async function runEncryption () {
             if (error) {
                 reject(error);
             }
-            resolve(result);
+            const encryptedDisk = result.replace(/9000(?!.*9000)/, '');
+            console.log('encrypted disk', encryptedDisk);
+            resolve(encryptedDisk);
         });
     });
 }
