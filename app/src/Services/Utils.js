@@ -130,18 +130,27 @@ export const generateDataFiles = (partition = 'D') => {
     createDirectory(path);
 
     for (let i = 0; i < FILES_COUNT; i++) {
-        const fileName = (i + 1),
+        const fileName = pad((i + 1), 6),
             file = {
                 filePath: `${path}${fileName}.dat`
             };
         filesArray.push(file);
+
+        console.log('filename',fileName);
     }
 
     async.map(filesArray, getInfo, function (e, r) {
-        console.log('writing files', r);
-        console.log('writing files error', e);
+        // console.log('writing files', r);
+        // console.log('writing files error', e);
     });
     function getInfo(file, callback) {
         fs.writeFile(file.filePath, content, callback);
     }
 };
+
+
+function pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
