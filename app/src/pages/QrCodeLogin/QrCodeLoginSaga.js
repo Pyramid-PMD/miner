@@ -52,7 +52,7 @@ export function* autoLoginSaga() {
             const res = yield call(api.autoLogin);
             console.log('autologin response', res);
             yield call(handleAutoLoginResponse, res);
-            yield call(delay, 4000);
+            yield call(delay, 30000);
         } catch (err) {
             console.log('error', err);
             // yield put(getDataFailureAction(err));

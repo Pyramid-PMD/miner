@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
 import OverviewChart from "./OverviewChart";
 import ExchangeIndex from "./ExchangeIndex";
 import OverviewActions, { OverviewSelectors } from './OverviewRedux';
 import { SettingsSelectors } from '../Settings/SettingsRedux';
+import * as moment from "moment";
 
 class Overview extends React.Component {
     constructor(props) {

@@ -3,6 +3,8 @@ const sha3 = require("crypto-js/sha3");
 const macaddress = require('macaddress-secure');
 const qrCodeGen = require('qrcode');
 const {getEthernetMac} = require('./mac-address');
+import 'moment/locale/zh-cn';
+import moment from 'moment';
 
 export const getDiskId = () => {
 
@@ -118,4 +120,9 @@ export const isAddress = function (address) {
     }
 };
 
+
+export function setMomentLocale(lang) {
+    const locale = lang === 'cn' ? 'zh-cn' : 'en';
+    moment.locale(locale);
+}
 

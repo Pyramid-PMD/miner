@@ -1,7 +1,7 @@
 import { put, call, select } from 'redux-saga/effects';
 import SettingsActions, { SettingsSelectors } from './SettingsRedux';
 import i18n from '../../../../config/i18n/i18next.client.config';
-import {getDriveList} from "../../../../Services/Utils";
+import {getDriveList, setMomentLocale} from "../../../../Services/Utils";
 const config = require('../../../../config/app.config');
 import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
@@ -76,6 +76,7 @@ export function * loadDefaultSettingsSaga(api, action) {
     const lang = yield call(getSavedLanguage);
     if (lang) {
         yield i18n.changeLanguage(lang.code);
+        yield call(setMomentLocale, lang.code);
         try {
             const drivelist = yield call(getDriveList);
             if (drivelist && drivelist.length > 0) {
@@ -114,6 +115,7 @@ export function * saveNewSettingsSaga(api, action) {
     }
 
     yield i18n.changeLanguage(language.code);
+    yield call(setMomentLocale, language.code);
     yield saveUserCurrency(currency);
     yield saveUserDisk(partition);
     yield setLanguage(language);

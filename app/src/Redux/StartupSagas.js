@@ -54,6 +54,7 @@ export function measureUploadSpeed() {
             .on('start', function(dataSize) {
         })
             .on('end', function(averageSpeed) {
+                console.log('average speed', averageSpeed);
                 resolve(Math.floor(averageSpeed / 1024));
             }).start();
     });
