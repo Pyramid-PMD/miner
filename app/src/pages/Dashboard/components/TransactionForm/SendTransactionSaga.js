@@ -64,6 +64,8 @@ export function * sendTransaction(api, action) {
             default:
                 errorMsg = yield call(handleGenericNetworkErrors, res);
         }
+
+        console.log('transaction error', errorMsg);
         yield put(SendTransactionActions.sendTransactionFailure(errorMsg));
     }
 

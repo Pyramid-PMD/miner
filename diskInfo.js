@@ -4,7 +4,9 @@ const {getEthernetMac} = require('./app/src/Services/mac-address');
 
 
 const getDiskId = () => {
-    //if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
+    if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => {
+        resolve('3350_4330_4B23_5209_0025_3859_0000_0001');
+    });
     if (process.platform === 'win32') {
         return new Promise((resolve, reject) => {
             wmic.get_values('DISKDRIVE', 'Name, SerialNumber, MediaType, InterfaceType', null, function(error, drives) {
@@ -32,15 +34,6 @@ const getDiskId = () => {
 
 const getMacAddress = () => {
     return getEthernetMac();
-    // return new Promise((resolve, reject) => {
-    //     macaddress.one((err, address) => {
-    //         if (err) {
-    //             reject(err);
-    //         }
-    //         console.log(JSON.stringify(address));
-    //         resolve(address.toUpperCase().replace(/:/g, '-'));
-    //     });
-    // });
 };
 
 const generateQrCode = (source) => {

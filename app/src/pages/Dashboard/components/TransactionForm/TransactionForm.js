@@ -112,7 +112,7 @@ class TransactionForm extends Component {
             this.transaction.trade_pwd = null;
             return (
                 <UncontrolledAlert color="danger" fade={false}>
-                    { this.props.error }
+                    { this.props.sendError }
                 </UncontrolledAlert>
             );
             // return <div className="error mb-4 alert alert-danger">{ this.props.sendError }</div>

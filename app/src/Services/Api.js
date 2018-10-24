@@ -8,12 +8,8 @@ const url = 'http://101.132.161.0/api/desk/';
 // TODO: get disk id by ipcMain
 
 let encryptedDiskInfo;
-console.log('process', process, process.env.NODE_ENV, process.platform);
-// process.env.NODE_ENV !== 'development' &&
-if (process.platform === 'win32')  {
-    encryptedDiskInfo = ipcRenderer.sendSync('encryption');
-    console.log('encryptedDiskInfo', encryptedDiskInfo);
-}
+encryptedDiskInfo = ipcRenderer.sendSync('encryption');
+console.log('encryptedDiskInfo', encryptedDiskInfo);
 
 //TODO: dynamic or static version?
 const create  =  (baseURL = url) => {
