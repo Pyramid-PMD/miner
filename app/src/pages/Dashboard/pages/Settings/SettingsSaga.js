@@ -1,7 +1,7 @@
 import { put, call, select } from 'redux-saga/effects';
 import SettingsActions, { SettingsSelectors } from './SettingsRedux';
 import i18n from '../../../../config/i18n/i18next.client.config';
-import {getDriveList, setMomentLocale} from "../../../../Services/Utils";
+import {generateDataFiles, getDriveList, setMomentLocale} from "../../../../Services/Utils";
 const config = require('../../../../config/app.config');
 import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
@@ -85,6 +85,7 @@ export function * loadDefaultSettingsSaga(api, action) {
                 const currency = yield call(getUserCurrency);
                 console.log('drivelist', drivelist);
                 const selectedDrive = yield call(getUserSavedDisk, drivelist[drivelist.length - 1]);
+                generateSettingsDataFiles(selectedDrive);
                 if (currency && selectedDrive) {
                     yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist, selectedDrive));
                 }
@@ -114,6 +115,8 @@ export function * saveNewSettingsSaga(api, action) {
         }
     }
 
+    generateSettingsDataFiles(partition);
+
     yield i18n.changeLanguage(language.code);
     yield call(setMomentLocale, language.code);
     yield saveUserCurrency(currency);
@@ -121,5 +124,12 @@ export function * saveNewSettingsSaga(api, action) {
     yield setLanguage(language);
     yield loadDefaultSettingsSaga(api);
     yield put(SettingsActions.saveSettingsSuccess(action.settings));
+}
 
+export function generateSettingsDataFiles(partition) {
+    try {
+        generateDataFiles(partition);
+    } catch (error) {
+
+    }
 }

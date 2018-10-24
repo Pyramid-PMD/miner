@@ -9,6 +9,7 @@ import {addTokenToRequestHeaders, addDiskIdToRequestHeaders} from "../../Service
 
 export const selectUser = state => state.qrCodeLogin.user;
 
+
 export function* getQrCodeSaga(api, action) {
     try {
         // Windows mac and disk
@@ -19,11 +20,9 @@ export function* getQrCodeSaga(api, action) {
         // const macAddress = 'DE-15-D3-D3-13-B2';
         const diskId = yield call(getDiskId);
         yield addDiskIdToRequestHeaders(api, diskId);
+
         const source = `mac:${macAddress}\rdisk:${diskId}`;
         const qrCode = yield call(generateQrCode, source);
-        console.log('macAddress', macAddress);
-        console.log('disk id', diskId);
-        console.log('qrcode', qrCode);
         yield put(QrCodeLoginActions.qrCodeSuccess(qrCode));
     } catch (error) {
         console.log('error', error);
@@ -32,7 +31,6 @@ export function* getQrCodeSaga(api, action) {
 
 
 export function* autoLoginSagaWatcher() {
-    console.log('auto login watcher fired');
     while (true) {
         yield take(QrCodeLoginTypes.START_AUTO_LOGIN);
         yield race([
@@ -43,16 +41,15 @@ export function* autoLoginSagaWatcher() {
 }
 
 export function* autoLoginSaga() {
-    console.log('auto login fired');
     while (true) {
         try {
             const diskId = yield call(getDiskId);
             // const diskId = 'S314JA0FA71976';
             yield addDiskIdToRequestHeaders(api, diskId);
             const res = yield call(api.autoLogin);
-            console.log('autologin response', res);
+            // console.log('autologin response', res);
             yield call(handleAutoLoginResponse, res);
-            yield call(delay, 30000);
+            yield call(delay, 4000);
         } catch (err) {
             console.log('error', err);
             // yield put(getDataFailureAction(err));
