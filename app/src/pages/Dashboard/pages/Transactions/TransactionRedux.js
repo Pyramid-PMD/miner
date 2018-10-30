@@ -5,7 +5,7 @@ import moment from 'moment';
 const { Types, Creators } = createActions({
     transactionRequest: null,
     transactionSuccess: ['transaction'],
-    transactionFailure: ['error'],
+    transactionFailure: ['error']
 });
 
 export const TransactionTypes = Types;
@@ -37,6 +37,7 @@ export const TransactionSelectors = {
 export const request = (state) => ({...state, loading: true, transaction: null, error: null });
 export const success = (state, action) => ({...state, loading: false, transaction: action.transaction, error: null });
 export const failure = (state, action) => ({...state, loading: false, transaction: null, error: action.error });
+
 
 
 export const reducer = createReducer(INITIAL_STATE, {

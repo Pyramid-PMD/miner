@@ -28,6 +28,7 @@ class TransactionForm extends Component {
     }
 
     componentDidMount() {
+        this.props.resetState();
         this.props.getAddressList();
     }
 
@@ -183,6 +184,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getAddressList: () => dispatch(SendTransactionActions.getSavedAddressList()),
+        resetState: () => dispatch(SendTransactionActions.resetState())
         // changeFormField: (form, field, value) => {dispatch(changeFieldValue(form, field, value))}
     }
 };
