@@ -104,7 +104,7 @@ export function setMomentLocale(lang) {
 }
 
 
-const generateDataFilesPath = () => {
+const generateDataFilesPath = (partition) => {
     return process.platform === 'win32' ? `${partition}:/PMDATA/` : `${os.homedir()}/Library/Application Support/${app.getName()}/PMDATA/`;
 };
 
@@ -124,17 +124,19 @@ export const generateDataFiles = (partition = 'D') => {
     const filesArray = [],
         size = process.env.NODE_ENV === 'development' ? 1024 : 1024 * 1024,
         content = new Buffer(size),
-        path = generateDataFilesPath(),
+        path = generateDataFilesPath(partition),
         FILES_COUNT = 1000;
 
     createDirectory(path);
 
     for (let i = 0; i < FILES_COUNT; i++) {
-        const fileName = (i + 1),
+        const fileName = pad((i + 1), 6),
             file = {
                 filePath: `${path}${fileName}.dat`
             };
         filesArray.push(file);
+
+        console.log('filename',fileName);
     }
 
     async.map(filesArray, getInfo, function (e, r) {
@@ -145,3 +147,10 @@ export const generateDataFiles = (partition = 'D') => {
         fs.writeFile(file.filePath, content, callback);
     }
 };
+
+
+function pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
