@@ -10,7 +10,54 @@ if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
     autoUpdater.setFeedURL(updateFeed);
     setInterval(() => {
         autoUpdater.checkForUpdates()
-    }, 60 * 1000);
+    }, 3 * 60 * 1000);
+
+
+
+    autoUpdater.on('checking-for-update',()=>{
+        console.log('checking for update');
+        const dialogOpts = {
+            type: 'info',
+            buttons: ['Restart', 'Later'],
+            title: 'Application checking for update',
+            message: 'Application checking for update',
+            detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+        };
+
+        dialog.showMessageBox(dialogOpts, (response) => {
+            if (response === 0) autoUpdater.quitAndInstall()
+        })
+    });
+
+
+    autoUpdater.on('update-not-available',()=>{
+        console.log('checking for update');
+        const dialogOpts = {
+            type: 'info',
+            buttons: ['Restart', 'Later'],
+            title: 'Application update-not-available',
+            message: 'Application checking for update',
+            detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+        };
+
+        dialog.showMessageBox(dialogOpts, (response) => {
+            if (response === 0) autoUpdater.quitAndInstall()
+        })
+    });
+
+    autoUpdater.on('update-available', message => {
+        const dialogOpts = {
+            type: 'info',
+            buttons: ['Restart', 'Later'],
+            title: 'Application Update available',
+            message,
+            detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+        };
+
+        dialog.showMessageBox(dialogOpts, (response) => {
+            if (response === 0) autoUpdater.quitAndInstall()
+        })
+    });
 
     autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
         const dialogOpts = {
@@ -27,7 +74,16 @@ if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
     });
 
     autoUpdater.on('error', message => {
-        console.error('There was a problem updating the application')
-        console.error(message)
+        const dialogOpts = {
+            type: 'info',
+            buttons: ['Restart', 'Later'],
+            title: 'Application Update Error',
+            message: JSON.stringify(message),
+            detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+        };
+
+        dialog.showMessageBox(dialogOpts, (response) => {
+            if (response === 0) autoUpdater.quitAndInstall()
+        })
     });
 }

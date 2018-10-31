@@ -6,7 +6,7 @@
   "description": "Pyramid hash rate software for miners.",
   "main": "main.js",
   "scripts": {
-    "bundle": "webpack --mode development",
+    "bundle": "webpack",
     "serve": "cross-env NODE_ENV=development electron .",
     "start": "cross-env NODE_ENV=development npm-run-all --parallel bundle serve",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
