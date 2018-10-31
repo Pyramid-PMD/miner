@@ -7,7 +7,7 @@ import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 import SendTransactionActions from './SendTransactionRedux';
 import TransactionActions from '../../pages/Transactions/TransactionRedux';
 import WithdrawActions from '../../pages/Withdraw/WithdrawRedux';
-
+import OverviewActions from '../../pages/Overview/OverviewRedux';
 
 
 
@@ -39,6 +39,7 @@ export function * sendTransaction(api, action) {
         } else {
             yield put (WithdrawActions.outerListRequest());
         }
+        yield put(OverviewActions.overviewRequest());
     } else {
         let errorMsg;
         switch (res.data.code) {
