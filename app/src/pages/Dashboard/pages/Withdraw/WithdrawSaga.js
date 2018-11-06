@@ -4,7 +4,8 @@ import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getOuterList(api, action) {
     const res = yield call(api.getTransactionList, 'outer');
-    if (res.data.code === "0") {
+    if (res && res.data.code === "0") {
+        console.log('withdraw history', res);
         yield put(WithdrawActions.outerListSuccess(res.data.data));
     } else {
         let errorMsg;

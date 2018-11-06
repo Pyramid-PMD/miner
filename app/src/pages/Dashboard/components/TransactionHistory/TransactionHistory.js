@@ -20,6 +20,7 @@ const TransactionHistory = (props) => {
                                             <th>{ t('common:interface.address') }</th>
                                             <th>{ t('common:interface.amount') }</th>
                                             <th className="text-center">{ t('common:interface.state') }</th>
+                                            <th className="text-center">{ t('common:interface.fee') }</th>
                                         </tr>
                                         </thead>
                                         <tbody>

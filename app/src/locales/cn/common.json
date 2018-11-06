@@ -25,7 +25,8 @@
     "logout": "注销",
     "diskSerial": "硬盘 ID",
     "copiedToCB": "复制",
-    "netTest": "测试网"
+    "netTest": "测试网",
+    "fee": "费用"
   },
   "networkErrors": {
     "somethingWentWrong": "出了些问题。请再试一次",

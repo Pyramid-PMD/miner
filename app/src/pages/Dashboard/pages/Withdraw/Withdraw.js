@@ -24,7 +24,7 @@ export class Withdraw extends Component {
                                 transactionType="outer"
                                 sendTransaction={this.props.sendTransaction}/>
 
-                            <TransactionHistory history={ this.props.history } />
+                            <TransactionHistory transactionHistory={ this.props.transactionHistory } />
                         </div>
                     )
                 }
@@ -35,7 +35,7 @@ export class Withdraw extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        history: WithdrawSelectors.selectList(state)
+        transactionHistory: WithdrawSelectors.selectList(state)
     };
 };
 
