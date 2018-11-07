@@ -1,9 +1,9 @@
 const shell = require('node-powershell');
 
 const getEthernetMac = () => {
-    if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => {
-        resolve('E0-D5-5E-76-F7-E3');
-    });
+    // if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => {
+    //     resolve('E0-D5-5E-76-F7-E3');
+    // });
 
   return new Promise((resolve, reject) => {
       let ps = new shell({

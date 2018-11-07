@@ -26,7 +26,9 @@
     "diskSerial": "硬盘 ID",
     "copiedToCB": "复制",
     "netTest": "测试网",
-    "fee": "费用"
+    "fee": "费用",
+    "online": "线上",
+    "offline": "离线"
   },
   "networkErrors": {
     "somethingWentWrong": "出了些问题。请再试一次",

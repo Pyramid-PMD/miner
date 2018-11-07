@@ -26,7 +26,9 @@
     "diskSerial": "Disk serial",
     "copiedToCB": "Copied to clipboard",
     "netTest": "Test net",
-    "fee": "Fee"
+    "fee": "Fee",
+    "online": "Online",
+    "offline": "Offline"
   },
   "networkErrors": {
     "somethingWentWrong": "Something went wrong. Please try again",

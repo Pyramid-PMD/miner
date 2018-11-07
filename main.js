@@ -1,5 +1,4 @@
 if (require('electron-squirrel-startup')) return;
-require('./autoupdater');
 
 // Basic init
 const electron = require('electron');
@@ -16,7 +15,7 @@ const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 let mainWindow;
 
 app.on('ready', async () => {
-
+    require('./autoupdater');
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 900,
