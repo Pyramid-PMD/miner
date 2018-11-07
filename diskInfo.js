@@ -4,9 +4,9 @@ const {getEthernetMac} = require('./app/src/Services/mac-address');
 
 
 const getDiskId = () => {
-    if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => {
-        resolve('3350_4330_4B23_5209_0025_3859_0000_0001');
-    });
+    // if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => {
+    //     resolve('3350_4330_4B23_5209_0025_3859_0000_0001');
+    // });
     if (process.platform === 'win32') {
         return new Promise((resolve, reject) => {
             wmic.get_values('DISKDRIVE', 'Name, SerialNumber, MediaType, InterfaceType', null, function(error, drives) {

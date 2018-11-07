@@ -1,8 +1,8 @@
 {
   "name": "Pyramid",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "productName": "Pyramid",
-  "author": "Pyramid Dev Team<pyramid@jhfund.vip>",
+  "author": "Jiahe Foundation, Singapore<pyramid@jhfund.vip>",
   "description": "Pyramid hash rate software for miners.",
   "main": "main.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "start": "cross-env NODE_ENV=development npm-run-all --parallel bundle serve",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/src/assets/icons/win/icon.ico --prune=true --ignore=release-builds --ignore=installers --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE",
-    "package-win-64": "electron-packager . --overwrite --asar=true --platform=win32 --arch=x64 --icon=app/src/assets/icons/win/icon.ico --extra-resource=\"delivery\" --prune=true --ignore=release-builds --ignore=installers --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE"
+    "package-win-64": "electron-packager . --overwrite --asar=true --platform=win32 --arch=x64 --icon=app/src/assets/icons/win/icon.ico --extra-resource=\"delivery\" --prune=true --ignore=release-builds --ignore=installers --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE",
+    "create-win-intaller": "electron-installer-windows --src release-builds/Pyramid-win32-x64/ --dest installers/win/x64/"
   },
   "repository": "pastahito/electron-react-webpack",
   "license": "Pyramid",

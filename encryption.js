@@ -13,21 +13,22 @@ if (process.env.NODE_ENV === 'development') {
 const encryptor = edge.func(encryptorPath);
 
 async function runEncryption () {
-
     const diskId = await getDiskId(),
-          // macaddress = await getMacAddress(),
-          macaddress = 'DE-15-D3-D3-13-B2',
-          stringToEncrypt = `MAC:${macaddress}\rDISK:${diskId}`;
-
-    console.log('stringToEncrypt', stringToEncrypt);
+          macaddress = await getMacAddress(),
+          // macaddress = 'DE-15-D3-D3-13-B2',
+          stringToEncrypt = `MAC:${macaddress}\\rDISK:${diskId}`;
 
     return new Promise((resolve, reject) => {
+        console.log('stringToEncrypt', stringToEncrypt);
+
         encryptor(stringToEncrypt, function (error, result) {
             if (error) {
+                console.log('encryption error', error);
                 reject(error);
             }
+            console.log('encrypted disk', result);
+
             const encryptedDisk = result.replace(/9000(?!.*9000)/, '');
-            console.log('encrypted disk', encryptedDisk);
             resolve(encryptedDisk);
         });
     });

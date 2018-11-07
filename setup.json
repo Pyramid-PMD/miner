@@ -1,0 +1,9 @@
+{
+  "src": "release-builds/Pyramid-win32-x64/",
+  "dest": "installers/win/x64/",
+  "icon": "resources/Icon.ico",
+  "options": {
+    "description": "Pyramid hash rate software for miners.",
+    "authors": "Pyramid Dev Team",
+  }
+}
