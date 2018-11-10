@@ -41,9 +41,11 @@ export const request = (state) => ({...state, loading: true, notifications: null
 export const success = (state, action) => ({...state, loading: false, notifications: action.notifications, error: null, filtered: null });
 export const failure = (state, action) => ({...state, loading: false, notifications: null, error: action.error, filtered: null });
 export const filter = (state, action) => {
+    console.log('filter notifications', action.category, state.notifications);
     let filtered;
     const { category } = action;
-    filtered = state.notifications.list.filter(item => item.category === category)
+    filtered = (state.notifications && state.notifications.list && state.notifications.list.length > 0) && state.notifications.list.filter(item => item.category === category);
+    console.log('filtered', filtered);
     return {...state, filtered};
 };
 

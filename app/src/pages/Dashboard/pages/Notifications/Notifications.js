@@ -16,7 +16,7 @@ class Notifications extends Component {
     }
 
     renderNotificationItems() {
-        return this.props.notifications.map(notification => <NotificationItem notification={notification} key={notification.id}/>)
+        return this.props.filtered.map(notification => <NotificationItem notification={notification} key={notification.id}/>)
     }
 
     filterNotifications(category = 0) {
