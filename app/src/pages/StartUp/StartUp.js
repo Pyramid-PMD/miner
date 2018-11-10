@@ -41,7 +41,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        startAutLogin: () => dispatch(QrLoginActions.startAutoLogin())
+        startAutLogin: () => dispatch(QrLoginActions.startAutoLogin()),
     }
 };
 export default connect(null, mapDispatchToProps)(StartUp);

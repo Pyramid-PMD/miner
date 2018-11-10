@@ -82,7 +82,7 @@ class SettingsForm extends Component {
                                             name="currency"
                                             className="drop-down-dark"
                                             component={this.renderDropdownList}
-                                            data={this.props.length > 0 ? this.props.rates: []}
+                                            data={this.props.rates.length > 0 ? this.props.rates: []}
                                             textField="name"
                                         />
                                     </div>

@@ -25,6 +25,7 @@ export function * getUserInfoSaga(api) {
 
 export function * getExchangeRates(api) {
     const res = yield call(api.getExchangeRates);
+    console.log('res', res);
     if (res) {
         if (res.data.code === "0") {
             yield put(SettingsActions.exchangeRateSuccess(res.data.data));
@@ -74,29 +75,35 @@ export function setLanguage(lang) {
 
 export function * loadDefaultSettingsSaga(api, action) {
     const lang = yield call(getSavedLanguage);
-    if (lang) {
+    // if (lang) {
         yield i18n.changeLanguage(lang.code);
         yield call(setMomentLocale, lang.code);
         try {
-            const drivelist = yield call(getDriveList);
-            if (drivelist && drivelist.length > 0) {
-                yield getUserInfoSaga(api);
-                yield getExchangeRates(api);
-                const currency = yield call(getUserCurrency);
-                console.log('drivelist', drivelist);
-                const selectedDrive = yield call(getUserSavedDisk, drivelist[drivelist.length - 1]);
-                generateSettingsDataFiles(selectedDrive);
-                if (currency && selectedDrive) {
-                    yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist, selectedDrive));
-                }
+            let rates;
+            const ratesRes = yield call(api.getExchangeRates);
+            if (ratesRes.data.code === "0" && ratesRes.data.data) {
+                rates = ratesRes.data.data.list;
             }
+            const drivelist = yield call(getDriveList);
+            // if (drivelist && drivelist.length > 0) {
+            yield getUserInfoSaga(api);
+            const currency = yield call(getUserCurrency);
+
+            console.log('drivelist', drivelist, 'rates', rates);
+            const selectedDrive = yield call(getUserSavedDisk, drivelist[drivelist.length - 1]);
+            generateSettingsDataFiles(selectedDrive);
+            yield put(SettingsActions.loadDefaultSuccess(lang, currency, drivelist, rates, selectedDrive));
+
+            // if (currency && selectedDrive) {
+            // }
+            // }
 
         } catch (e) {
             console.log(e);
         }
 
 
-    }
+    // }
 
 }
 
