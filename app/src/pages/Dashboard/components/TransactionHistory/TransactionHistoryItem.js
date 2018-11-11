@@ -4,10 +4,10 @@ const TransactionHistoryItem = (props) => {
     const { transaction } = props;
     return (
         <tr>
-            <td>{transaction.addr}</td>
-            <td>{transaction.amount}</td>
+            <td>{ transaction.addr }</td>
+            <td className="text-center">{ transaction.amount }</td>
             <td className={`${ transaction.statusName.value } text-right`}>{ transaction.statusName.title }</td>
-            <td>{transaction.fee} PMD</td>
+            <td className="text-center">{ transaction.fee } PMD</td>
         </tr>
     );
 };

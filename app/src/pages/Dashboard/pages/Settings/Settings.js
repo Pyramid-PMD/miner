@@ -30,11 +30,12 @@ class Settings extends Component {
     }
 
     render() {
+        console.log('settings', this.props.rates);
         return (
             <I18n>
                 {
                     (t) => (
-                        !this.props.loading ?
+                        this.props.rates ?
                         <div>
                             { this.renderSaveFeedback(t) }
                             <SettingsForm
@@ -56,6 +57,7 @@ class Settings extends Component {
 
 
 const mapStateToProps = (state) => {
+    console.log('state', state);
     return {
         loading: SettingsSelectors.selectLoading(state),
         rates: SettingsSelectors.selectRates(state),

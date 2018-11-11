@@ -1,6 +1,10 @@
 {
   "name": "Pyramid",
+<<<<<<< HEAD
   "version": "1.1.1",
+=======
+  "version": "1.0.0",
+>>>>>>> b5ce5b55a0cc6282ba727f759a9ffbcdab94a831
   "productName": "Pyramid",
   "author": "Jiahe Foundation, Singapore<pyramid@jhfund.vip>",
   "description": "Pyramid hash rate software for miners.",

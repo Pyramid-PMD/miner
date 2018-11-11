@@ -79,7 +79,6 @@ export function* handleAutoLoginSuccess(res) {
     yield call(saveTokenToStorage, token, user);
     console.log('initial user', initialUser);
     if (!initialUser) {
-
         if (isNew === 1) {
             yield put(replace('/alias'));
         } else {
