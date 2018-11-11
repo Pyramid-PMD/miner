@@ -5,9 +5,9 @@ const TransactionHistoryItem = (props) => {
     return (
         <tr>
             <td>{ transaction.addr }</td>
-            <td>{ transaction.amount }</td>
+            <td className="text-center">{ transaction.amount }</td>
             <td className={`${ transaction.statusName.value } text-right`}>{ transaction.statusName.title }</td>
-            <td>{ transaction.fee }</td>
+            <td className="text-center">{ transaction.fee }</td>
         </tr>
     );
 };
