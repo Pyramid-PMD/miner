@@ -50,7 +50,7 @@ app.on('window-all-closed', function() {
 
 async function sendEncryptedDiskInfoToRenderer()  {
     let encryptedDiskInfo;
-    if (process.platform === 'win32') {
+    if (process.platform === 'win32' && process.env.NODE_ENV !== 'development') {
         const { runEncryption } = require('./encryption');
         encryptedDiskInfo = await runEncryption();
     } else {
