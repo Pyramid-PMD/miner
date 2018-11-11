@@ -6,7 +6,7 @@ const TransactionHistoryItem = (props) => {
         <tr>
             <td>{ transaction.addr }</td>
             <td className="text-center">{ transaction.amount }</td>
-            <td className={`${ transaction.statusName.value } text-right`}>{ transaction.statusName.title }</td>
+            <td className={`${ transaction.statusName.value } text-center`}>{ transaction.statusName.title }</td>
             <td className="text-center">{ transaction.fee } PMD</td>
         </tr>
     );
