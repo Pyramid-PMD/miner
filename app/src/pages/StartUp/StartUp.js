@@ -12,6 +12,7 @@ const pageStyles = {
 
 class StartUp extends Component {
     componentDidMount() {
+        // localStorage.clear();
         this.props.startAutLogin();
     }
 
