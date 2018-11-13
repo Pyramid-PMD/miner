@@ -54,7 +54,13 @@ export const getMacAddress = () => {
 };
 
 export const generateQrCode = (source) => {
-    return qrCodeGen.toDataURL(source);
+    const options = {
+        errorCorrectionLevel: 'H',
+        rendererOpts: {
+            quality: 1
+        }
+    };
+    return qrCodeGen.toDataURL(source, options);
 };
 
 /**

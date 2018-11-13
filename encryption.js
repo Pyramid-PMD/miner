@@ -15,8 +15,7 @@ const encryptor = edge.func(encryptorPath);
 async function runEncryption () {
     const diskId = await getDiskId(),
           macaddress = await getMacAddress(),
-          // macaddress = 'DE-15-D3-D3-13-B2',
-          stringToEncrypt = `MAC:${macaddress}\\rDISK:${diskId}`;
+          stringToEncrypt = `MAC:${macaddress} DISK:${diskId}`;
 
     return new Promise((resolve, reject) => {
         console.log('stringToEncrypt', stringToEncrypt);

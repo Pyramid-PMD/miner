@@ -21,7 +21,7 @@ export function* getQrCodeSaga(api, action) {
         const diskId = yield call(getDiskId);
         yield addDiskIdToRequestHeaders(api, diskId);
 
-        const source = `mac:${macAddress}\rdisk:${diskId}`;
+        const source = `MAC:${macAddress} DISK:${diskId}`;
         const qrCode = yield call(generateQrCode, source);
         yield put(QrCodeLoginActions.qrCodeSuccess(qrCode));
     } catch (error) {

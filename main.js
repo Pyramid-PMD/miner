@@ -35,12 +35,13 @@ app.on('ready', async () => {
     });
 
 
-    await sendEncryptedDiskInfoToRenderer();
-
     mainWindow.loadURL(startUrl);
     const menuBuilder = new MenuBuilder(mainWindow);
     menuBuilder.buildMenu();
     mainWindow.on('page-title-updated', e => e.preventDefault())
+
+    // await sendEncryptedDiskInfoToRenderer();
+
 });
 
 app.on('window-all-closed', function() {

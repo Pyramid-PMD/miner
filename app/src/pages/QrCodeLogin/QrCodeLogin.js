@@ -20,7 +20,7 @@ class QrCodeLogin extends Component {
                     (t) => (
                         <div className="page page-login full-height d-flex justify-content-center align-items-center" style={pageStyles}>
                             <div className="page-container d-flex flex-column align-items-center">
-                                {qrCode ? <img src={qrCode} alt="Machine qr code"/> :  null }
+                                {qrCode ? <img src={qrCode} alt="Machine qr code" style={{width:'250px'}}/> :  null }
                                 <p className="mt-4">Login PYRAMID</p>
                             </div>
                         </div>
