@@ -34,13 +34,13 @@ app.on('ready', async () => {
         slashes: true
     });
 
+    await sendEncryptedDiskInfoToRenderer();
 
     mainWindow.loadURL(startUrl);
     const menuBuilder = new MenuBuilder(mainWindow);
     menuBuilder.buildMenu();
     mainWindow.on('page-title-updated', e => e.preventDefault())
 
-    // await sendEncryptedDiskInfoToRenderer();
 
 });
 
