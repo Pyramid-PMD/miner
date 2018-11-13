@@ -94,9 +94,6 @@ export function* handleAutoLoginFailure(res) {
             console.log('wating scan');
             yield put(replace('/qr-code-login'));
             break;
-        case -502:
-            yield put(replace('/qr-code-login'));
-            break;
         case -10203:
             console.log('no user in disk id');
             break;
