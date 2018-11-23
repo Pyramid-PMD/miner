@@ -13,7 +13,7 @@ if (process.platform !== 'darwin' && process.env.NODE_ENV !== 'development') {
         autoUpdater.checkForUpdates();
         setTimeout(() => {
             initCheck();
-        }, 60 * 60 * 1000);
+        }, 60 * 1000);
     };
 
     setTimeout(() => {

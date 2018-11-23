@@ -15,7 +15,7 @@ const iconPath = path.join(__dirname, '/app/assets/icons/png/64x64.png');
 let mainWindow;
 
 app.on('ready', async () => {
-    require('./autoupdater');
+
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 900,
@@ -42,11 +42,17 @@ app.on('ready', async () => {
     mainWindow.on('page-title-updated', e => e.preventDefault())
 
 
+    mainWindow.webContents.once("did-frame-finish-load", function (event) {
+        require('./autoupdater');
+    })
+
 });
 
 app.on('window-all-closed', function() {
     app.quit();
 });
+
+
 
 
 async function sendEncryptedDiskInfoToRenderer()  {
