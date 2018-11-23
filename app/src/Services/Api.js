@@ -20,7 +20,7 @@ const create  =  (baseURL = url) => {
         'version': '1.0.0' //app.getVersion()
     };
 
-    if (encryptedDiskInfo) {
+    if (encryptedDiskInfo && encryptedDiskInfo !== '') {
         headers['tx'] = encryptedDiskInfo;
     }
     const api = apisauce.create({
