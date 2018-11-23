@@ -36,7 +36,7 @@
     "loading": "加载设置"
   },
   "miner": {
-    "estimateIncoming": "预计24小时内的收益为: ",
+    "estimateIncoming": "今日预期收益",
     "globalHashRate": "全网算力",
     "localHashRate": "本地算力"
   },
