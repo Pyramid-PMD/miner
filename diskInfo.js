@@ -20,8 +20,8 @@ const getDiskId = () => {
                 const filtered = drives.filter((drive) => drive.MediaType === 'Fixed hard disk media' );
                 if (filtered.length > 0) {
                     const serials = filtered.map(drive => drive.SerialNumber);
-                    // resolve(serials[0].replace(/\./g, ''));
-                    resolve('3350_4330_4B23_5209_0025_3859_0000_0001');
+                    resolve(serials[0].replace(/\./g, ''));
+                    // resolve('3350_4330_4B23_5209_0025_3859_0000_0001');
                 } else {
                     reject('No local disks found');
                 }
