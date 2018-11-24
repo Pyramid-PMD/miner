@@ -1,5 +1,3 @@
-### Build
-
 npm i electron-packager -g
 
 npm i -g electron-installer-windows
@@ -18,6 +16,4 @@ npm run bundle
 
 npm run package-win-64
 
-> npm run serve
-
-npm run create-win-installer
+; npm run create-win-installer
