@@ -56,13 +56,15 @@ async function sendEncryptedDiskInfoToRenderer()  {
     let encryptedDiskInfo;
 
     try {
-        if (process.platform === 'win32' && process.env.NODE_ENV !== 'development') {
+        if (process.platform === 'win32') {
             const { runEncryption } = require('./encryption');
             encryptedDiskInfo = await runEncryption();
         }
     } catch (error) {
         console.log(error);
     }
+
+    console.log('encrypted disk', encryptedDiskInfo);
 
     ipcMain.on('encryption', (event, data) => {
         event.returnValue = encryptedDiskInfo || '';
