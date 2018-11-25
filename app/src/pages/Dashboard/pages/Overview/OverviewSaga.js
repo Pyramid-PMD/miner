@@ -12,11 +12,7 @@ export function * getOverview(api) {
 
         }
         else {
-            switch (res.data.code) {
-                default:
-                    errorMsg = yield call(handleGenericNetworkErrors, res);
-            }
-
+            errorMsg = yield call(handleGenericNetworkErrors, res);
             yield put(OverviewActions.overviewFailure(errorMsg));
         }
 

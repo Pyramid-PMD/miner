@@ -9,7 +9,13 @@ const { Types, Creators } = createActions({
     saveSettingsSuccess: ['settings'],
     saveSettingsFailure: null,
     loadDefaultSettings: null,
-    loadDefaultSuccess: ['language', 'currency', 'driveList', 'selectedDrive'],
+    loadDefaultSuccess: [
+        'language',
+        'currency',
+        'driveList',
+        'rates',
+        'selectedDrive'
+    ],
     loadDefaultFailure: ['error'],
     savedLanguageRequest: null,
     savedLanguageSuccess: ['language'],
@@ -39,7 +45,7 @@ export const SettingsSelectors = {
     selectLoading: (state) => state.settings.loading,
     selectAlias: (state) => state.settings.user ? state.settings.user.machine_nick : null,
     selectLanguage: (state) => state.settings.language ? state.settings.language : config.i18n.initialLang,
-    selectRates: (state) =>  state.settings.rates ? state.settings.rates.list : null,
+    selectRates: state =>  state.settings.rates,
     selectBalance: (state) => {
         if (state.settings.user) {
             return state.settings.user.balance;
@@ -94,10 +100,24 @@ export const userInfoRequest = (state) => ({ ...state });
 export const userInfoSuccess = (state, action) => ({ ...state, user: action.user });
 export const userInfoFailure = (state, action) => ({ ...state, user: null, error: action.error });
 export const savedLanguageSuccess = (state, action) => ({ ...state, language: action.language });
+
 export const loadDefaultSettings = (state, action) => ({ ...state, success: null, loading: true });
-export const loadDefaultSuccess = (state, action) => ({ ...state, loading: false, language: action.language, selectedRate: action.currency, driveList: action.driveList, selectedDrive: action.selectedDrive});
+export const loadDefaultSuccess = (state, action) => {
+    console.log('load success action', action);
+    return {
+        ...state,
+        loading: false,
+        language: action.language,
+        selectedRate: action.currency,
+        driveList: action.driveList,
+        rates: action.rates,
+        selectedDrive: action.selectedDrive
+    }
+};
+
 export const exchangeRateSuccess = (state, action) => ({ ...state, rates: action.rates });
-export const saveSettingsRequest = state => ({ ...state, success: null })
+
+export const saveSettingsRequest = state => ({ ...state, success: null });
 export const saveSettingsSuccess = (state, action) => ({ ...state, loadDefault: false, language: action.settings.language, selectedRate: action.settings.currency, success: true  });
 
 export const setDefaultAppSettings = (state) => ({ ...state, loadDefault: true });

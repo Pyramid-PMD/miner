@@ -32,7 +32,8 @@ class NetworkIndicator extends Component {
                 </span>
             </div>
             <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample">
-                { this.props.t('common:interface.netTest') }
+                { this.state.online ?
+                    this.props.t('common:interface.online') :  this.props.t('common:interface.offline') }
             </UncontrolledTooltip>
         </div>
 

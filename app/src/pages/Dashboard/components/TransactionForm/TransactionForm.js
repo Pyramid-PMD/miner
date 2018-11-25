@@ -28,6 +28,7 @@ class TransactionForm extends Component {
     }
 
     componentDidMount() {
+        this.props.resetState();
         this.props.getAddressList();
     }
 
@@ -112,7 +113,7 @@ class TransactionForm extends Component {
             this.transaction.trade_pwd = null;
             return (
                 <UncontrolledAlert color="danger" fade={false}>
-                    { this.props.error }
+                    { this.props.sendError }
                 </UncontrolledAlert>
             );
             // return <div className="error mb-4 alert alert-danger">{ this.props.sendError }</div>
@@ -183,6 +184,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getAddressList: () => dispatch(SendTransactionActions.getSavedAddressList()),
+        resetState: () => dispatch(SendTransactionActions.resetState())
         // changeFormField: (form, field, value) => {dispatch(changeFieldValue(form, field, value))}
     }
 };

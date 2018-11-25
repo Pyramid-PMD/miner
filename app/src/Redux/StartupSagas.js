@@ -25,16 +25,15 @@ export function * checkAuthStatus(api, action) {
     }
 
     // Get default language
-    if (!token) {
-        yield put(LoginActions.loginFailure())
-    } else {
-        yield api.instance.addRequestTransform(request => {
-            request.headers['token'] = token;
-            request.headers['uid'] = user.uid;
-        });
-        yield put(LoginActions.loginSuccess(user))
-    }
-
+    // if (!token) {
+    //     yield put(LoginActions.loginFailure())
+    // } else {
+    //     yield api.instance.addRequestTransform(request => {
+    //         request.headers['token'] = token;
+    //         request.headers['uid'] = user.uid;
+    //     });
+    //     yield put(LoginActions.loginSuccess(user))
+    // }
 }
 
 export function measureUploadSpeed() {
@@ -55,6 +54,7 @@ export function measureUploadSpeed() {
             .on('start', function(dataSize) {
         })
             .on('end', function(averageSpeed) {
+                console.log('average speed', averageSpeed);
                 resolve(Math.floor(averageSpeed / 1024));
             }).start();
     });

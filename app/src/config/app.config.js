@@ -24,12 +24,13 @@ module.exports = {
         namespace: ['common', 'menu', 'auth', 'dashboard']
     },
     brand: {
-        logo: './src/assets/img/logo.svg',
+        logo: './src/assets/img/logo.png',
         pageBg: './src/assets/img/bg/page-bg.png',
         name: 'pyramid',
         slogan: 'Next generation decentralized protocol of storage'
     },
     currencies: [],
     defaultCurrency: 'cny',
-    disks: []
+    disks: [],
+    pollMinerInterval: 60 * 5 * 1000
 };

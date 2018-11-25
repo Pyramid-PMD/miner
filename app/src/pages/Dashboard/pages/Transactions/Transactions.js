@@ -36,6 +36,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getTransaction: () => dispatch(TransactionActions.transactionRequest()),
+        // getTransactionHistory: () => dispatch(TransactionActions.transactionRequest()),
         sendTransaction: (transaction, type) => dispatch(SendTransactionActions.sendTransactionRequest(transaction, type))
     }
 };

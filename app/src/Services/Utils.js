@@ -1,26 +1,21 @@
 const wmic = require('wmic');
 const sha3 = require("crypto-js/sha3");
-export const getDiskId = () => {
-    //if (process.env.NODE_ENV === 'development') return new Promise((resolve, reject) => resolve('7654321'));
-    if (process.platform === 'win32') {
-        return new Promise((resolve, reject) => {
-            wmic.get_values('DISKDRIVE', 'Name, SerialNumber, MediaType, InterfaceType', null, function(error, drives) {
-                if (error) {
-                    console.log('error', error);
-                    reject(error);
-                }
-                console.log('serial', drives);
-                const filtered = drives.filter((drive) => drive.InterfaceType === "IDE");
-                if (filtered.length > 0) {
-                    const serials = filtered.map(drive => drive.SerialNumber);
-                    resolve(serials[0]); // An array of disks
-                }
-            });
-        })
+const macaddress = require('macaddress-secure');
+const qrCodeGen = require('qrcode');
+const {getEthernetMac} = require('./mac-address');
+import 'moment/locale/zh-cn';
+import moment from 'moment';
+const diskInfo = require('../../../diskInfo');
+const async = require('async');
+const fs = require('fs');
+const Buffer = require('buffer').Buffer;
+const os = require('os');
+const { app } =  require('electron').remote;
+const path = require('path');
 
-    } else {
-        return new Promise((resolve, reject) => resolve('S314JA0FA71976'))
-    }
+
+export const getDiskId = () => {
+    return diskInfo.getDiskId();
 };
 
 
@@ -54,6 +49,19 @@ export const getDriveList = () => {
     });
 };
 
+export const getMacAddress = () => {
+    return getEthernetMac();
+};
+
+export const generateQrCode = (source) => {
+    const options = {
+        errorCorrectionLevel: 'H',
+        rendererOpts: {
+            quality: 1
+        }
+    };
+    return qrCodeGen.toDataURL(source, options);
+};
 
 /**
  * Checks if the given string is a checksummed address
@@ -96,3 +104,59 @@ export const isAddress = function (address) {
 };
 
 
+export function setMomentLocale(lang) {
+    const locale = lang === 'cn' ? 'zh-cn' : 'en';
+    moment.locale(locale);
+}
+
+
+const generateDataFilesPath = (partition) => {
+    return process.platform === 'win32' ? `${partition}:/PMDATA/` : `${os.homedir()}/Library/Application Support/${app.getName()}/PMDATA/`;
+};
+
+
+const createDirectory  = (filePath) => {
+    const dirname = path.dirname(filePath);
+
+    if (!fs.existsSync(dirname)) {
+        createDirectory(dirname);
+    }
+    fs.mkdirSync(filePath);
+};
+
+
+export const generateDataFiles = (partition = 'D') => {
+    // console.log('calling generate files', app.getName());
+    const filesArray = [],
+        size = process.env.NODE_ENV === 'development' ? 1024 : 1024 * 1024,
+        content = new Buffer(size),
+        path = generateDataFilesPath(partition),
+        FILES_COUNT = 1000;
+
+    createDirectory(path);
+
+    for (let i = 0; i < FILES_COUNT; i++) {
+        const fileName = pad((i + 1), 6),
+            file = {
+                filePath: `${path}${fileName}.dat`
+            };
+        filesArray.push(file);
+
+        console.log('filename',fileName);
+    }
+
+    async.map(filesArray, getInfo, function (e, r) {
+        // console.log('writing files', r);
+        // console.log('writing files error', e);
+    });
+    function getInfo(file, callback) {
+        fs.writeFile(file.filePath, content, callback);
+    }
+};
+
+
+function pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}

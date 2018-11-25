@@ -2,45 +2,173 @@
   "en": [
     {
       "id": 1,
-      "head": "Pyramid 为什么能为你带来更多的收益 english",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "How to start mining",
+      "imageContainerClass": "horizontal",
+      "body": "Congratulations, you have chosen Pyramid's new generation of distributed storage miners. After receiving the mining machine, please connect the display, power supply, network, mouse, keyboard and other peripherals, and ensure that all components can work normally, then open the desktop Pyramid mining software to carry out normal mining. Note: In order to ensure a stable network connection, we recommend using a wired network for mining. The normal mining interface is shown below",
+      "images": [
+        {
+          "id": 1,
+          "caption": "Click on the recharge to see the exchange PMD wallet address, copy the address",
+          "src": "./src/assets/img/help/help1.png"
+        }
+      ]
     },
     {
       "id": 2,
-      "head": "Pyramid 为什么能为你带来更多的收益",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "How to withdraw coins to a local wallet",
+      "imageContainerClass": "horizontal",
+      "body": "You can use the mining machine to withdraw coins to the local wallet (IMToken, Exodus and other wallets that support ERC20 tokens), first copy the address of the local wallet, and then enter the copied address in the [Treasies] interface of the mining machine software.",
+      "images": [
+        {
+          "id": 2,
+          "caption": "Click on the recharge to see the exchange PMD wallet address, copy the address",
+          "src": "./src/assets/img/help/help2.png"
+        }
+      ]
     },
     {
       "id": 3,
-      "head": "Pyramid 为什么能为你带来更多的收益",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "How to raise coins to the exchange",
+      "imageContainerClass": "horizontal",
+      "body": "You can use the mining machine to withdraw coins to the exchange wallet. Take ZZEX as an example. After logging in to ZZEX, enter the asset management interface and enter PMD.",
+      "images": [
+        {
+          "id": 3,
+          "caption": "Click on the recharge to see the exchange PMD wallet address, copy the address",
+          "src": "./src/assets/img/help/help3.png"
+        },
+        {
+          "id": 4,
+          "caption": "Then enter the copied address in the [Treasies] interface of the mining machine software.",
+          "src": "./src/assets/img/help/help4.png"
+        },
+        {
+          "id": 5,
+          "src": "./src/assets/img/help/help5.png"
+        }
+      ]
     },
     {
       "id": 4,
-      "head": "Pyramid 为什么能为你带来更多的收益",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "I have multiple mining machines, how to link them to my account",
+      "imageContainerClass": "horizontal",
+      "body": "In the case that the user may have multiple mining machines, we offer an easy-to-operate APP that can manage multiple mining machines at the same time. Please go to the xxx address to download and install. After the APP installation is complete, just click on the scan code in the upper left corner of the homepage and select Bind to link to the total account."
+    },
+    {
+      "id": 5,
+      "head": "How to use the mobile app to quickly check the status of all my mines",
+      "body": "With the mobile app, you can quickly check the working status of all the bonded miners under your name. as the picture shows",
+      "imageContainerClass": "d-flex justify-content-between",
+      "images": [
+        {
+          "id": 6,
+          "caption": "Click on the mining machine to view the specific mining situation.",
+          "src": "./src/assets/img/help/help6.png"
+        },
+        {
+          "id": 7,
+          "src": "./src/assets/img/help/help7.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "head": "Pyramid mining machine after-sales content",
+      "imageContainerClass": "horizontal",
+      "body": "<p>Pyramid complies with the post-sales policy of hardware products in the country of sale. According to China's three-package laws and regulations, the above policies apply only to Pyramid products purchased in mainland China. When purchasing a Pyramid product, check that the product is sold with a Pyramide's three-pack warranty card to ensure it is protected by China's three-package laws and regulations. If the product is purchased from outside the mainland China, it is not covered by China's Three Guarantees laws and regulations.</p><ul><li>Warranty period The machine and the accessories included have a one-year warranty from the date of original purchase.</li><li>The repair method repairs or replaces the equipment according to the specific fault conditions. All replacement parts, accessories or equipment are brand new. Replacement parts and accessories are subject to the remaining period of the original 1 year warranty period or 90 days from the date of repair or replacement, whichever is longer. If there is a problem with the accessory, a new accessory will be replaced.</li></ul>"
+
+    },
+    {
+      "id": 7,
+      "head": "After-sales service contact",
+      "body": "The official website of Pyramid is https://jhfund.vip, you can find the latest after-sales service contact information on the website."
+
     }
   ],
   "cn": [
     {
       "id": 1,
-      "head": "Pyramid 为什么能为你带来更多的收益",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "如何开始挖矿",
+      "imageContainerClass": "horizontal",
+      "body": "恭喜你，选择了Pyramid新一代分布式存储矿机。在收到矿机之后，请连接好显示器、电源、网络、鼠标、键盘等外设，并确保各部件都能正常工作，之后开启桌面Pyramid挖矿软件就可以进行正常挖矿了。注：为了保证网络连接稳定，我们建议使用有线网络进行挖矿。正常的挖矿界面如下图所示",
+      "images": [
+        {
+          "id": 1,
+          "caption": "点击充值，可以看到交易所PMD钱包地址，复制该地址",
+          "src": "./src/assets/img/help/help1.png"
+        }
+      ]
     },
     {
       "id": 2,
-      "head": "Pyramid 为什么能为你带来更多的收益",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "如何提币到本地钱包",
+      "imageContainerClass": "horizontal",
+      "body": "可以通过矿机提币到本地钱包(IMToken, Exodus 以及其他支持 ERC20代币的钱包)，首先复制本地钱包的地址，然后在矿机软件的【提币】界面输入复制的地址",
+      "images": [
+        {
+          "id": 2,
+          "caption": "点击充值，可以看到交易所PMD钱包地址，复制该地址",
+          "src": "./src/assets/img/help/help2.png"
+        }
+      ]
     },
     {
       "id": 3,
-      "head": "Pyramid 为什么能为你带来更多的收益",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "如何提币到交易所",
+      "imageContainerClass": "horizontal",
+      "body": "可以通过矿机提币到交易所钱包，以ZZEX为例，登陆ZZEX后，进入资产管理界面，输入 PMD",
+      "images": [
+        {
+          "id": 3,
+          "caption": "点击充值，可以看到交易所PMD钱包地址，复制该地址",
+          "src": "./src/assets/img/help/help3.png"
+        },
+        {
+          "id": 4,
+          "caption": "然后在矿机软件的【提币】界面输入复制的地址",
+          "src": "./src/assets/img/help/help4.png"
+        },
+        {
+          "id": 5,
+          "src": "./src/assets/img/help/help5.png"
+        }
+      ]
     },
     {
       "id": 4,
-      "head": "Pyramid 为什么能为你带来更多的收益",
-      "body": "Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益Pyramid 为什么能为你带来更多的收益"
+      "head": "我有多台矿机，如何将它们关联到我的账户",
+      "body": "针对用户可能拥有多台矿机的情况，我们提供了便于操作的APP可以同时管理多台矿机。请到xxx地址下载安装。APP安装完成后，只需要点击首页左上角扫描矿机二维码，选择绑定，即可关联到总账户。"
+    },
+    {
+      "id": 5,
+      "head": "如何使用手机APP来快速查看我所有矿机的状态",
+      "body": "通过手机APP，您可以快速查看名下所有已绑定矿机的工作状态。如图所示",
+      "imageContainerClass": "d-flex justify-content-between",
+      "images": [
+        {
+          "id": 6,
+          "caption": "点击矿机，可以查看具体挖矿情况",
+          "src": "./src/assets/img/help/help6.png"
+        },
+        {
+          "id": 7,
+          "src": "./src/assets/img/help/help7.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "head": "Pyramid矿机售后内容",
+      "imageContainerClass": "horizontal",
+      "body": "<p>Pyramid 遵从销售国所在关于硬件产品的售后政策，根据中国的三包法律和法规，上述政策仅适用于在中国大陆购买的Pyramid 产品。请在购买Pyramid 产品时检查产品出售时是否带有Pyramid 的三包保修卡，以确保其可受中国的三包法律和法规保护。如果产品是从中国大陆以外的地区购买，则不在中国的三包法律和法规涵盖的范围内。</p><ul><li>保修期限矿机整机及所含附件自原始购买之日起享有 1 年保修期。</li><li>维修方式根据具体的故障情况对设备进行修理或更换。所有更换的部件、附件或设备都是全新的。更换的部件、附件享受原有 1 年保修期的剩余时长或者自修理或更换日起 90 天的保修期，以二者中期限较长者为准。如果附件出现问题，会更换全新的附件。</li></ul>"
+
+    },
+    {
+      "id": 7,
+      "head": "售后服务联系方式",
+      "imageContainerClass": "horizontal",
+      "body": "Pyramid官方网站地址为 https://jhfund.vip，您可以在网站上找到最新的售后服务联系方式。"
+
     }
   ]
 }

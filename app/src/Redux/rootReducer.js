@@ -18,6 +18,7 @@ const rootReducer = combineReducers({
     profit: require('../pages/Dashboard/pages/Profit/ProfitRedux').reducer,
     startup: require('./StartupRedux').reducer,
     loadingIndicator: require('../components/LoadingIndicator/LoadingIndicatorRedux').reducer,
+    qrCodeLogin: require('../pages/QrCodeLogin/QrLoginRedux').reducer
 });
 
 export default rootReducer;

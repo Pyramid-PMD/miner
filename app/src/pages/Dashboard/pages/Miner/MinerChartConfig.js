@@ -17,7 +17,7 @@ export default () => {
         },
         calculable : true,
         legend: {
-            data:[ i18n.t('dashboard:miner.globalHashRate'), i18n.t('dashboard:miner.localHashRate')],
+            data:[ /*i18n.t('dashboard:miner.globalHashRate'),*/ i18n.t('dashboard:miner.localHashRate')],
             textStyle: {
                 color: '#fff'
             }
@@ -44,11 +44,11 @@ export default () => {
             }
         ],
         series : [
-            {
-                name: i18n.t('dashboard:miner.globalHashRate'),
-                type:'line',
-                data: []
-            },
+            // {
+            //     name: i18n.t('dashboard:miner.globalHashRate'),
+            //     type:'line',
+            //     data: []
+            // },
             {
                 name: i18n.t('dashboard:miner.localHashRate'),
                 type:'bar',

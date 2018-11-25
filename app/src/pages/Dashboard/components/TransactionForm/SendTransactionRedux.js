@@ -5,7 +5,8 @@ const { Types, Creators } = createActions({
     sendTransactionSuccess: null,
     sendTransactionFailure: ['error'],
     getSavedAddressList: null,
-    getSavedAddressListSuccess: ['addressList']
+    getSavedAddressListSuccess: ['addressList'],
+    resetState: null
 });
 
 export const SendTransactionTypes = Types;
@@ -29,10 +30,13 @@ export const success = (state, action) => ({...state, loading: false, error: nul
 export const failure = (state, action) => ({...state, loading: false, error: action.error });
 export const getSavedAddressListSuccess = (state, action) => ({...state, addressList: action.addressList });
 
+export const resetState = (state) => ({...state, ...INITIAL_STATE});
 
 export const reducer = createReducer(INITIAL_STATE, {
     [Types.SEND_TRANSACTION_REQUEST]: request,
     [Types.SEND_TRANSACTION_SUCCESS]: success,
     [Types.SEND_TRANSACTION_FAILURE]: failure,
-    [Types.GET_SAVED_ADDRESS_LIST_SUCCESS]: getSavedAddressListSuccess
+    [Types.GET_SAVED_ADDRESS_LIST_SUCCESS]: getSavedAddressListSuccess,
+    [Types.RESET_STATE]: resetState
+
 });

@@ -37,15 +37,16 @@ const pageStyles = {
 
 class Dashboard extends Component {
     //TODO: Use redux-observable in polling miner
+    componentDidMount() {
+        this.props.loadSettings();
+    }
+
     componentWillMount() {
         this.startPoll();
-        // Load default settings
-        this.props.loadSettings();
-
     }
 
     startPoll() {
-        const interval = (60 * 60 * 1000) + 20;
+        const interval = (60 * 5 * 1000);
         this.props.pollMiner();
         setTimeout(() => {
             this.startPoll();
@@ -57,6 +58,11 @@ class Dashboard extends Component {
     }
 
     render() {
+        // if (this.props.loading) {
+        //     return (<div className="d-flex align-items-stretch root-container">
+        //         <p>loading</p>
+        //     </div>);
+        // }
         return (
             <div className="d-flex align-items-stretch root-container">
                 <div>
@@ -92,6 +98,7 @@ const mapStateToProps = (state) => {
         balance: SettingsSelectors.selectBalance(state),
         adjustedBalance: SettingsSelectors.selectAdjustedBalance(state),
         currency: SettingsSelectors.selectUserCurrency(state),
+        loading: SettingsSelectors.selectLoading(state),
         miner: null,
         alias: SettingsSelectors.selectAlias(state),
         isPollingMiner: StartupSelectors.selectMinerPolling(state),

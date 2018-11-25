@@ -14,12 +14,13 @@ const TransactionHistory = (props) => {
                             <tr className="has-separator">
                                 <td>{ key }</td>
                                 <td className="pr-0 pl-0 pb-0 pt-1">
-                                    <table>
+                                    <table className="history-table">
                                         <thead>
                                         <tr>
-                                            <th>{ t('common:interface.address') }</th>
-                                            <th>{ t('common:interface.amount') }</th>
-                                            <th className="text-center">{ t('common:interface.state') }</th>
+                                            <th style={{width: '60%'}}>{ t('common:interface.address') }</th>
+                                            <th style={{width: '10%'}} className="text-center">{ t('common:interface.amount') }</th>
+                                            <th style={{width: '15%'}} className="text-center">{ t('common:interface.state') }</th>
+                                            <th  style={{width: '15%'}}className="text-center">{ t('common:interface.fee') }</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -40,7 +41,7 @@ const TransactionHistory = (props) => {
 
     return (
         <div className="table-responsive transaction-history">
-            <table className="history-table table">
+            <table className="table">
                 <tbody>
                 { renderHistory()}
                 </tbody>

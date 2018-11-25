@@ -21,7 +21,7 @@ const ExchangeIndex = (props) => {
                        <section>
                            <h2 className="text-capitalize">{t('dashboard:overview.exchangeIndex')}</h2>
                            <ul className="exchange-list d-flex justify-content-start list-unstyled">
-                               { currency ? renderExchangeList() : null }
+                               {/*{currency && renderExchangeList() }*/}
                                <ComingSoon/>
                            </ul>
                        </section>

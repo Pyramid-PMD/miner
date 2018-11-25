@@ -32,9 +32,9 @@ class MinerChart extends Component  {
             const { localChart, globalChart } = props;
             if (this.chartInstance) {
                 this.option.xAxis.data = globalChart.time;
-                this.option.series[0].data = globalChart.hash;
-                this.option.series[1].data = localChart.hash;
-
+                // this.option.series[0].data = globalChart.hash;
+                // this.option.series[1].data = localChart.hash;
+                this.option.series[0].data = localChart.hash;
                 this.chartInstance.setOption(this.option);
             }
         }

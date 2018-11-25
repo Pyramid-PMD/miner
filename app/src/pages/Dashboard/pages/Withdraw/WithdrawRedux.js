@@ -21,12 +21,13 @@ const INITIAL_STATE = {
 export const WithdrawSelectors = {
     selectList: (state) => {
         if (state.withdraw.list) {
+            const list = [...state.withdraw.list.list];
             // TODO: Check if I can mutate state here
-            state.withdraw.list.list.map(item => {
-                item.status = item.status === 1 ? { title: "Received", value: 'received'} : { title: "In progress", value: 'in_progress'};
+            list.map(item => {
+                item.statusName = item.status === 1 ? { title: "Received", value: 'received'} : { title: "In progress", value: 'in_progress'};
                 item.date = moment.unix(item.create_at).format("DD MMM");
             });
-            return _.groupBy(state.withdraw.list.list, 'date');
+            return _.groupBy(list, 'date');
         }
     }
 };
