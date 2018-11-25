@@ -18,14 +18,14 @@ async function runEncryption () {
           stringToEncrypt = `MAC:${macaddress} DISK:${diskId}`;
 
     return new Promise((resolve, reject) => {
-        console.log('stringToEncrypt', stringToEncrypt);
+        console.log('RAW string to be encrypted', stringToEncrypt);
 
         encryptor(stringToEncrypt, function (error, result) {
             if (error) {
                 console.log('encryption error', error);
                 reject(error);
             }
-            console.log('encrypted disk', result);
+            console.log('Encrypted string', result);
 
             const encryptedDisk = result.replace(/9000(?!.*9000)/, '');
             resolve(encryptedDisk);

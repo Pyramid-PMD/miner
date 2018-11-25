@@ -64,8 +64,6 @@ async function sendEncryptedDiskInfoToRenderer()  {
         console.log(error);
     }
 
-    console.log('encrypted disk', encryptedDiskInfo);
-
     ipcMain.on('encryption', (event, data) => {
         event.returnValue = encryptedDiskInfo || '';
     });
