@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import createHashHistory from "history/createHashHistory";
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import {autoLoginSagaWatcher} from "../pages/QrCodeLogin/QrCodeLoginSaga";
+import {pollMinerSagaWatcher} from "./StartupSagas";
 
 
 export default (rootReducer, rootSaga) => {
@@ -40,6 +41,7 @@ export default (rootReducer, rootSaga) => {
     // kick off root saga
     let sagasManager = sagaMiddleware.run(rootSaga);
     sagaMiddleware.run(autoLoginSagaWatcher);
+    sagaMiddleware.run(pollMinerSagaWatcher);
 
     // epicMiddleware.run(rootEpic);
 

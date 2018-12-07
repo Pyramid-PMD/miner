@@ -6,7 +6,8 @@ const { Types, Creators } = createActions({
     pollMinerRequest: ['speed'],
     pollMinerSuccess: null,
     pollMinerFailure: ['error'],
-    pollMinerStop: null,
+    startMinerPoll: null,
+    stopMinerPoll: null,
     diskSerialRequest: null,
     diskSerialSuccess: ['diskSerial'],
     handleGenericNetworkErrors: ['response']

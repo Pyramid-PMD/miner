@@ -1,9 +1,14 @@
-import { put, call } from 'redux-saga/effects';
+import { put, call, take, race, select } from 'redux-saga/effects';
 import LoginActions from '../pages/Login/LoginRedux';
-import StartupActions from './StartupRedux';
+import StartupActions, {StartupTypes} from "./StartupRedux";
 import { getSavedLanguage } from '../pages/Dashboard/pages/Settings/SettingsSaga';
 import {getDiskId} from "../Services/Utils";
 import i18n from '../config/i18n/i18next.client.config';
+import {QrCodeLoginTypes} from "../pages/QrCodeLogin/QrLoginRedux";
+import {addDiskIdToRequestHeaders} from "../Services/Api";
+import {api} from "./rootSaga";
+import {delay} from "redux-saga";
+import {handleAutoLoginResponse} from "../pages/QrCodeLogin/QrCodeLoginSaga";
 
 export function * checkAuthStatus(api, action) {
     const lang = yield getSavedLanguage();
@@ -56,23 +61,26 @@ export function measureUploadSpeed() {
             .on('end', function(averageSpeed) {
                 console.log('average speed', averageSpeed);
                 resolve(Math.floor(averageSpeed / 1024));
-            }).start();
+            })
+            // .on('error', (error) => reject(error))
+            .start();
+        net.upload.abort();
     });
 }
 
-export function * pollMinerSaga(api) {
-    const speed = yield measureUploadSpeed() || 168;
-    const res = yield call(api.pollMiner, speed);
-    if (res.data.code === "0") {
-        yield put(StartupActions.pollMinerSuccess())
-    } else {
-        switch (res.data.code) {
-
-        }
-        yield put(StartupActions.pollMinerFailure('error'));
-    }
-
-}
+// export function * pollMinerSaga(api) {
+//     const speed = yield measureUploadSpeed() || 168;
+//     const res = yield call(api.pollMiner, speed);
+//     if (res.data.code === "0") {
+//         yield put(StartupActions.pollMinerSuccess())
+//     } else {
+//         switch (res.data.code) {
+//
+//         }
+//         yield put(StartupActions.pollMinerFailure('error'));
+//     }
+//
+// }
 
 
 export function * handleGenericNetworkErrors (response) {
@@ -99,3 +107,39 @@ export function * handleGenericNetworkErrors (response) {
     return errorMsg;
 
 }
+
+export function* pollMinerSagaWatcher() {
+    while (true) {
+        yield take(StartupTypes.START_MINER_POLL);
+        yield race([
+            call(pollMinerSaga),
+            take(StartupTypes.STOP_MINER_POLL)
+        ]);
+    }
+}
+
+const POLL_MINER_INTERVAL = 5 * 1000;
+
+export function* pollMinerSaga() {
+    while (true) {
+        console.log('poll miner saga called');
+        let speed = 168;
+        try {
+            speed = yield measureUploadSpeed();
+        } catch (error) {
+            console.log('error', error);
+        }
+        const res = yield call(api.pollMiner, speed);
+        if (res.status === 200) {
+            if (res.data.code === "0") {
+                yield put(StartupActions.pollMinerSuccess())
+            } else {
+                yield put(StartupActions.pollMinerFailure('error'));
+            }
+        } else {
+            yield put(StartupActions.pollMinerFailure('error'));
+        }
+        yield call(delay, POLL_MINER_INTERVAL);
+    }
+}
+

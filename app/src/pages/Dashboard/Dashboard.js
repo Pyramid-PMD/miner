@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-// import Overview from "./pages/Overview/Overview";
-// import Transactions from "./pages/Transactions/Transactions";
-// import Miner from "./pages/Miner/Miner";
-// import Withdraw from "./pages/Withdraw/Withdraw";
-// import Faq from "./pages/Faq/Faq";
-// import Settings from "./pages/Settings/Settings";
-// import Profit from "./pages/Profit/Profit";
 import Menu from "./components/Menu/Menu";
-// import Notifications from "./pages/Notifications/Nofications";
 import config from '../../config/app.config';
 import PageHeader from "./components/PageHeader/PageHeader";
 
@@ -25,8 +17,6 @@ const AsyncSettings = AsyncComponent(() => import("./pages/Settings/Settings"));
 const AsyncProfit = AsyncComponent(() => import("./pages/Profit/Profit"));
 const AsyncNotifications = AsyncComponent(() => import("./pages/Notifications/Notifications"));
 
-
-
 import SettingsActions, { SettingsSelectors } from './pages/Settings/SettingsRedux';
 import StartupActions, { StartupSelectors } from '../../Redux/StartupRedux';
 import LoginActions from '../Login/LoginRedux';
@@ -36,33 +26,17 @@ const pageStyles = {
 };
 
 class Dashboard extends Component {
-    //TODO: Use redux-observable in polling miner
+
     componentDidMount() {
-        this.props.loadSettings();
-    }
-
-    componentWillMount() {
-        this.startPoll();
-    }
-
-    startPoll() {
-        const interval = (60 * 5 * 1000);
-        this.props.pollMiner();
-        setTimeout(() => {
-            this.startPoll();
-        }, interval);
-    }
-
-    componentWillUnmount() {
-        clearTimeout(this.timeout);
+        const {
+            loadSettings,
+            startMinerPoll
+        } = this.props;
+        loadSettings();
+        startMinerPoll();
     }
 
     render() {
-        // if (this.props.loading) {
-        //     return (<div className="d-flex align-items-stretch root-container">
-        //         <p>loading</p>
-        //     </div>);
-        // }
         return (
             <div className="d-flex align-items-stretch root-container">
                 <div>
@@ -101,15 +75,13 @@ const mapStateToProps = (state) => {
         loading: SettingsSelectors.selectLoading(state),
         miner: null,
         alias: SettingsSelectors.selectAlias(state),
-        isPollingMiner: StartupSelectors.selectMinerPolling(state),
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         loadSettings: () => dispatch(SettingsActions.loadDefaultSettings()),
-        loadUser: () => dispatch(SettingsActions.userInfoRequest()),
-        pollMiner: () => dispatch(StartupActions.pollMinerRequest()),
+        startMinerPoll: () => dispatch(StartupActions.startMinerPoll()),
         logout: () => dispatch(LoginActions.logoutRequest()),
     }
 };
