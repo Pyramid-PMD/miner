@@ -118,7 +118,7 @@ export function* pollMinerSagaWatcher() {
     }
 }
 
-const POLL_MINER_INTERVAL = 5 * 1000;
+const POLL_MINER_INTERVAL = 5 * 60 * 1000;
 
 export function* pollMinerSaga() {
     while (true) {
