@@ -4,7 +4,7 @@ import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getMinerChartSaga(api, action) {
     const res = yield call(api.getMinerChart);
-    if (res) {
+    if (res.status === 200) {
         console.log(res);
         if (res.data.code === "0") {
             yield put(MinerActions.minerChartSuccess(res.data.data));
@@ -22,7 +22,7 @@ export function * getMinerChartSaga(api, action) {
 
 export function * getMinerFutureSaga(api, action) {
     const res = yield call(api.getMinerFuture);
-    if (res) {
+    if (res.status === 200) {
         console.log(res);
         if (res.data.code === "0") {
             yield put(MinerActions.minerFutureSuccess(res.data.data.future));

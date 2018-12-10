@@ -8,7 +8,7 @@ import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getUserInfoSaga(api) {
     const res = yield call(api.getUserInfo);
-    if (res) {
+    if (res.status === 200) {
         if (res.data.code === "0") {
             yield put(SettingsActions.userInfoSuccess(res.data.data));
         } else {
@@ -84,10 +84,13 @@ export function * loadDefaultSettingsSaga(api, action) {
         try {
             let rates, currency;
             const ratesRes = yield call(api.getExchangeRates);
-            if (ratesRes.data.code === "0" && ratesRes.data.data) {
-                rates = ratesRes.data.data.list;
-                currency = yield call(getUserCurrency, rates[0]);
+            if (ratesRes.status === 200) {
+                if (ratesRes.data.code === "0" && ratesRes.data.data) {
+                    rates = ratesRes.data.data.list;
+                    currency = yield call(getUserCurrency, rates[0]);
+                }
             }
+
             const drivelist = yield call(getDriveList);
             console.log('drivelist', drivelist);
             // if (drivelist && drivelist.length > 0) {

@@ -5,7 +5,7 @@ import { handleGenericNetworkErrors } from '../../../../Redux/StartupSagas';
 
 export function * getTransaction(api, action) {
     const res = yield call(api.getTransaction);
-    if (res) {
+    if (res.status === 200) {
         if (res.data.code === "0") {
             yield put(TransactionActions.transactionSuccess(res.data.data));
         } else {

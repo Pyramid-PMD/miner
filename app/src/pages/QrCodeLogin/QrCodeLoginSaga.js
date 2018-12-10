@@ -58,16 +58,19 @@ export function* autoLoginSaga() {
 }
 
 export function* handleAutoLoginResponse(res) {
-    if (res.data) {
-        if (res.data.code === '0') {
-            yield call(handleAutoLoginSuccess, res);
+    if (res.status === 200) {
+        if (res.data) {
+            if (res.data.code === '0') {
+                yield call(handleAutoLoginSuccess, res);
+            } else {
+                yield call(handleAutoLoginFailure, res);
+            }
         } else {
-            yield call(handleAutoLoginFailure, res);
-        }
-    } else {
-        // TODO: handle generic errors
+            // TODO: handle generic errors
 
+        }
     }
+
 }
 
 export function* handleAutoLoginSuccess(res) {

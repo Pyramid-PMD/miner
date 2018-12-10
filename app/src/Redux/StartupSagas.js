@@ -61,10 +61,11 @@ export function measureUploadSpeed() {
             .on('end', function(averageSpeed) {
                 console.log('average speed', averageSpeed);
                 resolve(Math.floor(averageSpeed / 1024));
+                net.upload.abort();
             })
-            // .on('error', (error) => reject(error))
+            .on('error', (error) => reject(error))
             .start();
-        net.upload.abort();
+
     });
 }
 
@@ -124,22 +125,35 @@ export function* pollMinerSaga() {
     while (true) {
         console.log('poll miner saga called');
         let speed = 168;
+        let isOnline = false;
         try {
-            speed = yield measureUploadSpeed();
+            const ping = yield call(api.ping);
+            isOnline = ping.status === 200;
+            console.log('is online', isOnline);
+            if (isOnline) {
+                console.log('is online', navigator.onLine);
+                speed = yield measureUploadSpeed();
+                console.log('speed', speed);
+                const res = yield call(api.pollMiner, speed);
+                if (res.status === 200) {
+                    if (res.data.code === "0") {
+                        yield put(StartupActions.pollMinerSuccess())
+                    } else {
+                        yield put(StartupActions.pollMinerFailure('error'));
+                    }
+                } else {
+                    yield put(StartupActions.pollMinerFailure('error'));
+                }
+            }
         } catch (error) {
             console.log('error', error);
         }
-        const res = yield call(api.pollMiner, speed);
-        if (res.status === 200) {
-            if (res.data.code === "0") {
-                yield put(StartupActions.pollMinerSuccess())
-            } else {
-                yield put(StartupActions.pollMinerFailure('error'));
-            }
-        } else {
-            yield put(StartupActions.pollMinerFailure('error'));
-        }
+
         yield call(delay, POLL_MINER_INTERVAL);
+
+
     }
 }
+
+
 

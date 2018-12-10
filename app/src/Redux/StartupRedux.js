@@ -10,7 +10,8 @@ const { Types, Creators } = createActions({
     stopMinerPoll: null,
     diskSerialRequest: null,
     diskSerialSuccess: ['diskSerial'],
-    handleGenericNetworkErrors: ['response']
+    handleGenericNetworkErrors: ['response'],
+    pingRequest: ['null']
 
 });
 

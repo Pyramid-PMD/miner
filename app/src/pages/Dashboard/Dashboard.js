@@ -34,6 +34,11 @@ class Dashboard extends Component {
         } = this.props;
         loadSettings();
         startMinerPoll();
+
+        // const TIMEOUT = 5 * 60 * 1000;
+        // setTimeout(() => {
+        //     startMinerPoll();
+        // }, TIMEOUT)
     }
 
     render() {
