@@ -20,7 +20,7 @@ class Miner extends Component {
                             <MinerChart localChart={ this.props.localChart } globalChart={this.props.globalChart} />
                             { this.props.future ?
                                 <p className="text-secondary text-center">
-                                    {t('dashboard:miner.estimateIncoming')} <span className="number number-big text-primary">{this.props.future}</span> PMD
+                                    {t('dashboard:miner.estimateIncoming')} <span className="number number-big text-primary">{this.props.future}</span> PMDC
                                 </p> : null }
                         </div>
                     )

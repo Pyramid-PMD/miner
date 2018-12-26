@@ -38,7 +38,7 @@ class Wallet extends Component {
                                 </li>
                                 <li>
                                     <h2 className="text-secondary text-small">{ t('dashboard:transaction.balance') }</h2>
-                                    <p><span className="number number-big margin-right-4">{  balance }</span><span className="text-small">PMD</span></p>
+                                    <p><span className="number number-big margin-right-4">{  balance }</span><span className="text-small">PMDC</span></p>
                                 </li>
                             </ul>
                         </section>

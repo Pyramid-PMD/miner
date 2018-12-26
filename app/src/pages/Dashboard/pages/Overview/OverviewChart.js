@@ -94,7 +94,7 @@ const OverviewChart = (props) => {
                                     {/*<div className="has-separator">*/}
                                         {/*<p>*/}
                                             {/*<span className="number number-big margin-right-4">{ pmdAll }</span>*/}
-                                            {/*<span className="text-small">PMD</span>*/}
+                                            {/*<span className="text-small">PMDC</span>*/}
                                         {/*</p>*/}
                                         {/*<p className="text-small text-secondary"><span className="margin-right-4">≈ { currency ? (currency.rate * pmdAll).toPrecision(5) : null }</span><span className="text-uppercase">{ currency ? currency.name : null }</span></p>*/}
                                     {/*</div>*/}

@@ -8,7 +8,7 @@
       "images": [
         {
           "id": 1,
-          "caption": "Click on the recharge to see the exchange PMD wallet address, copy the address",
+          "caption": "Click on the recharge to see the exchange PMDC wallet address, copy the address",
           "src": "./src/assets/img/help/help1.png"
         }
       ]
@@ -21,7 +21,7 @@
       "images": [
         {
           "id": 2,
-          "caption": "Click on the recharge to see the exchange PMD wallet address, copy the address",
+          "caption": "Click on the recharge to see the exchange PMDC wallet address, copy the address",
           "src": "./src/assets/img/help/help2.png"
         }
       ]
@@ -30,11 +30,11 @@
       "id": 3,
       "head": "How to raise coins to the exchange",
       "imageContainerClass": "horizontal",
-      "body": "You can use the mining machine to withdraw coins to the exchange wallet. Take ZZEX as an example. After logging in to ZZEX, enter the asset management interface and enter PMD.",
+      "body": "You can use the mining machine to withdraw coins to the exchange wallet. Take ZZEX as an example. After logging in to ZZEX, enter the asset management interface and enter PMDC.",
       "images": [
         {
           "id": 3,
-          "caption": "Click on the recharge to see the exchange PMD wallet address, copy the address",
+          "caption": "Click on the recharge to see the exchange PMDC wallet address, copy the address",
           "src": "./src/assets/img/help/help3.png"
         },
         {
@@ -94,7 +94,7 @@
       "images": [
         {
           "id": 1,
-          "caption": "点击充值，可以看到交易所PMD钱包地址，复制该地址",
+          "caption": "点击充值，可以看到交易所PMDC钱包地址，复制该地址",
           "src": "./src/assets/img/help/help1.png"
         }
       ]
@@ -107,7 +107,7 @@
       "images": [
         {
           "id": 2,
-          "caption": "点击充值，可以看到交易所PMD钱包地址，复制该地址",
+          "caption": "点击充值，可以看到交易所PMDC钱包地址，复制该地址",
           "src": "./src/assets/img/help/help2.png"
         }
       ]
@@ -116,11 +116,11 @@
       "id": 3,
       "head": "如何提币到交易所",
       "imageContainerClass": "horizontal",
-      "body": "可以通过矿机提币到交易所钱包，以ZZEX为例，登陆ZZEX后，进入资产管理界面，输入 PMD",
+      "body": "可以通过矿机提币到交易所钱包，以ZZEX为例，登陆ZZEX后，进入资产管理界面，输入 PMDC",
       "images": [
         {
           "id": 3,
-          "caption": "点击充值，可以看到交易所PMD钱包地址，复制该地址",
+          "caption": "点击充值，可以看到交易所PMDC钱包地址，复制该地址",
           "src": "./src/assets/img/help/help3.png"
         },
         {
